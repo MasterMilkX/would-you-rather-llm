@@ -1,0 +1,3 @@
+crontab -e
+# Add this line:
+0 * * * * /home/milk/Desktop/RESEARCH/wyr/.venv/bin/python /home/milk/Desktop/RESEARCH/wyr/generate_job.py >> /home/milk/Desktop/RESEARCH/wyr/wyr_job.log 2>&1

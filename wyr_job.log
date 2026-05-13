@@ -1,0 +1,42 @@
+/home/milk/Desktop/RESEARCH/wyr/generate_job.py:152: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  (datetime.utcnow().isoformat(), PROMPT)
+/home/milk/Desktop/RESEARCH/wyr/generate_job.py:207: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  "generated_at":  datetime.utcnow().isoformat(),
+
+============================================================
+WYR Generation Job — 2026-05-13T15:00:03.278110
+============================================================
+Created question row id=1
+
+--- Slot A: llama ---
+  [llama] Loading from ./model_outputs/llama-wyr-merged ...
+  ERROR loading/generating for llama: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/llama-wyr-merged'. Use `repo_type` argument if needed.
+  Raw output: 'Would you rather option A or option B?'
+  Option A: 'option A'
+  Option B: 'option B'
+
+--- Slot B: smol ---
+  [smol] Loading from ./model_outputs/smol-wyr-merged ...
+  ERROR loading/generating for smol: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/smol-wyr-merged'. Use `repo_type` argument if needed.
+  Raw output: 'Would you rather option A or option B?'
+  Option A: 'option A'
+  Option B: 'option B'
+
+--- Slot C: qwen ---
+  [qwen] Loading from ./model_outputs/qwen-wyr-merged ...
+  ERROR loading/generating for qwen: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/qwen-wyr-merged'. Use `repo_type` argument if needed.
+  Raw output: 'Would you rather option A or option B?'
+  Option A: 'option A'
+  Option B: 'option B'
+
+--- Slot D: gemma ---
+  [gemma] Loading from ./model_outputs/gemma-wyr-merged ...
+  ERROR loading/generating for gemma: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/gemma-wyr-merged'. Use `repo_type` argument if needed.
+  Raw output: 'Would you rather option A or option B?'
+  Option A: 'option A'
+  Option B: 'option B'
+
+✓ Wrote current_question.json
+✓ question_id=1 saved to wyr_votes.db
+✓ Done at 2026-05-13T15:00:03.306664
+

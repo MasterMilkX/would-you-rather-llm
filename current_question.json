@@ -1,0 +1,26 @@
+{
+  "question_id": 1,
+  "generated_at": "2026-05-13T18:56:22.014858",
+  "slots": {
+    "A": {
+      "slot": "A",
+      "option_a": "Every time someone else uses their phone, your phone turns into a fart machine (your own smell is gone)",
+      "option_b": "Be the only one who can't see the person talking to themselves"
+    },
+    "B": {
+      "slot": "B",
+      "option_a": "Not be able to ever make a joke or funny story again",
+      "option_b": "Be unable to tell any personal stories"
+    },
+    "C": {
+      "slot": "C",
+      "option_a": "Be a 10% chance to become a god",
+      "option_b": "Become the most powerful being on earth"
+    },
+    "D": {
+      "slot": "D",
+      "option_a": "Always be able to hear a bee",
+      "option_b": "Never see an ant"
+    }
+  }
+}
