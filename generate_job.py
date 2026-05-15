@@ -257,13 +257,19 @@ def run(test_mode: bool = False):
         )
         db.commit()
 
-        results[slot] = {"slot": slot, "option_a": opt_a, "option_b": opt_b}
+        results[slot] = {"slot": slot, "option_a": opt_a, "option_b": opt_b, "model_name": model_name}
 
     payload = {
         "question_id":  question_id,
         "generated_at": datetime.utcnow().isoformat(),
         "test_mode":    test_mode,
-        "slots":        results,
+        # Public: what the frontend API returns (no model names)
+        "slots": {
+            slot: {"slot": d["slot"], "option_a": d["option_a"], "option_b": d["option_b"]}
+            for slot, d in results.items()
+        },
+        # Private: used by web server to resolve votes — never forwarded to the browser
+        "slot_model_map": {slot: d["model_name"] for slot, d in results.items()},
     }
     with open(JSON_PATH, "w") as f:
         json.dump(payload, f, indent=2)

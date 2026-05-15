@@ -1,27 +1,33 @@
 {
-  "question_id": 37,
-  "generated_at": "2026-05-15T15:03:46.885724",
+  "question_id": 38,
+  "generated_at": "2026-05-15T15:15:53.710473",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Always be the only person that can smell something but cant tell for sure",
-      "option_b": "always have to pee in a public bathroom"
+      "option_a": "Your mom keeps calling to ask if you wanna do chores for her",
+      "option_b": "your dad asks you to help with errands"
     },
     "B": {
       "slot": "B",
-      "option_a": "Always have to do homework for no reason",
-      "option_b": "Have a job that pays nothing but still have to work"
+      "option_a": "Be able to control all of your muscles and bones but cant move them (except for when you are awake)",
+      "option_b": "be the best at anything you do, but only use one hand"
     },
     "C": {
       "slot": "C",
-      "option_a": "Pick up trash in your area.",
-      "option_b": "Take out the trash"
+      "option_a": "Have your arms so long they are almost a separate person",
+      "option_b": "Have 4 legs but only be able to walk on them"
     },
     "D": {
       "slot": "D",
-      "option_a": "Only ever get to eat one food for a year (You may choose it yourself but be aware that once your done with the month/year then no more.)",
-      "option_b": "Never have any chocolate again"
+      "option_a": "10 million",
+      "option_b": "5 billion"
     }
+  },
+  "slot_model_map": {
+    "A": "gemma",
+    "B": "llama",
+    "C": "smol",
+    "D": "qwen"
   }
 }

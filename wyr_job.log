@@ -289,3 +289,59 @@ Created question row id=37
 ✓ question_id=37 saved to wyr_votes.db
 ✓ Done at 2026-05-15T11:03:47
 
+
+============================================================
+WYR Generation Job  — 2026-05-15T11:15:43
+============================================================
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  Found 1 vote record(s) to merge
+  SSH clear remote delta: cp /home/server/APPS/wyr/votes_delta.jsonl /home/server/APPS/wyr/votes_delta.jsonl.bak && truncate -s 0 /home/server/APPS/wyr/votes_delta.jsonl
+  ✓ clear remote delta OK
+  ✓ Merged 1 vote(s), skipped 0
+Created question row id=38
+
+--- Slot A: gemma ---
+  [gemma] Loading from ./model_outputs/gemma-wyr-merged ...
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:   0%|          | 1/340 [00:00<01:48,  3.11it/s]Loading weights:   9%|▊         | 29/340 [00:00<00:03, 87.53it/s]Loading weights:  16%|█▌        | 55/340 [00:00<00:02, 137.93it/s]Loading weights:  24%|██▍       | 82/340 [00:00<00:01, 175.11it/s]Loading weights:  36%|███▌      | 122/340 [00:00<00:00, 240.64it/s]Loading weights:  47%|████▋     | 160/340 [00:00<00:00, 264.04it/s]Loading weights:  59%|█████▊    | 199/340 [00:00<00:00, 294.96it/s]Loading weights:  70%|██████▉   | 237/340 [00:01<00:00, 317.98it/s]Loading weights:  81%|████████  | 276/340 [00:01<00:00, 331.23it/s]Loading weights:  93%|█████████▎| 315/340 [00:01<00:00, 334.72it/s]Loading weights: 100%|██████████| 340/340 [00:01<00:00, 255.31it/s]
+  [gemma] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Your mom keeps calling to ask if you wanna do chores for her\nB) your dad asks you to help with errands'
+  Parsed Option A: 'Your mom keeps calling to ask if you wanna do chores for her'
+  Parsed Option B: 'your dad asks you to help with errands'
+
+--- Slot B: llama ---
+  [llama] Loading from ./model_outputs/llama-wyr-merged ...
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/201 [00:00<00:03, 49.25it/s]Loading weights:  20%|██        | 41/201 [00:00<00:00, 226.82it/s]Loading weights:  33%|███▎      | 67/201 [00:00<00:00, 236.50it/s]Loading weights:  52%|█████▏    | 105/201 [00:00<00:00, 283.97it/s]Loading weights:  69%|██████▊   | 138/201 [00:00<00:00, 295.79it/s]Loading weights:  84%|████████▎ | 168/201 [00:00<00:00, 288.38it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 278.61it/s]
+[transformers] Both `max_new_tokens` (=80) and `max_length`(=2048) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  [llama] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Be able to control all of your muscles and bones but cant move them (except for when you are awake)\nB) be the best at anything you do, but only use one hand'
+  Parsed Option A: 'Be able to control all of your muscles and bones but cant move them (except for when you are awake)'
+  Parsed Option B: 'be the best at anything you do, but only use one hand'
+
+--- Slot C: smol ---
+  [smol] Loading from ./model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/218 [00:00<00:04, 45.49it/s]Loading weights:  11%|█         | 23/218 [00:00<00:01, 117.14it/s]Loading weights:  20%|██        | 44/218 [00:00<00:01, 157.27it/s]Loading weights:  28%|██▊       | 60/218 [00:00<00:01, 153.10it/s]Loading weights:  39%|███▊      | 84/218 [00:00<00:00, 181.40it/s]Loading weights:  47%|████▋     | 103/218 [00:00<00:00, 183.28it/s]Loading weights:  56%|█████▌    | 122/218 [00:00<00:00, 159.54it/s]Loading weights:  64%|██████▍   | 140/218 [00:00<00:00, 161.98it/s]Loading weights:  72%|███████▏  | 157/218 [00:01<00:00, 148.15it/s]Loading weights:  79%|███████▉  | 173/218 [00:01<00:00, 138.29it/s]Loading weights:  86%|████████▌ | 188/218 [00:01<00:00, 119.87it/s]Loading weights:  92%|█████████▏| 201/218 [00:01<00:00, 108.50it/s]Loading weights: 100%|██████████| 218/218 [00:01<00:00, 139.00it/s]
+  [smol] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Have your arms so long they are almost a separate person\nB) Have 4 legs but only be able to walk on them'
+  Parsed Option A: 'Have your arms so long they are almost a separate person'
+  Parsed Option B: 'Have 4 legs but only be able to walk on them'
+
+--- Slot D: qwen ---
+  [qwen] Loading from ./model_outputs/qwen-wyr-merged ...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<00:45,  7.43it/s]Loading weights:  12%|█▏        | 39/338 [00:00<00:01, 187.52it/s]Loading weights:  24%|██▍       | 82/338 [00:00<00:00, 286.60it/s]Loading weights:  33%|███▎      | 113/338 [00:00<00:00, 282.09it/s]Loading weights:  47%|████▋     | 159/338 [00:00<00:00, 334.75it/s]Loading weights:  58%|█████▊    | 196/338 [00:00<00:00, 342.53it/s]Loading weights:  69%|██████▊   | 232/338 [00:00<00:00, 328.70it/s]Loading weights:  83%|████████▎ | 279/338 [00:00<00:00, 353.37it/s]Loading weights:  93%|█████████▎| 315/338 [00:01<00:00, 348.85it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 310.16it/s]
+  [qwen] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) 10 million\nB) 5 billion'
+  Parsed Option A: '10 million'
+  Parsed Option B: '5 billion'
+✓ Status written to job_status.json
+
+✓ Wrote current_question.json
+
+[sync] Pushing question JSON to web server ...
+  SCP push question: current_question.json → milk@141.166.173.142:/home/server/APPS/wyr/current_question.json
+  ✓ push question OK
+✓ question_id=38 saved to wyr_votes.db
+✓ Done at 2026-05-15T11:15:54
+
