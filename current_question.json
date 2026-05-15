@@ -1,26 +1,27 @@
 {
-  "question_id": 1,
-  "generated_at": "2026-05-13T18:56:22.014858",
+  "question_id": 37,
+  "generated_at": "2026-05-15T15:03:46.885724",
+  "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Every time someone else uses their phone, your phone turns into a fart machine (your own smell is gone)",
-      "option_b": "Be the only one who can't see the person talking to themselves"
+      "option_a": "Always be the only person that can smell something but cant tell for sure",
+      "option_b": "always have to pee in a public bathroom"
     },
     "B": {
       "slot": "B",
-      "option_a": "Not be able to ever make a joke or funny story again",
-      "option_b": "Be unable to tell any personal stories"
+      "option_a": "Always have to do homework for no reason",
+      "option_b": "Have a job that pays nothing but still have to work"
     },
     "C": {
       "slot": "C",
-      "option_a": "Be a 10% chance to become a god",
-      "option_b": "Become the most powerful being on earth"
+      "option_a": "Pick up trash in your area.",
+      "option_b": "Take out the trash"
     },
     "D": {
       "slot": "D",
-      "option_a": "Always be able to hear a bee",
-      "option_b": "Never see an ant"
+      "option_a": "Only ever get to eat one food for a year (You may choose it yourself but be aware that once your done with the month/year then no more.)",
+      "option_b": "Never have any chocolate again"
     }
   }
 }
