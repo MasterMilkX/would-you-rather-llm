@@ -42,10 +42,11 @@ login()
 # list of models: google/gemma-3-1b-it, HuggingFaceTB/SmolLM2-1.7B-Instruct, TinyLlama/TinyLlama-1.1B-Chat-v1.0, Qwen/Qwen2.5-1.5B
 
 MODEL_SET = {
-    "gemma": "google/gemma-3-1b-it",
-    "smol": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-    "llama": "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
-    "qwen": "Qwen/Qwen2.5-1.5B",
+    # "gemma": "google/gemma-3-1b-it",
+    # "smol": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    # "llama": "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
+    "big-llama": "meta-llama/Llama-3.2-1B",
+    # "qwen": "Qwen/Qwen2.5-1.5B",
 }
 
 EPOCHS = 5

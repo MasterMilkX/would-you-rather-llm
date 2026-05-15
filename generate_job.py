@@ -58,9 +58,9 @@ GEN_PARAMS = dict(
 )
 
 PROMPT          = "Would you rather"
-DB_PATH         = "wyr_votes.db"
-JSON_PATH       = "current_question.json"
-STATUS_PATH     = "job_status.json"
+DB_PATH         = "/home/milk/Desktop/RESEARCH/wyr/wyr_votes.db"
+JSON_PATH       = "/home/milk/Desktop/RESEARCH/wyr/current_question.json"
+STATUS_PATH     = "/home/milk/Desktop/RESEARCH/wyr/job_status.json"
 
 # ---------------------------------------------------------------------------
 # Test-mode dummy questions — used instead of real models with --test

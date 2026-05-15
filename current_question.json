@@ -1,33 +1,33 @@
 {
-  "question_id": 39,
-  "generated_at": "2026-05-15T16:02:02.290569",
+  "question_id": 48,
+  "generated_at": "2026-05-15T18:02:14.546361",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "be forced to eat everyday for a month with no choice but to digest the food",
-      "option_b": "Forced to drink every day with no way of turning it down"
+      "option_a": "A bumblebee",
+      "option_b": "A butterfly"
     },
     "B": {
       "slot": "B",
-      "option_a": "Have your personality instantly change to 1 of many different animals",
-      "option_b": "Be able to talk to an animal without any obstacles"
+      "option_a": "Every time youre walking around someone is going to throw something at you (but theyre not really scared)",
+      "option_b": "Have a constant, horrible stench on you"
     },
     "C": {
       "slot": "C",
-      "option_a": "Have a horse for 10 years with no more",
-      "option_b": "Be an eagle for 5 months"
+      "option_a": "Only be able to eat meat",
+      "option_b": "only be able to drink milk"
     },
     "D": {
       "slot": "D",
-      "option_a": "Be a pirate and be able to fight with swords.",
-      "option_b": "8-foot tall octopus?"
+      "option_a": "Have 10,864 of your closest friends in on a huge prank that involves one person getting completely and utterly destroyed",
+      "option_b": "Make an annoying noise every time someone comes near you"
     }
   },
   "slot_model_map": {
-    "A": "llama",
-    "B": "qwen",
-    "C": "gemma",
+    "A": "qwen",
+    "B": "gemma",
+    "C": "llama",
     "D": "smol"
   }
 }

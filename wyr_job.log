@@ -500,3 +500,59 @@ Created question row id=47
 ✓ question_id=47 saved to wyr_votes.db
 ✓ Done at 2026-05-15T13:00:16
 
+
+============================================================
+WYR Generation Job  — 2026-05-15T14:00:03
+============================================================
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  Found 18 vote record(s) to merge
+  SSH clear remote delta: cp /home/server/APPS/wyr/votes_delta.jsonl /home/server/APPS/wyr/votes_delta.jsonl.bak && truncate -s 0 /home/server/APPS/wyr/votes_delta.jsonl
+  ✓ clear remote delta OK
+  ✓ Merged 18 vote(s), skipped 0
+Created question row id=48
+
+--- Slot A: qwen ---
+  [qwen] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/qwen-wyr-merged ...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<01:07,  4.98it/s]Loading weights:   8%|▊         | 27/338 [00:00<00:03, 100.89it/s]Loading weights:  15%|█▌        | 52/338 [00:00<00:01, 152.98it/s]Loading weights:  22%|██▏       | 76/338 [00:00<00:01, 175.02it/s]Loading weights:  31%|███▏      | 106/338 [00:00<00:01, 213.51it/s]Loading weights:  38%|███▊      | 130/338 [00:00<00:01, 207.25it/s]Loading weights:  45%|████▍     | 152/338 [00:00<00:00, 195.90it/s]Loading weights:  52%|█████▏    | 177/338 [00:00<00:00, 209.25it/s]Loading weights:  59%|█████▉    | 199/338 [00:01<00:00, 192.42it/s]Loading weights:  67%|██████▋   | 225/338 [00:01<00:00, 209.23it/s]Loading weights:  75%|███████▌  | 255/338 [00:01<00:00, 228.03it/s]Loading weights:  83%|████████▎ | 280/338 [00:01<00:00, 226.73it/s]Loading weights:  90%|████████▉ | 304/338 [00:01<00:00, 228.08it/s]Loading weights:  97%|█████████▋| 328/338 [00:01<00:00, 216.44it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 200.50it/s]
+  [qwen] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) A bumblebee\nB) A butterfly'
+  Parsed Option A: 'A bumblebee'
+  Parsed Option B: 'A butterfly'
+
+--- Slot B: gemma ---
+  [gemma] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/gemma-wyr-merged ...
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 3555.83it/s]
+  [gemma] Loaded on cpu
+  Raw output: 'Would you rather...\nA) Every time youre walking around someone is going to throw something at you (but theyre not really scared)\nB) Have a constant, horrible stench on you'
+  Parsed Option A: 'Every time youre walking around someone is going to throw something at you (but theyre not really scared)'
+  Parsed Option B: 'Have a constant, horrible stench on you'
+
+--- Slot C: llama ---
+  [llama] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/llama-wyr-merged ...
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   3%|▎         | 6/201 [00:00<00:03, 58.11it/s]Loading weights:  20%|█▉        | 40/201 [00:00<00:00, 216.93it/s]Loading weights:  36%|███▌      | 72/201 [00:00<00:00, 254.20it/s]Loading weights:  52%|█████▏    | 105/201 [00:00<00:00, 280.87it/s]Loading weights:  68%|██████▊   | 137/201 [00:00<00:00, 293.22it/s]Loading weights:  83%|████████▎ | 167/201 [00:00<00:00, 293.25it/s]Loading weights:  98%|█████████▊| 197/201 [00:00<00:00, 269.82it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 263.99it/s]
+[transformers] Both `max_new_tokens` (=80) and `max_length`(=2048) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  [llama] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Only be able to eat meat\nB) only be able to drink milk'
+  Parsed Option A: 'Only be able to eat meat'
+  Parsed Option B: 'only be able to drink milk'
+
+--- Slot D: smol ---
+  [smol] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/218 [00:00<00:04, 46.68it/s]Loading weights:  11%|█         | 23/218 [00:00<00:01, 120.71it/s]Loading weights:  22%|██▏       | 48/218 [00:00<00:00, 173.37it/s]Loading weights:  32%|███▏      | 70/218 [00:00<00:00, 189.68it/s]Loading weights:  43%|████▎     | 93/218 [00:00<00:00, 203.50it/s]Loading weights:  52%|█████▏    | 114/218 [00:00<00:00, 188.95it/s]Loading weights:  61%|██████▏   | 134/218 [00:00<00:00, 183.96it/s]Loading weights:  70%|███████   | 153/218 [00:01<00:00, 104.38it/s]Loading weights:  77%|███████▋  | 168/218 [00:01<00:00, 57.45it/s] Loading weights:  82%|████████▏ | 179/218 [00:01<00:00, 60.75it/s]Loading weights:  87%|████████▋ | 189/218 [00:02<00:00, 54.64it/s]Loading weights:  90%|█████████ | 197/218 [00:02<00:00, 51.64it/s]Loading weights:  96%|█████████▋| 210/218 [00:02<00:00, 63.34it/s]Loading weights: 100%|██████████| 218/218 [00:02<00:00, 87.89it/s]
+  [smol] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Have 10,864 of your closest friends in on a huge prank that involves one person getting completely and utterly destroyed\nB) Make an annoying noise every time someone comes near you'
+  Parsed Option A: 'Have 10,864 of your closest friends in on a huge prank that involves one person getting completely and utterly destroyed'
+  Parsed Option B: 'Make an annoying noise every time someone comes near you'
+✓ Status written to /home/milk/Desktop/RESEARCH/wyr/job_status.json
+
+✓ Wrote /home/milk/Desktop/RESEARCH/wyr/current_question.json
+
+[sync] Pushing question JSON to web server ...
+  SCP push question: /home/milk/Desktop/RESEARCH/wyr/current_question.json → milk@141.166.173.142:/home/server/APPS/wyr/current_question.json
+  ✓ push question OK
+✓ question_id=48 saved to /home/milk/Desktop/RESEARCH/wyr/wyr_votes.db
+✓ Done at 2026-05-15T14:02:14
+

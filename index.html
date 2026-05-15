@@ -84,9 +84,17 @@
   }
   .win-title span{font-family:'VT323',monospace;font-size:1rem;color:var(--bg);letter-spacing:2px;}
   .win-controls{display:flex;gap:8px;}
-  .win-ctrl{width:24px;height:24px;background:transparent;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--teal);cursor:pointer;font-family:'VT323',monospace;transition:opacity 0.15s;}
+  .win-ctrl{width:24px;height:24px;background:transparent;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--teal);cursor:pointer;font-family:'VT323',monospace;transition:opacity 0.15s;position:relative;}
   .win-ctrl.feedback-selected{filter:drop-shadow(0 0 6px #ff4400) drop-shadow(0 0 14px #ff2200) drop-shadow(0 0 28px #ff0000);opacity:1;}
   .win-ctrl.feedback-disabled{opacity:0.18;cursor:default;pointer-events:none;}
+  .win-ctrl[data-tip]::after{
+    content:attr(data-tip);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+    background:var(--bg);border:1px solid var(--teal-dim);color:var(--teal);
+    font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:1px;
+    white-space:nowrap;padding:3px 7px;pointer-events:none;
+    opacity:0;transition:opacity 0.15s;z-index:200;
+  }
+  .win-ctrl[data-tip]:not(.feedback-disabled):hover::after{opacity:1;}
   .win-body{padding:18px;}
   .wyr-prompt{font-family:'VT323',monospace;font-size:1.3rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:14px;text-align:center;}
   .option-btn{
@@ -228,9 +236,9 @@ function buildCard(slot) {
     <div class="win-title">
       <span>MODEL_${slot}.EXE</span>
       <div class="win-controls">
-        <div class="win-ctrl" id="fb-${slot}-UPVOTE"   onclick="submitModelFeedback('${slot}','UPVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg></div>
-        <div class="win-ctrl" id="fb-${slot}-DOWNVOTE" onclick="submitModelFeedback('${slot}','DOWNVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"/></svg></div>
-        <div class="win-ctrl" id="fb-${slot}-FLAG"     onclick="submitModelFeedback('${slot}','FLAG')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Zm300-440Zm86 160h134v-240H510l-16-80H280v240h290l16 80Z"/></svg></div>
+        <div class="win-ctrl" id="fb-${slot}-UPVOTE"   data-tip="GOOD QUESTION"  onclick="submitModelFeedback('${slot}','UPVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg></div>
+        <div class="win-ctrl" id="fb-${slot}-DOWNVOTE" data-tip="BAD QUESTION"   onclick="submitModelFeedback('${slot}','DOWNVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"/></svg></div>
+        <div class="win-ctrl" id="fb-${slot}-FLAG"     data-tip="FLAG CONTENT"   onclick="submitModelFeedback('${slot}','FLAG')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Zm300-440Zm86 160h134v-240H510l-16-80H280v240h290l16 80Z"/></svg></div>
       </div>
     </div>
     <div class="win-body">
@@ -336,30 +344,38 @@ async function restoreSavedVotes(qid) {
 
   const saved = getSavedVotes(qid);
   const votedSlots = Object.keys(saved);
+
   if (votedSlots.length === 0) {
-    setStatus('','CLICK AN OPTION ON ANY CARD TO CAST YOUR VOTE_');
+    setStatus('', 'CLICK AN OPTION ON ANY CARD TO CAST YOUR VOTE_');
     return;
   }
+
+  // Restore button state unconditionally — doesn't need the API
+  for (const slot of votedSlots) {
+    const chosenOption = saved[slot];
+    const btnA = document.getElementById(`obtn-${slot}-A`);
+    const btnB = document.getElementById(`obtn-${slot}-B`);
+    if (!btnA) continue;
+    btnA.disabled = true; btnB.disabled = true;
+    btnA.classList.toggle('selected-a', chosenOption === 'A');
+    btnB.classList.toggle('selected-b', chosenOption === 'B');
+  }
+
+  state.voted = true;
+  const remaining = SLOTS.filter(s => !saved[s]).length;
+  setStatus('', remaining > 0
+    ? `PREVIOUS VOTES RESTORED // ${remaining} CARD${remaining > 1 ? 'S' : ''} REMAINING_`
+    : 'ALL VOTES CAST // RESULTS SHOWN_');
+
+  // Fetch current vote counts and show results — best-effort, silent on failure
   try {
     const resp = await fetch(`/api/results/${qid}`);
-    if (!resp.ok) { setStatus('','CLICK AN OPTION ON ANY CARD TO CAST YOUR VOTE_'); return; }
+    if (!resp.ok) return;
     const data = await resp.json();
     for (const slot of votedSlots) {
-      const chosenOption = saved[slot];
-      const btnA = document.getElementById(`obtn-${slot}-A`);
-      const btnB = document.getElementById(`obtn-${slot}-B`);
-      if (!btnA) continue;
-      btnA.disabled = true; btnB.disabled = true;
-      btnA.classList.toggle('selected-a', chosenOption === 'A');
-      btnB.classList.toggle('selected-b', chosenOption === 'B');
-      showResults(slot, data.totals, data.slot_reveal, chosenOption);
+      showResults(slot, data.totals, data.slot_reveal, saved[slot]);
     }
-    state.voted = true;
-    const remaining = SLOTS.filter(s => !saved[s]).length;
-    setStatus('', remaining > 0
-      ? `PREVIOUS VOTES RESTORED // ${remaining} CARD${remaining>1?'S':''} REMAINING_`
-      : 'ALL VOTES CAST // RESULTS SHOWN_');
-  } catch(e) { setStatus('','CLICK AN OPTION ON ANY CARD TO CAST YOUR VOTE_'); }
+  } catch(e) { /* results unavailable, button state already restored above */ }
 }
 
 function setStatus(cls,msg){
