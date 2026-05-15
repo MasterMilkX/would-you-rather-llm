@@ -345,3 +345,158 @@ Created question row id=38
 ✓ question_id=38 saved to wyr_votes.db
 ✓ Done at 2026-05-15T11:15:54
 
+
+============================================================
+WYR Generation Job  — 2026-05-15T12:00:04
+============================================================
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  Found 13 vote record(s) to merge
+  SSH clear remote delta: cp /home/server/APPS/wyr/votes_delta.jsonl /home/server/APPS/wyr/votes_delta.jsonl.bak && truncate -s 0 /home/server/APPS/wyr/votes_delta.jsonl
+  ✓ clear remote delta OK
+  ✓ Merged 13 vote(s), skipped 0
+Created question row id=46
+
+--- Slot A: llama ---
+  [llama] Loading from ./model_outputs/llama-wyr-merged ...
+  ERROR: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/llama-wyr-merged'. Use `repo_type` argument if needed.
+
+--- Slot B: gemma ---
+  [gemma] Loading from ./model_outputs/gemma-wyr-merged ...
+  ERROR: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/gemma-wyr-merged'. Use `repo_type` argument if needed.
+
+--- Slot C: qwen ---
+  [qwen] Loading from ./model_outputs/qwen-wyr-merged ...
+  ERROR: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/qwen-wyr-merged'. Use `repo_type` argument if needed.
+
+--- Slot D: smol ---
+  [smol] Loading from ./model_outputs/smol-wyr-merged ...
+  ERROR: Repo id must be in the form 'repo_name' or 'namespace/repo_name': './model_outputs/smol-wyr-merged'. Use `repo_type` argument if needed.
+✓ Status written to job_status.json
+
+✓ Wrote current_question.json
+
+[sync] Pushing question JSON to web server ...
+  SCP push question: current_question.json → milk@141.166.173.142:/home/server/APPS/wyr/current_question.json
+  ✓ push question OK
+✓ question_id=46 saved to wyr_votes.db
+✓ Done at 2026-05-15T12:00:05
+
+
+============================================================
+WYR Generation Job  — 2026-05-15T12:01:49
+============================================================
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  No pending vote deltas.
+Created question row id=39
+
+--- Slot A: llama ---
+  [llama] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/llama-wyr-merged ...
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   1%|          | 2/201 [00:00<00:11, 17.95it/s]Loading weights:  14%|█▍        | 29/201 [00:00<00:01, 156.07it/s]Loading weights:  32%|███▏      | 64/201 [00:00<00:00, 238.65it/s]Loading weights:  47%|████▋     | 95/201 [00:00<00:00, 265.63it/s]Loading weights:  64%|██████▍   | 129/201 [00:00<00:00, 287.77it/s]Loading weights:  79%|███████▉  | 159/201 [00:00<00:00, 289.10it/s]Loading weights:  97%|█████████▋| 194/201 [00:00<00:00, 305.91it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 270.79it/s]
+[transformers] Both `max_new_tokens` (=80) and `max_length`(=2048) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  [llama] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) be forced to eat everyday for a month with no choice but to digest the food\nB) Forced to drink every day with no way of turning it down'
+  Parsed Option A: 'be forced to eat everyday for a month with no choice but to digest the food'
+  Parsed Option B: 'Forced to drink every day with no way of turning it down'
+
+--- Slot B: qwen ---
+  [qwen] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/qwen-wyr-merged ...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<00:54,  6.19it/s]Loading weights:  12%|█▏        | 39/338 [00:00<00:01, 177.80it/s]Loading weights:  22%|██▏       | 75/338 [00:00<00:01, 227.85it/s]Loading weights:  36%|███▌      | 120/338 [00:00<00:00, 302.94it/s]Loading weights:  47%|████▋     | 160/338 [00:00<00:00, 321.53it/s]Loading weights:  61%|██████    | 207/338 [00:00<00:00, 364.29it/s]Loading weights:  72%|███████▏  | 245/338 [00:00<00:00, 357.98it/s]Loading weights:  86%|████████▌ | 291/338 [00:00<00:00, 371.10it/s]Loading weights:  97%|█████████▋| 329/338 [00:01<00:00, 262.87it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 283.66it/s]
+  [qwen] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Have your personality instantly change to 1 of many different animals\nB) Be able to talk to an animal without any obstacles'
+  Parsed Option A: 'Have your personality instantly change to 1 of many different animals'
+  Parsed Option B: 'Be able to talk to an animal without any obstacles'
+
+--- Slot C: gemma ---
+  [gemma] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/gemma-wyr-merged ...
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:   0%|          | 1/340 [00:00<01:18,  4.29it/s]Loading weights:  18%|█▊        | 61/340 [00:00<00:01, 228.81it/s]Loading weights:  39%|███▉      | 134/340 [00:00<00:00, 390.37it/s]Loading weights:  58%|█████▊    | 198/340 [00:00<00:00, 466.56it/s]Loading weights:  74%|███████▍  | 253/340 [00:00<00:00, 472.57it/s]Loading weights:  90%|█████████ | 306/340 [00:00<00:00, 444.38it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 398.74it/s]
+  [gemma] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) The car park is not working, your family has to drive everywhere without a vehicle. Your kids want to go on adventures every day but no one else can afford the trip (you are the only driver, which means everyone must always be in your back seat). Would you rather...?\nRented taxi for all?'
+  Parsed Option A: None
+  Parsed Option B: None
+  Failed to parse options, retrying...
+  [gemma] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/gemma-wyr-merged ...
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 92/340 [00:00<00:00, 919.92it/s]Loading weights:  94%|█████████▍| 319/340 [00:00<00:00, 1696.58it/s]Loading weights: 100%|██████████| 340/340 [00:00<00:00, 1672.64it/s]
+  [gemma] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Have a horse for 10 years with no more\nB) Be an eagle for 5 months'
+  Parsed Option A: 'Have a horse for 10 years with no more'
+  Parsed Option B: 'Be an eagle for 5 months'
+
+--- Slot D: smol ---
+  [smol] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:   4%|▍         | 9/218 [00:00<00:02, 89.90it/s]Loading weights:  14%|█▍        | 30/218 [00:00<00:01, 160.24it/s]Loading weights:  22%|██▏       | 47/218 [00:00<00:01, 151.14it/s]Loading weights:  31%|███       | 67/218 [00:00<00:00, 166.18it/s]Loading weights:  41%|████▏     | 90/218 [00:00<00:00, 188.03it/s]Loading weights:  50%|█████     | 109/218 [00:00<00:00, 183.50it/s]Loading weights:  59%|█████▊    | 128/218 [00:00<00:00, 169.27it/s]Loading weights:  67%|██████▋   | 146/218 [00:00<00:00, 153.71it/s]Loading weights:  74%|███████▍  | 162/218 [00:01<00:00, 154.01it/s]Loading weights:  82%|████████▏ | 178/218 [00:01<00:00, 146.62it/s]Loading weights:  89%|████████▉ | 194/218 [00:01<00:00, 147.15it/s]Loading weights:  96%|█████████▋| 210/218 [00:01<00:00, 134.73it/s]Loading weights: 100%|██████████| 218/218 [00:01<00:00, 149.30it/s]
+  [smol] Loaded on cuda:0
+  Raw output: 'Would you rather\nA) Be a pirate and be able to fight with swords.\nB) 8-foot tall octopus?'
+  Parsed Option A: 'Be a pirate and be able to fight with swords.'
+  Parsed Option B: '8-foot tall octopus?'
+✓ Status written to job_status.json
+
+✓ Wrote current_question.json
+
+[sync] Pushing question JSON to web server ...
+  SCP push question: current_question.json → milk@141.166.173.142:/home/server/APPS/wyr/current_question.json
+  ✓ push question OK
+✓ question_id=39 saved to wyr_votes.db
+✓ Done at 2026-05-15T12:02:02
+
+
+============================================================
+WYR Generation Job  — 2026-05-15T13:00:04
+============================================================
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  Found 12 vote record(s) to merge
+  SSH clear remote delta: cp /home/server/APPS/wyr/votes_delta.jsonl /home/server/APPS/wyr/votes_delta.jsonl.bak && truncate -s 0 /home/server/APPS/wyr/votes_delta.jsonl
+  ✓ clear remote delta OK
+  ✓ Merged 12 vote(s), skipped 0
+Created question row id=47
+
+--- Slot A: gemma ---
+  [gemma] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/gemma-wyr-merged ...
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:   0%|          | 1/340 [00:00<02:14,  2.52it/s]Loading weights:   9%|▉         | 31/340 [00:00<00:03, 81.04it/s]Loading weights:  24%|██▍       | 81/340 [00:00<00:01, 193.68it/s]Loading weights:  36%|███▌      | 122/340 [00:00<00:00, 253.87it/s]Loading weights:  47%|████▋     | 160/340 [00:00<00:00, 284.52it/s]Loading weights:  58%|█████▊    | 196/340 [00:00<00:00, 265.67it/s]Loading weights:  67%|██████▋   | 228/340 [00:01<00:00, 268.66it/s]Loading weights:  77%|███████▋  | 263/340 [00:01<00:00, 284.16it/s]Loading weights:  89%|████████▉ | 302/340 [00:01<00:00, 305.73it/s]Loading weights: 100%|██████████| 340/340 [00:01<00:00, 247.79it/s]
+  [gemma] Loaded on cuda:0
+  Raw output: "Would you rather...\nA) Be able to make someone disappear with a thought (you can't teleport anywhere else on earth, but the person is gone for 10 minutes when your power is used)\nB) Make everyone believe that they are not who they really are"
+  Parsed Option A: "Be able to make someone disappear with a thought (you can't teleport anywhere else on earth, but the person is gone for 10 minutes when your power is used)"
+  Parsed Option B: 'Make everyone believe that they are not who they really are'
+
+--- Slot B: smol ---
+  [smol] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:   4%|▎         | 8/218 [00:00<00:02, 78.38it/s]Loading weights:   7%|▋         | 16/218 [00:00<00:02, 67.92it/s]Loading weights:  11%|█         | 23/218 [00:00<00:03, 62.72it/s]Loading weights:  14%|█▍        | 31/218 [00:00<00:02, 67.75it/s]Loading weights:  19%|█▉        | 41/218 [00:00<00:02, 73.68it/s]Loading weights:  24%|██▍       | 52/218 [00:00<00:01, 83.79it/s]Loading weights:  28%|██▊       | 61/218 [00:00<00:02, 78.31it/s]Loading weights:  32%|███▏      | 69/218 [00:00<00:01, 76.98it/s]Loading weights:  38%|███▊      | 82/218 [00:01<00:01, 91.45it/s]Loading weights:  43%|████▎     | 93/218 [00:01<00:01, 95.08it/s]Loading weights:  47%|████▋     | 103/218 [00:01<00:01, 81.49it/s]Loading weights:  52%|█████▏    | 113/218 [00:01<00:01, 78.84it/s]Loading weights:  56%|█████▌    | 122/218 [00:01<00:01, 80.83it/s]Loading weights:  60%|██████    | 131/218 [00:01<00:01, 83.16it/s]Loading weights:  64%|██████▍   | 140/218 [00:01<00:00, 84.13it/s]Loading weights:  69%|██████▉   | 151/218 [00:01<00:00, 89.99it/s]Loading weights:  74%|███████▍  | 161/218 [00:01<00:00, 88.77it/s]Loading weights:  78%|███████▊  | 171/218 [00:02<00:00, 89.85it/s]Loading weights:  84%|████████▍ | 183/218 [00:02<00:00, 95.74it/s]Loading weights:  89%|████████▊ | 193/218 [00:02<00:00, 92.75it/s]Loading weights:  93%|█████████▎| 203/218 [00:02<00:00, 94.05it/s]Loading weights: 100%|██████████| 218/218 [00:02<00:00, 87.87it/s]
+  [smol] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Be a knight, but have to wear armor that is made of clay instead of steel\nB) Have no hands'
+  Parsed Option A: 'Be a knight, but have to wear armor that is made of clay instead of steel'
+  Parsed Option B: 'Have no hands'
+
+--- Slot C: qwen ---
+  [qwen] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/qwen-wyr-merged ...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<00:43,  7.68it/s]Loading weights:   8%|▊         | 27/338 [00:00<00:02, 127.31it/s]Loading weights:  19%|█▉        | 65/338 [00:00<00:01, 215.77it/s]Loading weights:  33%|███▎      | 113/338 [00:00<00:00, 300.61it/s]Loading weights:  43%|████▎     | 147/338 [00:00<00:00, 301.94it/s]Loading weights:  58%|█████▊    | 195/338 [00:00<00:00, 350.23it/s]Loading weights:  69%|██████▊   | 232/338 [00:00<00:00, 351.92it/s]Loading weights:  80%|███████▉  | 269/338 [00:00<00:00, 353.34it/s]Loading weights:  93%|█████████▎| 313/338 [00:01<00:00, 373.16it/s]Loading weights: 100%|██████████| 338/338 [00:01<00:00, 316.80it/s]
+  [qwen] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Be able to fly\nB) be invisible'
+  Parsed Option A: 'Be able to fly'
+  Parsed Option B: 'be invisible'
+
+--- Slot D: llama ---
+  [llama] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/llama-wyr-merged ...
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/201 [00:00<00:04, 47.43it/s]Loading weights:  16%|█▋        | 33/201 [00:00<00:00, 176.17it/s]Loading weights:  33%|███▎      | 67/201 [00:00<00:00, 245.29it/s]Loading weights:  49%|████▉     | 99/201 [00:00<00:00, 273.35it/s]Loading weights:  65%|██████▌   | 131/201 [00:00<00:00, 283.26it/s]Loading weights:  80%|███████▉  | 160/201 [00:00<00:00, 285.20it/s]Loading weights:  95%|█████████▍| 190/201 [00:00<00:00, 289.83it/s]Loading weights: 100%|██████████| 201/201 [00:00<00:00, 270.06it/s]
+[transformers] Both `max_new_tokens` (=80) and `max_length`(=2048) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  [llama] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Get 1 million dollars today but no benefits\nB) Wait to get $50k when ure old'
+  Parsed Option A: 'Get 1 million dollars today but no benefits'
+  Parsed Option B: 'Wait to get $50k when ure old'
+✓ Status written to job_status.json
+
+✓ Wrote current_question.json
+
+[sync] Pushing question JSON to web server ...
+  SCP push question: current_question.json → milk@141.166.173.142:/home/server/APPS/wyr/current_question.json
+  ✓ push question OK
+✓ question_id=47 saved to wyr_votes.db
+✓ Done at 2026-05-15T13:00:16
+

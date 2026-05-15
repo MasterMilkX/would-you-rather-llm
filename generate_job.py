@@ -42,10 +42,10 @@ warnings.filterwarnings("ignore", message=".*datetime.datetime.utcnow.*")
 # ---------------------------------------------------------------------------
 
 MODELS = {
-    "qwen":  "./model_outputs/qwen-wyr-merged",
-    "llama": "./model_outputs/llama-wyr-merged",
-    "gemma": "./model_outputs/gemma-wyr-merged",
-    "smol":  "./model_outputs/smol-wyr-merged",
+    "qwen":  "/home/milk/Desktop/RESEARCH/wyr/model_outputs/qwen-wyr-merged",
+    "llama": "/home/milk/Desktop/RESEARCH/wyr/model_outputs/llama-wyr-merged",
+    "gemma": "/home/milk/Desktop/RESEARCH/wyr/model_outputs/gemma-wyr-merged",
+    "smol":  "/home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged",
 }
 
 # Shared generation settings

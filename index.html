@@ -7,15 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
   :root {
-    --teal:      #a6fff8;
-    --teal-dark: #5ce8df;
-    --teal-dim:  #2a6e6a;
-    --bg:        #0a1a1a;
-    --win-bg:    #0d2b2b;
-    --text:      #c8fffc;
-    --text-dim:  #5ce8df;
-    --pink:      #ff6ef7;
-    --yellow:    #fffb6e;
+    --teal:      #5b8fff;
+    --teal-dark: #2e5bcc;
+    --teal-dim:  #1e3569;
+    --bg:        #04060f;
+    --win-bg:    #080d1e;
+    --text:      #e8edff;
+    --text-dim:  #6688ee;
+    --pink:      #ff3a00;
+    --yellow:    #ff8c00;
     --scan: repeating-linear-gradient(
       0deg, transparent, transparent 2px,
       rgba(0,0,0,0.15) 2px, rgba(0,0,0,0.15) 4px
@@ -25,10 +25,11 @@
   body {
     background: var(--bg);
     background-image:
-      radial-gradient(ellipse at 20% 20%, #0d3535 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 80%, #0a2828 0%, transparent 50%);
+      radial-gradient(ellipse at 50% 52%, #ff2200 0%, #a01000 18%, transparent 42%),
+      radial-gradient(ellipse at 50% 52%, #5a0a00 0%, transparent 65%),
+      radial-gradient(ellipse at 20% 85%, #060d28 0%, transparent 55%);
     font-family: 'Share Tech Mono', monospace;
-    color: var(--text); min-height: 100vh; overflow-x: hidden; cursor: crosshair;
+    color: var(--text); min-height: 100vh; overflow-x: hidden; cursor: default;
   }
   body::after {
     content: ''; position: fixed; inset: 0;
@@ -60,17 +61,17 @@
     99%{transform:translate(0,1px);}
   }
   .subtitle{font-size:0.8rem;color:var(--text-dim);letter-spacing:3px;margin-top:6px;}
-  .countdown-bar{text-align:center;padding:0.8rem;font-size:0.78rem;letter-spacing:2px;color:var(--text-dim);}
-  .countdown-bar span{color:var(--teal);font-family:'VT323',monospace;font-size:1.1rem;}
-  .gen-time{color:var(--text-dim);font-size:0.7rem;letter-spacing:2px;text-align:center;margin-bottom:1rem;}
-  .status{text-align:center;font-size:0.78rem;color:var(--text-dim);letter-spacing:2px;min-height:1.2em;margin-bottom:1rem;padding:0 1rem;}
+  .countdown-bar{text-align:center;padding:1rem;font-size:0.98rem;letter-spacing:2px;color:var(--text-dim);font-weight: bold;}
+  .countdown-bar span{color:var(--teal);font-family:'VT323',monospace;font-size:1.25rem;font-weight: bold;}
+  .gen-time{color:var(--text-dim);font-size:0.7rem;letter-spacing:2px;text-align:center;margin-bottom:1rem;font-weight: bold;}
+  .status{font-weight:bold;text-align:center;font-size:0.78rem;color:var(--text-dim);letter-spacing:2px;min-height:1.2em;margin-bottom:1rem;padding:0 1rem;}
   .status.loading{color:var(--teal);animation:blink 0.8s infinite;}
   .status.error{color:var(--pink);}
   @keyframes blink{50%{opacity:0.3;}}
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:1100px;margin:0 auto;padding:0 20px 60px;}
   .win{
     border:2px solid var(--teal);background:var(--win-bg);
-    box-shadow:0 0 0 1px var(--teal-dim),4px 4px 0 var(--teal-dim),0 0 20px rgba(166,255,248,0.08);
+    box-shadow:0 0 0 1px var(--teal-dim),4px 4px 0 var(--teal-dim),0 0 20px rgba(91,143,255,0.12);
     opacity:0;transform:translateY(16px);transition:opacity 0.4s,transform 0.4s;
   }
   .win.visible{opacity:1;transform:none;}
@@ -82,8 +83,10 @@
     border-bottom:1px solid var(--teal);
   }
   .win-title span{font-family:'VT323',monospace;font-size:1rem;color:var(--bg);letter-spacing:2px;}
-  .win-controls{display:flex;gap:4px;}
-  .win-ctrl{width:12px;height:12px;background:var(--bg);border:1px solid var(--bg);font-size:8px;display:flex;align-items:center;justify-content:center;color:var(--teal);font-family:'VT323';font-weight:bold;}
+  .win-controls{display:flex;gap:8px;}
+  .win-ctrl{width:24px;height:24px;background:transparent;font-size:14px;display:flex;align-items:center;justify-content:center;color:var(--teal);cursor:pointer;font-family:'VT323',monospace;transition:opacity 0.15s;}
+  .win-ctrl.feedback-selected{filter:drop-shadow(0 0 6px #ff4400) drop-shadow(0 0 14px #ff2200) drop-shadow(0 0 28px #ff0000);opacity:1;}
+  .win-ctrl.feedback-disabled{opacity:0.18;cursor:default;pointer-events:none;}
   .win-body{padding:18px;}
   .wyr-prompt{font-family:'VT323',monospace;font-size:1.3rem;color:var(--text-dim);letter-spacing:2px;margin-bottom:14px;text-align:center;}
   .option-btn{
@@ -92,10 +95,10 @@
     font-size:0.85rem;text-align:left;cursor:pointer;transition:all 0.15s;line-height:1.4;
   }
   .option-btn::before{content:'▶ ';color:var(--teal-dim);font-size:0.7rem;}
-  .option-btn:hover:not(:disabled){border-color:var(--teal);background:rgba(166,255,248,0.07);color:var(--teal);}
+  .option-btn:hover:not(:disabled){border-color:var(--teal);background:rgba(91,143,255,0.08);color:var(--teal);}
   .option-btn:hover:not(:disabled)::before{color:var(--teal);}
-  .option-btn.selected-a{border-color:var(--pink);background:rgba(166,255,248,0.12);color:var(--pink);}
-  .option-btn.selected-b{border-color:var(--pink);background:rgba(255,110,247,0.08);color:var(--pink);}
+  .option-btn.selected-a{border-color:var(--pink);background:rgba(91,143,255,0.14);color:var(--pink);}
+  .option-btn.selected-b{border-color:var(--pink);background:rgba(255,58,0,0.12);color:var(--pink);}
   .option-btn:disabled{cursor:default;}
   .option-btn.placeholder{color:var(--teal-dim);font-style:italic;}
   .results{margin-top:14px;display:none;border-top:1px dashed var(--teal-dim);padding-top:12px;}
@@ -104,10 +107,10 @@
   .result-label{color:var(--teal);}
   .bar-wrap{display:flex;align-items:center;gap:6px;}
   .bar{height:8px;background:var(--teal-dim);display:inline-block;transition:width 0.5s;min-width:2px;}
-  .bar.bar-b{background:var(--pink);}
+  .bar.voted{background:var(--pink);}
   .reveal-tag{font-size:0.7rem;color:var(--pink);margin-top:10px;letter-spacing:1px;text-align:center;}
   .voted-badge{font-size:0.7rem;color:var(--yellow);letter-spacing:1px;text-align:center;margin-bottom:6px;}
-  footer{text-align:center;padding:20px;font-size:0.7rem;color:var(--teal-dim);letter-spacing:2px;border-top:1px solid var(--teal-dim);}
+  footer{text-align:center;padding:20px;font-size:0.7rem;color:var(--teal);letter-spacing:2px;border-top:1px solid var(--yellow);}
   ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--teal-dim);}
   @media(max-width:640px){
     .titlebar { padding: 6px 8px; }
@@ -143,12 +146,12 @@
     <div class="titlebar-btn">■</div><div class="titlebar-btn">▼</div><div class="titlebar-btn">✕</div>
   </div>
   <div class="titlebar-title">WYR_LLM.EXE — RUNNING</div>
-  <div style="font-size:0.65rem;color:var(--bg);letter-spacing:1px;" id="clock"></div>
+  <div style="font-size:0.65rem;color:var(--yellow);letter-spacing:1px;" id="clock"></div>
 </div>
 
 <header>
   <div class="logo">WOULD YOU RATHER LLM</div>
-  <div class="subtitle">&nbsp;</div>
+  <!-- <div class="subtitle">&nbsp;</div> -->
 </header>
 
 <div class="countdown-bar">NEXT QUESTION IN: <span id="countdown">--:--:--</span></div>
@@ -179,6 +182,26 @@ function saveVote(qid, slot, option) {
   localStorage.setItem(voteKey(qid), JSON.stringify(v));
 }
 
+const FEEDBACK_TYPES = ['UPVOTE','DOWNVOTE','FLAG'];
+function feedbackKey(qid) { return `wyr_feedback_${qid}`; }
+function getSavedFeedback(qid) {
+  try { return JSON.parse(localStorage.getItem(feedbackKey(qid))) || {}; }
+  catch { return {}; }
+}
+function saveFeedback(qid, slot, type) {
+  const f = getSavedFeedback(qid);
+  f[slot] = type;
+  localStorage.setItem(feedbackKey(qid), JSON.stringify(f));
+}
+function lockFeedback(slot, chosen) {
+  for (const type of FEEDBACK_TYPES) {
+    const el = document.getElementById(`fb-${slot}-${type}`);
+    if (!el) continue;
+    el.classList.toggle('feedback-selected', type === chosen);
+    el.classList.toggle('feedback-disabled',  type !== chosen);
+  }
+}
+
 function tick() {
   document.getElementById('clock').textContent =
     new Date().toLocaleTimeString('en-US',{hour12:false});
@@ -204,7 +227,11 @@ function buildCard(slot) {
   el.innerHTML = `
     <div class="win-title">
       <span>MODEL_${slot}.EXE</span>
-      <div class="win-controls"><div class="win-ctrl">_</div><div class="win-ctrl">□</div><div class="win-ctrl">✕</div></div>
+      <div class="win-controls">
+        <div class="win-ctrl" id="fb-${slot}-UPVOTE"   onclick="submitModelFeedback('${slot}','UPVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg></div>
+        <div class="win-ctrl" id="fb-${slot}-DOWNVOTE" onclick="submitModelFeedback('${slot}','DOWNVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"/></svg></div>
+        <div class="win-ctrl" id="fb-${slot}-FLAG"     onclick="submitModelFeedback('${slot}','FLAG')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Zm300-440Zm86 160h134v-240H510l-16-80H280v240h290l16 80Z"/></svg></div>
+      </div>
     </div>
     <div class="win-body">
       <div class="wyr-prompt">Would you rather...</div>
@@ -268,6 +295,17 @@ async function submitVote(slot, chosenOption) {
   } catch(e){ setStatus('error','VOTE ERROR: '+e.message); }
 }
 
+function submitModelFeedback(slot, feedback) {
+  lockFeedback(slot, feedback);
+  saveFeedback(state.questionId, slot, feedback);
+  fetch('/api/moderate', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({question_id: state.questionId, slot, vote_type: feedback})
+  }).then(resp => {
+    if (!resp.ok) console.error('Feedback submission failed');
+  }).catch(e => console.error('Feedback submission error:', e));
+}
+
 function showResults(slot, totals, slotReveal, chosenOption) {
     const modelName = slotReveal[slot];
     if (!modelName||!totals[modelName]) return;
@@ -277,21 +315,25 @@ function showResults(slot, totals, slotReveal, chosenOption) {
     const pctB = 100-pctA;
     const el = document.getElementById(`results-${slot}`);
     if (!el) return;
+    //      ${slot===slot?`<div class="voted-badge">★ YOU VOTED ${chosenOption==='A'?'OPTION A':'OPTION B'} ★</div>`:''}
+
     el.innerHTML = `
-      ${slot===slot?`<div class="voted-badge">★ YOU VOTED ${chosenOption==='A'?'OPTION A':'OPTION B'} HERE ★</div>`:''}
       <div class="result-row">
         <span class="result-label">OPT A</span>
-        <div class="bar-wrap"><span class="bar" style="width:${Math.round(pctA*.9)}px"></span><span>${t.votes_a}v / ${pctA}%</span></div>
+        <div class="bar-wrap"><span class="bar ${chosenOption==='A'?'voted':''}" style="width:${Math.round(pctA*.9)}px"></span><span>${t.votes_a}v / ${pctA}%</span></div>
       </div>
       <div class="result-row">
         <span class="result-label">OPT B</span>
-        <div class="bar-wrap"><span class="bar bar-b" style="width:${Math.round(pctB*.9)}px"></span><span>${t.votes_b}v / ${pctB}%</span></div>
+        <div class="bar-wrap"><span class="bar ${chosenOption==='B'?'voted':''}" style="width:${Math.round(pctB*.9)}px"></span><span>${t.votes_b}v / ${pctB}%</span></div>
       </div>
       <div class="reveal-tag">★ MODEL: ${modelName.toUpperCase()} ★</div>`;
     el.classList.add('show');
 }
 
 async function restoreSavedVotes(qid) {
+  const savedFeedback = getSavedFeedback(qid);
+  for (const [slot, type] of Object.entries(savedFeedback)) lockFeedback(slot, type);
+
   const saved = getSavedVotes(qid);
   const votedSlots = Object.keys(saved);
   if (votedSlots.length === 0) {

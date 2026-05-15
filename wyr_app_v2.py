@@ -16,13 +16,14 @@ import os
 from collections import defaultdict
 from flask import Flask, request, jsonify, g, send_from_directory
 from datetime import datetime
-from sync import append_vote_delta
+from sync import append_vote_delta, add_model_vote
 
 app = Flask(__name__)
 
 JSON_PATH   = "current_question.json"
 DELTA_PATH  = "votes_delta.jsonl"
 STATUS_PATH = "job_status.json"
+MODEL_MOD_PATH = "model_mods.jsonl"   # for thumbs up/down/flag moderation (not implemented yet)
 
 # ---------------------------------------------------------------------------
 # Helpers: read current question
@@ -188,6 +189,32 @@ def api_results(question_id):
         "totals":      totals,
         "slot_reveal": slot_map,
     })
+
+
+@app.post("/api/moderate")
+def api_moderate():
+    """
+    Record a thumbs up/down/flag for moderation.
+
+    Body:
+        question_id : int
+        model_name  : str
+        vote_type   : "UPVOTE" | "DOWNVOTE" | "FLAG"
+    """
+    body        = request.get_json(silent=True) or {}
+    question_id = body.get("question_id")
+    slot  = body.get("slot", "").upper()  # optional, for frontend context but not required for recording the mod vote
+    vote_type   = body.get("vote_type", "").upper()
+
+    model_name = get_slot_model_map(load_current_question()).get(slot) if slot else None
+
+    if not question_id or not model_name or vote_type not in ("UPVOTE", "DOWNVOTE", "FLAG"):
+        return jsonify({"error": "Required: question_id, slot, vote_type (UPVOTE/DOWNVOTE/FLAG)"}), 400
+
+    # Append to model_mods delta file (not implemented yet)
+    add_model_vote(question_id, model_name, vote_type, MODEL_MOD_PATH)
+
+    return jsonify({"status": "ok", "message": f"Recorded {vote_type} for {model_name} on question {question_id}"})
 
 
 # ---------------------------------------------------------------------------

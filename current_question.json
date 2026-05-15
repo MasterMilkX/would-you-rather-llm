@@ -1,33 +1,33 @@
 {
-  "question_id": 38,
-  "generated_at": "2026-05-15T15:15:53.710473",
+  "question_id": 39,
+  "generated_at": "2026-05-15T16:02:02.290569",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Your mom keeps calling to ask if you wanna do chores for her",
-      "option_b": "your dad asks you to help with errands"
+      "option_a": "be forced to eat everyday for a month with no choice but to digest the food",
+      "option_b": "Forced to drink every day with no way of turning it down"
     },
     "B": {
       "slot": "B",
-      "option_a": "Be able to control all of your muscles and bones but cant move them (except for when you are awake)",
-      "option_b": "be the best at anything you do, but only use one hand"
+      "option_a": "Have your personality instantly change to 1 of many different animals",
+      "option_b": "Be able to talk to an animal without any obstacles"
     },
     "C": {
       "slot": "C",
-      "option_a": "Have your arms so long they are almost a separate person",
-      "option_b": "Have 4 legs but only be able to walk on them"
+      "option_a": "Have a horse for 10 years with no more",
+      "option_b": "Be an eagle for 5 months"
     },
     "D": {
       "slot": "D",
-      "option_a": "10 million",
-      "option_b": "5 billion"
+      "option_a": "Be a pirate and be able to fight with swords.",
+      "option_b": "8-foot tall octopus?"
     }
   },
   "slot_model_map": {
-    "A": "gemma",
-    "B": "llama",
-    "C": "smol",
-    "D": "qwen"
+    "A": "llama",
+    "B": "qwen",
+    "C": "gemma",
+    "D": "smol"
   }
 }

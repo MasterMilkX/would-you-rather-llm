@@ -32,12 +32,15 @@ WEB_SERVER_DIR  = "/home/server/APPS/wyr"
 # Local paths (same filename on both machines, different directories)
 JSON_PATH        = "current_question.json"
 DELTA_PATH       = "votes_delta.jsonl"    # on web server: appended to after votes
+MODEL_MOD_PATH   = "model_mods.jsonl"       # on web server: appended to after thumbs up/down/flag for moderation
 DB_PATH          = "wyr_votes.db"
 
 # Remote paths (as seen from GPU server)
 REMOTE_JSON      = f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:{WEB_SERVER_DIR}/current_question.json"
 REMOTE_DELTA     = f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:{WEB_SERVER_DIR}/votes_delta.jsonl"
 REMOTE_DELTA_BAK = f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:{WEB_SERVER_DIR}/votes_delta.jsonl.bak"
+REMOTE_MODEL_MOD = f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:{WEB_SERVER_DIR}/model_mods.jsonl"
+
 
 SCP_OPTS = ["-o", "BatchMode=yes", "-o", "ConnectTimeout=10", "-o", "StrictHostKeyChecking=accept-new"]
 
@@ -197,6 +200,24 @@ def append_vote_delta(question_id: int, model_name: str, chosen_option: str,
         "model_name":    model_name,
         "chosen_option": chosen_option,
         "voted_at":      datetime.utcnow().isoformat(),
+    }
+    with open(delta_path, "a") as f:
+        f.write(json.dumps(record) + "\n")
+
+
+# append thumbs up/down/flag to delta for moderation
+def add_model_vote(question_id: int, model_name: str, vote_type: str, delta_path: str = DELTA_PATH):
+    """
+    Called by wyr_app_v2.py after a thumbs up/down/flag click.
+    Appends one JSON line to votes_delta.jsonl with the feedback.
+
+    vote_type: "UPVOTE", "DOWNVOTE", or "FLAG"
+    """
+    record = {
+        "question_id": question_id,
+        "model_name": model_name,
+        "vote_type": vote_type,
+        "voted_at": datetime.utcnow().isoformat(),
     }
     with open(delta_path, "a") as f:
         f.write(json.dumps(record) + "\n")
