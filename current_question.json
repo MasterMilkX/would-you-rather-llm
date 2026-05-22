@@ -1,33 +1,33 @@
 {
-  "question_id": 48,
-  "generated_at": "2026-05-15T18:02:14.546361",
+  "question_id": 208,
+  "generated_at": "2026-05-22T18:03:59.753048",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "A bumblebee",
-      "option_b": "A butterfly"
+      "option_a": "Be able to summon a giant duck (but only when hungry)",
+      "option_b": "Have the ability to make anyone fall asleep"
     },
     "B": {
       "slot": "B",
-      "option_a": "Every time youre walking around someone is going to throw something at you (but theyre not really scared)",
-      "option_b": "Have a constant, horrible stench on you"
+      "option_a": "Be forced to do one of your chores",
+      "option_b": "Always be able to borrow stuff from everyone else"
     },
     "C": {
       "slot": "C",
-      "option_a": "Only be able to eat meat",
-      "option_b": "only be able to drink milk"
+      "option_a": "Lose your ability to ever eat ice cream again",
+      "option_b": "Never be able to go into an air conditioned building without passing out"
     },
     "D": {
       "slot": "D",
-      "option_a": "Have 10,864 of your closest friends in on a huge prank that involves one person getting completely and utterly destroyed",
-      "option_b": "Make an annoying noise every time someone comes near you"
+      "option_a": "Always be 2 minutes late for everything",
+      "option_b": "Never have enough money to pay your bills"
     }
   },
   "slot_model_map": {
-    "A": "qwen",
-    "B": "gemma",
-    "C": "llama",
-    "D": "smol"
+    "A": "gemma",
+    "B": "qwen",
+    "C": "smol",
+    "D": "llama"
   }
 }

@@ -221,3 +221,35 @@ def add_model_vote(question_id: int, model_name: str, vote_type: str, delta_path
     }
     with open(delta_path, "a") as f:
         f.write(json.dumps(record) + "\n")
+
+
+def pull_model_mods(local_path: str = MODEL_MOD_PATH) -> int:
+    """
+    Called by generate_job.py (or manually) to sync model moderation votes
+    from the web server to the local machine.
+
+    Pulls model_mods.jsonl from the web server and replaces the local copy.
+    The remote file is NOT deleted or truncated — it stays as the authoritative log.
+
+    Returns the number of records in the pulled file (0 if nothing to pull).
+    """
+    print("\n[sync] Pulling model mods from web server ...")
+
+    tmp_path = local_path + ".incoming"
+
+    ok = _scp(REMOTE_MODEL_MOD, tmp_path, "pull model mods")
+    if not ok or not os.path.exists(tmp_path) or os.path.getsize(tmp_path) == 0:
+        print("  No model mods on server (or file empty).")
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
+        return 0
+
+    count = 0
+    with open(tmp_path) as f:
+        for line in f:
+            if line.strip():
+                count += 1
+
+    os.replace(tmp_path, local_path)
+    print(f"  ✓ Pulled {count} mod record(s) → {local_path}")
+    return count

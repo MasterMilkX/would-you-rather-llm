@@ -13,7 +13,7 @@ from dataclasses import dataclass, field
 from typing import Dict, List, Any
 
 import json
-from datasets import Dataset, load_dataset
+from datasets import Dataset, load_dataset, concatenate_datasets
 from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments
 from peft import LoraConfig, PeftModel
 from trl import SFTTrainer, SFTConfig
@@ -42,14 +42,18 @@ login()
 # list of models: google/gemma-3-1b-it, HuggingFaceTB/SmolLM2-1.7B-Instruct, TinyLlama/TinyLlama-1.1B-Chat-v1.0, Qwen/Qwen2.5-1.5B
 
 MODEL_SET = {
-    # "gemma": "google/gemma-3-1b-it",
-    # "smol": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-    # "llama": "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
+    "gemma": "google/gemma-3-1b-it",
+    "smol": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "llama": "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
     "big-llama": "meta-llama/Llama-3.2-1B",
-    # "qwen": "Qwen/Qwen2.5-1.5B",
+    "deepseek": "deepseek-ai/DeepSeek-V4-Pro",
+    "qwen": "Qwen/Qwen2.5-1.5B",
 }
 
 EPOCHS = 5
+TRAIN_UPVOTE = True
+UPVOTE_Q = "finetuning-notebooks/upvote_questions.json"
+
 
 import gc
 import torch
@@ -138,6 +142,15 @@ JSONL_OUTPUT  = f"train-data/wyr_training_data-[{date}].jsonl"
 os.makedirs("train-data", exist_ok=True)
 
 train_dataset = build_wyr_dataset(POLLS_JSON)
+
+if TRAIN_UPVOTE and os.path.exists(UPVOTE_Q):
+    print(f"\nTRAIN_UPVOTE=True — appending upvoted questions from {UPVOTE_Q}")
+    upvote_dataset = build_wyr_dataset(UPVOTE_Q)
+    train_dataset = concatenate_datasets([train_dataset, upvote_dataset]).shuffle(seed=42)
+    print(f"Combined dataset size: {len(train_dataset)}")
+elif TRAIN_UPVOTE:
+    print(f"TRAIN_UPVOTE=True but {UPVOTE_Q} not found — skipping")
+
 print(train_dataset)
 print("\nSample entries:")
 for i in range(4):
