@@ -1,0 +1,316 @@
+{
+   "downvotes": [
+      {
+         "MODEL": "llama",
+         "optionA": "option A",
+         "optionB": "option B"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "option A",
+         "optionB": "option B"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "A meth head",
+         "optionB": "A crackhead"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "50 cent store",
+         "optionB": "Car wash"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be the only black person in a white school",
+         "optionB": "be the only female in all male highschool"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "See 2 people getting kissed simultaneously, but only one of them is your own gender",
+         "optionB": "Get to control the weather for a week (but its so bad that everyone hates it)?"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "10% chance to be a unicorn",
+         "optionB": "Infinity of unicorns"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be able to only say hello in a language that nobody else can speak but the person who made up this question",
+         "optionB": "Always be able to talk and never have anyone understand what u are saying"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "100+ dollar to get rid of a single, dirty towel",
+         "optionB": "5 dollars for an old pair of shoes"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Super long life (120+ years), but die 5 years earlier than the average person.",
+         "optionB": "Short life(30-40 yrs) but live to 80, would you rather get this or be 90 and have a terminal illness?"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "100 dollars every week, no matter what. But have to give up on all money from previous weeks forever so that if someone wins the lottery tomorrow u would be screwed because ur still spending it even though they made their winnings just now",
+         "optionB": "never get less than $5 a day but cant spend more then 3 of your daily earnings"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Super long life (120+ years), but die 5 years earlier than the average person.",
+         "optionB": "Short life(30-40 yrs) but live to 80, would you rather get this or be 90 and have a terminal illness?"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "100 dollars every week, no matter what. But have to give up on all money from previous weeks forever so that if someone wins the lottery tomorrow u would be screwed because ur still spending it even though they made their winnings just now",
+         "optionB": "never get less than $5 a day but cant spend more then 3 of your daily earnings"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Get to choose 1 food for the rest of your life",
+         "optionB": "get a million dollars every time someone eats that one food"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "50 dollar bill (one time only, once in your life)",
+         "optionB": "A million dollars every week"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "100 bottles of water to drink",
+         "optionB": "A full bathtub (that's cold!)"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "Get 100 dollars for every time someone gets the wrong answer on a quiz",
+         "optionB": "Get 5 dollars for every correct answer"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Have your stomach turn into a toilet",
+         "optionB": "Be able to eat without swallowing"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "50 dollar bill (one time only, once in your life)",
+         "optionB": "A million dollars every week"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be able to do any one thing with your body for 1 second, but have no control after that. (You cant stop the action at all.)",
+         "optionB": "Only be able to move as fast as people when they walk?"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be able to do any one thing with your body for 1 second, but have no control after that. (You cant stop the action at all.)",
+         "optionB": "Only be able to move as fast as people when they walk?"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Go to school with everyone else in class that has 10+ years of experience, but only have an hour a day to use your brainpower for classes. You cant share any notes or study material",
+         "optionB": "Have a super useful tool (like internet access/wifi) and never learn anything new?"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "The world is filled with talking animals",
+         "optionB": "Every animal can talk"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Go to school with everyone else in class that has 10+ years of experience, but only have an hour a day to use your brainpower for classes. You cant share any notes or study material",
+         "optionB": "Have a super useful tool (like internet access/wifi) and never learn anything new?"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Only be able to eat 1 type of food for a month (your choice wouldnt have any restrictions on the ingredients it could contain as long as its one thing, but there is no changing your mind once chosen...)",
+         "optionB": "Have only ever eaten pizza since birth"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "A very small dog that can only bark",
+         "optionB": "Superhuman speed"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Be a dog for 10 years (but get to be walked and have unlimited treats)",
+         "optionB": "Have human ears but no mouth"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "You have to tell a lie for every other word in your speech and can't be caught",
+         "optionB": "You must say 2 truths about yourself, but one is wrong"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "100 million dollars and a full college fund",
+         "optionB": "$5,000 for every kid in your class"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Would you rather...\nA) Have 10,000 dollars on your first day but only get $2.50 per hour wage with no benefits",
+         "optionB": "overtime pay (not that they would be needed for a minimum wage job.)"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Would you rather...\nA) Have 10,000 dollars on your first day but only get $2.50 per hour wage with no benefits",
+         "optionB": "overtime pay (not that they would be needed for a minimum wage job.)"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "100 million dollars and a full college fund",
+         "optionB": "$5,000 for every kid in your class"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "Never be able to speak for 1 hour of your life",
+         "optionB": "Only be able to do one thing when you are sick"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "Be able to control any animal (except your own, not creepy animals though) but only be able to use it for 30 seconds everyday. But you cant eat/drink anything while using them.",
+         "optionB": "Only ever use a specific food on one day of the week"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be an awesome singer and not be able to dance",
+         "optionB": "Be a terrible dancer but can sing?"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "You could only eat pizza once a week for 10 years. Would it be pepperoni or mushroom?",
+         "optionB": "Only drink water and soda pops (no juice!) every other day"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "100$ to have your pet become a piglet again (but it'll always be an extra one with you)",
+         "optionB": "250k for any animal that can act as human"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Your entire house be replaced with a 3D printer",
+         "optionB": "Be able to fly"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "Have to eat everything but one food (except for cheese) all the time",
+         "optionB": "Only be able to drink certain liquids"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "10 year old boy",
+         "optionB": "50 year old woman"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Get a 10% cut of any profits from your products sold for $50, but never get paid again.",
+         "optionB": "Have to pay someone else (who has no job) $$240$ per hour to make all your goods, which nobody buys"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Always be thirsty (only drink when you are 10% dehydrated and need to hydrate)",
+         "optionB": "Never feel hungry"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Only be able to ride the rollercoaster 5 times in your life but get an unlimited amount of drinks afterwards.",
+         "optionB": "No rollercooser ever"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "Have to eat one mushroom at a time (only 1st taste is edible)",
+         "optionB": "Eat a live cockroach every day"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Have your hair be an animal (your choice)",
+         "optionB": "Wear a hat that is someones tail"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Would you rather...\nA) Be in an elevator with 10 other people and have to pick one person every time the door opens for a ride of at least 3 minutes (for both trips out, not just going up",
+         "optionB": "down)... wouldnt it get tiring if ur stuck on that ride forever."
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "A horse with no legs, but the ability to be ridden like a horse. You have to walk on one foot for 10 hours at a time (no breaks).",
+         "optionB": "Find your own personal unicorn"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be forced to do one of your chores",
+         "optionB": "Always be able to borrow stuff from everyone else"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be forced to do one of your chores",
+         "optionB": "Always be able to borrow stuff from everyone else"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "Always be 2 minutes late for everything",
+         "optionB": "Never have enough money to pay your bills"
+      },
+      {
+         "MODEL": "llama",
+         "optionA": "A million dollars every 2 years (would you rather...)",
+         "optionB": "One year without sleep"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be a dog (bark with your mind, tail wagging to whatever music is playing right now at 3 AM in the morning.)",
+         "optionB": "Have no limbs"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "A 10 year old boy",
+         "optionB": "An 8 year old girl"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be able to walk without any motor force",
+         "optionB": "Get into a machine that forces your hand over 15 times"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "A 12 foot long shark",
+         "optionB": "a massive bear"
+      }
+   ],
+   "flagged": [
+      {
+         "MODEL": "smol",
+         "optionA": "option A",
+         "optionB": "option B"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "option A",
+         "optionB": "option B"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Would you rather...\nA) A black and white dog with spots on its ears and nose, but no tail",
+         "optionB": "leg hair."
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Would you rather...\nA) Have a head full of hair that can grow anywhere on your body at anytime like roots would never stop growing unless it was cut",
+         "optionB": "damaged but could still regrow from any scratch to an inch in 1 day and had no growth limits so theres more than one way to get longer hair then just combing / styling for thickness only. Wouldnt be able to control length though"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be able to run really fast but not super strong.",
+         "optionB": "be very strong and only have 50% as much speed"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "A 10 year old boy",
+         "optionB": "An 8 year old girl"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "A 10 year old boy",
+         "optionB": "An 8 year old girl"
+      }
+   ]
+}

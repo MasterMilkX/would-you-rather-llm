@@ -7,6 +7,7 @@
 import random
 import json
 from tqdm import tqdm
+import traceback
 
 import os
 from dataclasses import dataclass, field
@@ -44,13 +45,14 @@ login()
 MODEL_SET = {
     "gemma": "google/gemma-3-1b-it",
     "smol": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-    "llama": "TinyLlama/TinyLlama-1.1B-intermediate-step-1431k-3T",
-    "big-llama": "meta-llama/Llama-3.2-1B",
-    "deepseek": "deepseek-ai/DeepSeek-V4-Pro",
+    "tinyllama": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "meta-llama": "meta-llama/Llama-3.2-1B",
+    "tencent": "tencent/Hunyuan-1.8B-Instruct",
     "qwen": "Qwen/Qwen2.5-1.5B",
 }
 
 EPOCHS = 5
+SEED = 42
 TRAIN_UPVOTE = True
 UPVOTE_Q = "finetuning-notebooks/upvote_questions.json"
 
@@ -232,7 +234,12 @@ for MODEL_NAME, BASE_MODEL_ID in MODEL_SET.items():
         peft_config=peft_config,
     )
 
-    trainer.train()
+
+    try:
+        trainer.train()
+    except Exception as e:
+        print(f"ERROR: COULD NOT TRAIN {MODEL_NAME}")
+        print(e.with_traceback())
 
 
     # %%

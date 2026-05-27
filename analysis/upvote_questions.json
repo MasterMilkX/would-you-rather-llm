@@ -1,327 +1,434 @@
 [
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Be able to make someone disappear with a thought (you can't teleport anywhere else on earth, but the person is gone for 10 minutes when your power is used)",
       "optionB": "Make everyone believe that they are not who they really are"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be a knight, but have to wear armor that is made of clay instead of steel",
       "optionB": "Have no hands"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Be able to make someone disappear with a thought (you can't teleport anywhere else on earth, but the person is gone for 10 minutes when your power is used)",
       "optionB": "Make everyone believe that they are not who they really are"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be a knight, but have to wear armor that is made of clay instead of steel",
       "optionB": "Have no hands"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Be able to fly",
       "optionB": "be invisible"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Get 1 million dollars today but no benefits",
       "optionB": "Wait to get $50k when ure old"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Only be able to eat meat",
       "optionB": "only be able to drink milk"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Every time youre walking around someone is going to throw something at you (but theyre not really scared)",
       "optionB": "Have a constant, horrible stench on you"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "1000+ ducks",
       "optionB": "200+ horses"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Have your shoes be able to fly",
       "optionB": "have clothes that get bigger"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "1 million dollars but have to spend it in the first week of october each year (you cant just get a loan for this)",
       "optionB": "$200 worth of food everyday"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "A 30 year old woman with a career of selling used shoes.",
       "optionB": "Be stuck on an island for eternity"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "1000+ ducks",
       "optionB": "200+ horses"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "1 million dollars but have to spend it in the first week of october each year (you cant just get a loan for this)",
       "optionB": "$200 worth of food everyday"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be a dog on mars and be 10 feet long",
       "optionB": "have your entire body turn into rubber"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "be the world's best chef",
       "optionB": "Be superman"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "be the world's best chef",
       "optionB": "Be superman"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be a dog on mars and be 10 feet long",
       "optionB": "have your entire body turn into rubber"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "A magic unicorn that jumps when you say its name but only on command (no idea why, it just does so whenever you want!)",
       "optionB": "The power to speak to animals and make them do anything"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Be able to instantly teleport anywhere for 1 hour, but only be able to teleport once a week and dont have any control over when/where it is",
       "optionB": "Have the ability to read minds."
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "A magic unicorn that jumps when you say its name but only on command (no idea why, it just does so whenever you want!)",
       "optionB": "The power to speak to animals and make them do anything"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "The ones who have no memories",
       "optionB": "the ones who have lost their minds"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be able to play the piano for 3 hours straight, no singing involved. Only piano. No music. No songs of any kind",
       "optionB": "Sing in the shower"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Have to be able to say \"I'm so full I could eat another whole burger\" every hour on the half an hour and not have room for it.",
       "optionB": "Never being hungry"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "See 2 people getting kissed simultaneously, but only one of them is your own gender",
       "optionB": "Get to control the weather for a week (but its so bad that everyone hates it)?"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Have to be able to say \"I'm so full I could eat another whole burger\" every hour on the half an hour and not have room for it.",
       "optionB": "Never being hungry"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "The ability to live anywhere in the world for 1 day and never return home, but only have time enough to make one phone call from wherever u are.",
       "optionB": "Have a magical item that could travel with you everywhere?"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be the size of a small dog, but have super strong arms and legs",
       "optionB": "Be super tall with short arms"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be the size of a small dog, but have super strong arms and legs",
       "optionB": "Be super tall with short arms"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "A magic potion that makes everything taste like ice cream (but only for 30 minutes)",
       "optionB": "A magic potato that causes people to always say \"Would you rather\""
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Have a face like clay and be able to transform into any animal",
       "optionB": "Only speak in rhymes"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "A magic potion that makes everything taste like ice cream (but only for 30 minutes)",
       "optionB": "A magic potato that causes people to always say \"Would you rather\""
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Be able to control every emotion except fear",
       "optionB": "Have the power of time travel"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Live in a room with 30 cockroaches",
       "optionB": "live outside on the street with no place to go"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Only be able to eat 1 type of food for a month (your choice wouldnt have any restrictions on the ingredients it could contain as long as its one thing, but there is no changing your mind once chosen...)",
       "optionB": "Have only ever eaten pizza since birth"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be the only one left in the world",
       "optionB": "be a ghost"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Be able to fly but only for 30 seconds at a time",
       "optionB": "Have super strength"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Never be able to use your hands again, but are a super strong human being.",
       "optionB": "Be the best martial artist in history but have terrible eyesight"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Never be able to use your hands again, but are a super strong human being.",
       "optionB": "Be the best martial artist in history but have terrible eyesight"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be a human turtle shell but can't walk",
       "optionB": "Be an octopus with 10 arms"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Be able to talk to animals (but only on a 1-5 scale of like, every animal is your friend or enemy)",
       "optionB": "Have all your clothes smell good"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Always be slightly hot but never get a sunburn",
       "optionB": "Have the ability to speak with animals"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Live in the future where everyone is a troll",
       "optionB": "Be 100% human but always have your body weight on one leg"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Be the only one that knows how to make a pie, but no one else wants it made (you couldnt eat)",
       "optionB": "Never be able to own or buy anything?"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Never be able to speak again",
       "optionB": "Have a voice that is 10x louder than normal but no way to control it"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Have 10 million dollars but have to work 8 hours a day for them",
       "optionB": "No money, but be able to travel anywhere in the world"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "30 minutes of perfect music on repeat forever and ever (but only one song, no matter what kind or genre it is)",
       "optionB": "6 hours worth of new songs every day"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be a super cool person in an 80s movie",
       "optionB": "Have to be the main character of twilight"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Be a zombie",
       "optionB": "be a vampire"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be a 20 foot tall spider that can sneak up on anyone",
       "optionB": "be able to jump through any wall"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Be a zombie",
       "optionB": "be a vampire"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be able to teleport but be invisible everywhere you go.",
       "optionB": "Have perfect physical health, all the time"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Have 10 friends that are all total weirdos but have a lot of fun together.",
       "optionB": "Only be able to hug people"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Be able to run really fast but not super strong.",
       "optionB": "be very strong and only have 50% as much speed"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be a wolf but no claws, only teeth (can eat meat and berries)... but cant climb.",
       "optionB": "be an elephant but have no ears"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be a wolf but no claws, only teeth (can eat meat and berries)... but cant climb.",
       "optionB": "be an elephant but have no ears"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be able to teleport anywhere",
       "optionB": "Have super speed"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Be a 1st grade teacher",
       "optionB": "A tour guide"
    },
    {
+      "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Be a 1st grade teacher",
       "optionB": "A tour guide"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "10-foot tall tree that can only bloom once a year for one day. You have to be there and watch it all change in the most beautiful way ever!",
       "optionB": "One giant pumpkin of any size, but no use at all"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Only use a single hand to do things (like cook, clean, and tie your shoes)",
       "optionB": "Have feet that are useless in some places but work well everywhere else"
    },
    {
+      "MODEL": "qwen",
       "title": "Would you rather",
       "optionA": "Always have to eat your food cold",
       "optionB": "always have to drink water with a straw"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Only use a single hand to do things (like cook, clean, and tie your shoes)",
       "optionB": "Have feet that are useless in some places but work well everywhere else"
    },
    {
+      "MODEL": "smol",
       "title": "Would you rather",
       "optionA": "Have all your teeth fall out and they grow back but are 3x as large so when eating anything it is a choking hazard",
       "optionB": "Only have half of one tooth left"
    },
    {
+      "MODEL": "llama",
       "title": "Would you rather",
       "optionA": "Be an only child but never receive gifts or a toy",
       "optionB": "Get 30 minutes of extra school time per day"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Be able to summon a giant duck (but only when hungry)",
+      "optionB": "Have the ability to make anyone fall asleep"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Lose your ability to ever eat ice cream again",
+      "optionB": "Never be able to go into an air conditioned building without passing out"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Be able to summon a giant duck (but only when hungry)",
+      "optionB": "Have the ability to make anyone fall asleep"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Always know what your enemies are thinking (even if they dont tell you!)",
+      "optionB": "Always know which type of food the people around you think is disgusting"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Always know what your enemies are thinking (even if they dont tell you!)",
+      "optionB": "Always know which type of food the people around you think is disgusting"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "Get to travel back in time 1 hour a day",
+      "optionB": "Be able to rewind any video for free?"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Be a penguin",
+      "optionB": "be an elephant"
    }
 ]

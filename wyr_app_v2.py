@@ -149,7 +149,7 @@ def api_vote():
     slot          = body.get("slot", "").upper()
     chosen_option = body.get("chosen_option", "").upper()
 
-    if not question_id or slot not in ("A","B","C","D") or chosen_option not in ("A","B"):
+    if not question_id or slot not in ("A","B","C","D","E","F") or chosen_option not in ("A","B"):
         return jsonify({"error": "Required: question_id, slot (A-D), chosen_option (A/B)"}), 400
 
     # Load question to get the slot→model mapping

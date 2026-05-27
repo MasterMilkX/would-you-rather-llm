@@ -1,33 +1,45 @@
 {
-  "question_id": 208,
-  "generated_at": "2026-05-22T18:03:59.753048",
+  "question_id": 334,
+  "generated_at": "2026-05-27T20:00:29.288246",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Be able to summon a giant duck (but only when hungry)",
-      "option_b": "Have the ability to make anyone fall asleep"
+      "option_a": "Be trapped in a room with 10 people that all want to be your friend but you cant pick who gets friends (would you rather have an unrequited crush on 3 of them and one crush on 5?)",
+      "option_b": "Have the ability to turn anyone into a pigeon (you can only do this once)"
     },
     "B": {
       "slot": "B",
-      "option_a": "Be forced to do one of your chores",
-      "option_b": "Always be able to borrow stuff from everyone else"
+      "option_a": "Have 10 million dollars",
+      "option_b": "Be the most popular person in your town"
     },
     "C": {
       "slot": "C",
-      "option_a": "Lose your ability to ever eat ice cream again",
-      "option_b": "Never be able to go into an air conditioned building without passing out"
+      "option_a": "Be the first to get a hole in one on golf course thats 20 feet long and 1 foot deep (you hit from bottom of well, only have ball then climb up after hitting it with your hands etc...)",
+      "option_b": "be able fly by flapping arms like penguins"
     },
     "D": {
       "slot": "D",
-      "option_a": "Always be 2 minutes late for everything",
-      "option_b": "Never have enough money to pay your bills"
+      "option_a": "Be a cat",
+      "option_b": "be an elephant"
+    },
+    "E": {
+      "slot": "E",
+      "option_a": "Have to do one super long task everyday (10 hours) that doesnt change",
+      "option_b": "be able to perform a single action per day"
+    },
+    "F": {
+      "slot": "F",
+      "option_a": "Be able to speak animals tongue",
+      "option_b": "be a cat"
     }
   },
   "slot_model_map": {
     "A": "gemma",
     "B": "qwen",
     "C": "smol",
-    "D": "llama"
+    "D": "tencent",
+    "E": "tinyllama",
+    "F": "meta-llama"
   }
 }

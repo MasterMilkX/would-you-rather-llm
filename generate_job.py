@@ -43,9 +43,11 @@ warnings.filterwarnings("ignore", message=".*datetime.datetime.utcnow.*")
 
 MODELS = {
     "qwen":  "/home/milk/Desktop/RESEARCH/wyr/model_outputs/qwen-wyr-merged",
-    "llama": "/home/milk/Desktop/RESEARCH/wyr/model_outputs/llama-wyr-merged",
+    "tinyllama": "/home/milk/Desktop/RESEARCH/wyr/model_outputs/tinyllama-wyr-merged",
     "gemma": "/home/milk/Desktop/RESEARCH/wyr/model_outputs/gemma-wyr-merged",
     "smol":  "/home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged",
+    "tencent": "/home/milk/Desktop/RESEARCH/wyr/model_outputs/tencent-wyr-merged",
+    "meta-llama": "/home/milk/Desktop/RESEARCH/wyr/model_outputs/meta-llama-wyr-merged"
 }
 
 # Shared generation settings
@@ -211,7 +213,7 @@ def run(test_mode: bool = False):
 
     model_names = list(MODELS.keys())
     random.shuffle(model_names)
-    slots = ["A", "B", "C", "D"]
+    slots = ["A", "B", "C", "D", "E", "F"]
     results = {}
 
     # In test mode, grab 4 distinct random questions without loading any model
