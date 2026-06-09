@@ -1,45 +1,45 @@
 {
-  "question_id": 334,
-  "generated_at": "2026-05-27T20:00:29.288246",
+  "question_id": 647,
+  "generated_at": "2026-06-09T21:00:26.015013",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Be trapped in a room with 10 people that all want to be your friend but you cant pick who gets friends (would you rather have an unrequited crush on 3 of them and one crush on 5?)",
-      "option_b": "Have the ability to turn anyone into a pigeon (you can only do this once)"
+      "option_a": "Have a 10 year old kid curse your life with an illness that only affects the first person they touch. You have no memory of this but it comes back when someone touches you",
+      "option_b": "Be cursed by some random super evil wizard to be able to turn into any animal, for the rest of your lives"
     },
     "B": {
       "slot": "B",
-      "option_a": "Have 10 million dollars",
-      "option_b": "Be the most popular person in your town"
+      "option_a": "Be a frog",
+      "option_b": "be an elephant"
     },
     "C": {
       "slot": "C",
-      "option_a": "Be the first to get a hole in one on golf course thats 20 feet long and 1 foot deep (you hit from bottom of well, only have ball then climb up after hitting it with your hands etc...)",
-      "option_b": "be able fly by flapping arms like penguins"
+      "option_a": "100 million now",
+      "option_b": "$1b when youre 65"
     },
     "D": {
       "slot": "D",
-      "option_a": "Be a cat",
-      "option_b": "be an elephant"
+      "option_a": "Be the most famous person in history",
+      "option_b": "Be able to speak a language without knowing it"
     },
     "E": {
       "slot": "E",
-      "option_a": "Have to do one super long task everyday (10 hours) that doesnt change",
-      "option_b": "be able to perform a single action per day"
+      "option_a": "Would you rather...\nA) Never see the sun again forever would that be a blessing",
+      "option_b": "curse?"
     },
     "F": {
       "slot": "F",
-      "option_a": "Be able to speak animals tongue",
-      "option_b": "be a cat"
+      "option_a": "A bear",
+      "option_b": "An alligator"
     }
   },
   "slot_model_map": {
     "A": "gemma",
-    "B": "qwen",
-    "C": "smol",
+    "B": "tinyllama",
+    "C": "meta-llama",
     "D": "tencent",
-    "E": "tinyllama",
-    "F": "meta-llama"
+    "E": "smol",
+    "F": "qwen"
   }
 }

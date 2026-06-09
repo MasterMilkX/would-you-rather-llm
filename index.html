@@ -43,9 +43,10 @@
   }
   .titlebar-btns { display: flex; gap: 6px; }
   .titlebar-btn {
-    width:14px;height:14px;border:1px solid var(--bg);background:var(--teal);
+    height:14px;padding:0 5px;border:1px solid var(--bg);background:var(--yellow);
     font-size:9px;display:flex;align-items:center;justify-content:center;
     color:var(--bg);cursor:pointer;font-family:'VT323',monospace;font-weight:bold;
+    white-space:nowrap;
   }
   .titlebar-title { font-family:'VT323',monospace;font-size:1.1rem;color:var(--bg);letter-spacing:2px; }
   header { text-align:center; padding:2.5rem 1rem 1rem; }
@@ -151,7 +152,7 @@
 
 <div class="titlebar">
   <div class="titlebar-btns">
-    <div class="titlebar-btn">■</div><div class="titlebar-btn">▼</div><div class="titlebar-btn">✕</div>
+    <div class="titlebar-btn" onclick="window.open('https://gamegoogle.drmilkx.xyz/', '_blank')">GG</div><div class="titlebar-btn" onclick="window.open('https://gamecaptcha.drmilkx.xyz/', '_blank')">GC</div><div class="titlebar-btn"><-- other links!</div>
   </div>
   <div class="titlebar-title">WYR_LLM.EXE — RUNNING</div>
   <div style="font-size:0.65rem;color:var(--yellow);letter-spacing:1px;" id="clock"></div>
@@ -175,7 +176,7 @@
   <div class="win" id="card-F"></div>
 </div>
 
-<footer>[ WOULD YOU RATHER LLM // ALL OUTPUTS AI GENERATED // <span onclick="window.open('https://ai.google.dev/gemma/terms', '_blank')">Gemma Terms of Use</span> ]</footer>
+<footer>[ WOULD YOU RATHER LLM // ALL OUTPUTS AI GENERATED // THIS IS FOR RESEARCH PURPOSES ONLY - NO PERSONAL DATA IS COLLECTED; ONLY VOTES // <span onclick="window.open('https://ai.google.dev/gemma/terms', '_blank')">Gemma Terms of Use</span> ]</footer>
 
 <script>
 const SLOTS = ['A','B','C','D','E','F'];

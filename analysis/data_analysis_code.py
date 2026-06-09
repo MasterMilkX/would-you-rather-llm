@@ -8,6 +8,8 @@ import sqlite3
 import pandas as pd
 from tqdm import tqdm
 from datetime import datetime 
+import matplotlib.colors as mcolors
+import seaborn
 
 
 # import model
@@ -30,6 +32,8 @@ CATEGORIES = {
 }
 
 MISC_THRESH = 0.50
+
+TIME = datetime.today().strftime("%Y-%m-%d")
 
 # embed the categories
 print("Pre-computing category embeddings...")
@@ -121,8 +125,8 @@ def vis_data_cat(data, model_name):
     ax.grid(axis='y', alpha=0.3)
 
     plt.tight_layout()
-    plt.savefig(f'graphs/{model_name}-[{datetime.now()}].png', dpi=300, bbox_inches='tight')
-    plt.show()
+    plt.savefig(f'graphs/{model_name}-[{TIME}].png', dpi=300, bbox_inches='tight')
+    # plt.show()
 
 
 # Connect to SQLite database
@@ -135,10 +139,17 @@ df = pd.read_sql_query(query, conn)
 conn.close()
 
 ALL_MODELS = sorted(df['model_name'].unique())
+
+# remove deepseek and llama
+ALL_MODELS = [m for m in ALL_MODELS if m != "deepseek" and m != "llama"]
+
 print(f"Loaded {len(df)} entries from wyr_votes.db")
 print(f"\nUnique models: {ALL_MODELS}")
 print(f"\nData sample:")
-print(df.head())
+print(df.tail())
+
+#change llama to tinyllama
+df['model_name'] = df['model_name'].apply(lambda x: "tinyllama" if x == "llama" else x)
 
 # group by model
 MODEL_SET = {}
@@ -150,13 +161,12 @@ for index, entry in df.iterrows():
         continue
 
     model = entry['model_name']
-
-    # change llama to tinyllama
-    if model == "llama":
-        model = "tinyllama"
+    if model not in ALL_MODELS:
+        continue
         
     if model not in MODEL_SET:
         MODEL_SET[model] = []
+
     MODEL_SET[model].append(entry)
     num_entries += 1
 
@@ -209,18 +219,31 @@ for u in flagged_dat:
     flagged_cats.append(c)
 
 
+
+# change model names to match
+for d in upvote_cats:
+    if d['model'] == "llama":
+        d['model'] = "tinyllama"
+for d in downvote_cats:
+    if d['model'] == "llama":
+        d['model'] = "tinyllama"
+for d in flagged_cats:
+    if d['model'] == "llama":
+        d['model'] = "tinyllama"
+
 # make 2d array for heatmap
 # calculate votes with equation
 def vote_score_dataframe(ups,downs,flags):
     # x-axis : MODEL
     # y-axis : CATEGORY
-    # value = 2*(# upvotes) + -1*(# downvotes) + -3*(# flagged)
+    # value = 3*(# upvotes) + -1*(# downvotes) + -3*(# flagged)
 
-    arr_main = np.full((len(CATEGORIES),len(ALL_MODELS)), np.nan)
-    arr_sec = np.full((len(CATEGORIES),len(ALL_MODELS)), np.nan)
-    y_axis = np.array(CATEGORIES)
-    x_axis = np.array(ALL_MODELS)
+    arr_main = np.full((len(CATEGORIES.keys()),len(ALL_MODELS)), 0.0)
+    arr_sec = np.full((len(CATEGORIES.keys()),len(ALL_MODELS)), 0.0)
+    y_axis = sorted(list(CATEGORIES.keys()))
+    x_axis = sorted(ALL_MODELS)
 
+    # print(ALL_MODELS)
 
     # upvotes -> +3
     scoring = [3,-1,-3]
@@ -233,15 +256,11 @@ def vote_score_dataframe(ups,downs,flags):
             m_cat = u['main_category']
             s_cat = u['secondary_category']
 
-            mcell = arr_main[y_axis.index(m_cat)][x_axis.index(model)]
-            if not mcell:
-                mcell = 0
-            mcell += s
+            # print(f"MODEL: {model} | M_CAT: {m_cat} | S_CAT: {s_cat} | SCORE: {s}")
+            # print(u)
 
-            scell = arr_sec[y_axis.index(s_cat)][x_axis.index(model)]
-            if not scell:
-                scell = 0
-            scell += s
+            arr_main[y_axis.index(m_cat)][x_axis.index(model)] += s
+            arr_sec[y_axis.index(s_cat)][x_axis.index(model)] += s
 
     # turn into dataframe
     mdf = pd.DataFrame(arr_main, index=y_axis, columns=x_axis)
@@ -250,6 +269,38 @@ def vote_score_dataframe(ups,downs,flags):
     return mdf, sdf
 
 
+main_df, sec_df = vote_score_dataframe(upvote_cats,downvote_cats,flagged_cats)
+
+def showHeatmap(m, title):
+    fig, ax = plt.subplots(figsize=(12, 8))  # create a fresh figure each call
+    stoplight = seaborn.color_palette("blend:#ff0000,#fff,#00ff00", as_cmap=True)
+    vmin = m.min().min()
+    vmax = m.max().max()
+
+
+    # half = int((maximum + minimum) / 2)
+    hm = seaborn.heatmap(m, annot=True, cmap=stoplight, center=0,          # anchors black at 0
+        vmin=vmin,  # or set a fixed range e.g. vmin=-10
+        vmax=vmax)  # e.g. vmax=10)
+
+    # 3. Display
+    plt.title(title)
+    plt.xlabel("MODELS")
+    plt.ylabel("CATEGORIES")
+    plt.legend("VOTE SCORE [+3 upvote; -1 downvote; -3 flag]")
+    # plt.show()
+
+    fig = hm.get_figure()
+    fig.savefig(f"graphs/HEATMAP-{title}-{TIME}.png", dpi=300, bbox_inches='tight')
+    plt.close(fig)
+
+# drop deepseek
+# main_df = main_df.drop(columns=['deepseek'])
+# sec_df = sec_df.drop(columns=['deepseek'])
+
+
+showHeatmap(main_df, "MAIN CATEGORIES")
+showHeatmap(sec_df, "SECONDARY CATEGORIES")
 
     
 

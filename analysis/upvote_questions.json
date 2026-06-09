@@ -1,5 +1,41 @@
 [
    {
+      "MODEL": "llama",
+      "title": "Would you rather",
+      "optionA": "option A",
+      "optionB": "option B"
+   },
+   {
+      "MODEL": "llama",
+      "title": "Would you rather",
+      "optionA": "option A",
+      "optionB": "option B"
+   },
+   {
+      "MODEL": "llama",
+      "title": "Would you rather",
+      "optionA": "option A",
+      "optionB": "option B"
+   },
+   {
+      "MODEL": "llama",
+      "title": "Would you rather",
+      "optionA": "option A",
+      "optionB": "option B"
+   },
+   {
+      "MODEL": "llama",
+      "title": "Would you rather",
+      "optionA": "option A",
+      "optionB": "option B"
+   },
+   {
+      "MODEL": "llama",
+      "title": "Would you rather",
+      "optionA": "option A",
+      "optionB": "option B"
+   },
+   {
       "MODEL": "gemma",
       "title": "Would you rather",
       "optionA": "Be able to make someone disappear with a thought (you can't teleport anywhere else on earth, but the person is gone for 10 minutes when your power is used)",
@@ -430,5 +466,215 @@
       "title": "Would you rather",
       "optionA": "Be a penguin",
       "optionB": "be an elephant"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "A world with no birds",
+      "optionB": "World without cats"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "3000 years of life",
+      "optionB": "1 year for every day you live"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Be a horse (but only get to run 1 mile fast)",
+      "optionB": "Be a cat ( but only have 30 minutes of playtime/cat naps every day)?"
+   },
+   {
+      "MODEL": "tencent",
+      "title": "Would you rather",
+      "optionA": "Be the only one that can walk",
+      "optionB": "Only be able to swim"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "noone",
+      "optionB": "everyone"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Squishy carrot head that only sees eyes and noses (not ears or hands/wrists)",
+      "optionB": "Cursed rabbit tail that grows 1 inch every time someone gets angry at it"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Squishy carrot head that only sees eyes and noses (not ears or hands/wrists)",
+      "optionB": "Cursed rabbit tail that grows 1 inch every time someone gets angry at it"
+   },
+   {
+      "MODEL": "tencent",
+      "title": "Would you rather",
+      "optionA": "You have no hands",
+      "optionB": "Have 100 fingers"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "You have to eat 50 burgers a day",
+      "optionB": "Always be hungry"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "1000000 cupcakes",
+      "optionB": "A million chocolate bars"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Turn into a pigeon every time you fart",
+      "optionB": "Be able to control 20 dogs"
+   },
+   {
+      "MODEL": "tencent",
+      "title": "Would you rather",
+      "optionA": "You have no hands",
+      "optionB": "Have 100 fingers"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "1000000 cupcakes",
+      "optionB": "A million chocolate bars"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Be able to change the color of your eyes",
+      "optionB": "be able to change the temperature of your breath"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Be an alien",
+      "optionB": "be a ghost"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Be a random person in the world, but know all their thoughts and feelings (but not yours)",
+      "optionB": "Know what everyone is thinking about/feeling but be oblivious to your own?"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "Sleep in a coffin",
+      "optionB": "Sleep on the floor"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Be a wizard that always has to eat dragon meat for every meal",
+      "optionB": "be a regular person in the year 1600"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Eat cereal for every meal (yucky) but get 10 extra hours of sleep",
+      "optionB": "Get a full night's sleep and no cereal"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Always be in the wrong lane for traffic",
+      "optionB": "Get stuck behind 10 cars every time"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Be the only person who can see auras",
+      "optionB": "Only be able to hear other peoples thoughts"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Be the only person who can see auras",
+      "optionB": "Only be able to hear other peoples thoughts"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "Be a cat in the middle of nowhere",
+      "optionB": "be a dog on an island"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Be able to jump 3x higher than other people",
+      "optionB": "Have a super strong voice that can make anyones ears bleed"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Be able to smell things 20 times better than normal people",
+      "optionB": "be able to hear sounds 10x more clearly"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Be able to smell things 20 times better than normal people",
+      "optionB": "be able to hear sounds 10x more clearly"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Only able to have 1 friend at a time no matter where u go in the world (but can still talk on phone and see them through video chat)",
+      "optionB": "Always be surrounded by people but cant touch or hug anyone"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "The 70's",
+      "optionB": "Late 80s"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Always have a 10% discount at every store (not limited to the local area)",
+      "optionB": "Get $5 back for EVERY purchase?"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Be able to fly",
+      "optionB": "Time travel"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Have to do all your tasks in a single day (no weekends off for 12 days straight though )",
+      "optionB": "Do each task multiple times everyday with no breaks"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "Only have one arm",
+      "optionB": "Be able to eat with no hands"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "always have the perfect shower (hot, comfy, and the right amount of bubbles).",
+      "optionB": "Always get a perfectly cooked dish"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Boring, but convenient travel tubes. Everywhere would have a tube to get where you want instead of walking/driving etc",
+      "optionB": "Fast moving roller coaster that kills people if it goes above 20 miles per hour"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Always have a cold, but your immune system is good enough that you can cure any illness with 10% left in your body",
+      "optionB": "Never get sick, but everyone else around you does"
    }
 ]

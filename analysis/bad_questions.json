@@ -274,6 +274,206 @@
          "MODEL": "qwen",
          "optionA": "A 12 foot long shark",
          "optionB": "a massive bear"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "3x4 speed",
+         "optionB": "Speed of a car"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "150 bucks every time you die",
+         "optionB": "A whole house and yard for every successful escape"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Always get a wet nose/eye after using the bathroom, but no toilet seat burns",
+         "optionB": "Get 30 minutes of constant burning from every toilet trip"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have to eat something only once a month",
+         "optionB": "Would have to do it 3 times per day"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "10 million dollars in a single day",
+         "optionB": "$5,000 daily for the rest of your life"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "30 million people die every time you get a hug",
+         "optionB": "No one dies when you give hugs"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have to eat your own poop 1 time a year but not have any other issues",
+         "optionB": "Need one of every species ever on earth in front of yourself all the time"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "25% of your food",
+         "optionB": "Have to buy water and get it for the rest"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Have to do one super long task everyday (10 hours) that doesnt change",
+         "optionB": "be able to perform a single action per day"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have 100% of your brain for one hour but have to give up the next day.",
+         "optionB": "Get a head start with all your brains at once"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "10 million dollars (for a useless talent like competitive thumb-wrestling)",
+         "optionB": "$5 million for being the best potato eater in history"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have no voice and everyone can hear your thoughts but cant talk to u (and nobody knows ur name)",
+         "optionB": "Be able to speak only once in life"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Turn into a pigeon every time you fart",
+         "optionB": "Be able to control 20 dogs"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Have to be at the beach, but your feet are in water",
+         "optionB": "Always have wet hair"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Always be cold (0 degrees celcius) when travelling.",
+         "optionB": "Get stuck in a room with no door, but only your clothes on for bed"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "20 years of life with no knowledge",
+         "optionB": "No experience, but a perfect understanding"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be 40 years old",
+         "optionB": "be an animal (human or not human); always have a mouth that can spit to make someone alive"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Not be able to drive on the highway",
+         "optionB": "Be unable to eat any food that is not human"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "A millionaire",
+         "optionB": "$1 trillion"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Be able to fly at any point but only for 5 minutes",
+         "optionB": "be able to walk on water"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Would you rather...\nA) The ability to turn invisible at will, but would be unable to see anyone else's face",
+         "optionB": "features. Would only work 20% of the time and last for a short duration (like minutes)."
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Always get your hands dirty",
+         "optionB": "Be the most clean person in the room"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Spend 10 hours in silence everyday, but know that someone will be listening",
+         "optionB": "Speak your entire day and no one can hear"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "The smell of burning incense",
+         "optionB": "A bunch of onions"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Always get the last toy",
+         "optionB": "Never get the last toy"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Always have to eat food that has hair in it",
+         "optionB": "Never be able to eat anything"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Die when 10 years old",
+         "optionB": "Win $5 million when 20"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Die when 10 years old",
+         "optionB": "Win $5 million when 20"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "100% chance to get everyones favorite food at the grocery store",
+         "optionB": "50/50 chance"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have a tail and eat the things off of it (e.g., feathers, fur etc.)",
+         "optionB": "Be able to walk on water?"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be able to control your thoughts",
+         "optionB": "be able to think of one thing in an hour"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be the most beautiful in 2010",
+         "optionB": "Be a statue of the world"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Have your hands in front of 20 feet",
+         "optionB": "Spoil any pet that is not a human (a human has no control over them)."
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have to eat every day for a week (your choice of meal, but would have only 1 portion each time and no snacks allowed)",
+         "optionB": "Would rather be forced to drink some weird stuff"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "10% of your food",
+         "optionB": "1% of the food"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Never have to eat food again",
+         "optionB": "Be able to drink any amount of water for the rest of your life"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be able to speak",
+         "optionB": "be able to dance"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "A large dog",
+         "optionB": "Two medium dogs"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "All the time",
+         "optionB": "Never"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "A) 10 people who can do any skill (except fighting ) and have to be in a room with no doors",
+         "optionB": "walls for days until they find food. Would one person get hurt? would the other ones die because of hunger, etc."
       }
    ],
    "flagged": [
@@ -311,6 +511,46 @@
          "MODEL": "gemma",
          "optionA": "A 10 year old boy",
          "optionB": "An 8 year old girl"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "10 million dollars (for a useless talent like competitive thumb-wrestling)",
+         "optionB": "$5 million for being the best potato eater in history"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have no voice and everyone can hear your thoughts but cant talk to u (and nobody knows ur name)",
+         "optionB": "Be able to speak only once in life"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "1000000 dollars",
+         "optionB": "$1 million people"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be forced to be in a wheelchair",
+         "optionB": "Only able to walk one foot"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "be a mermaid but can only sing in the water (no voice on land)",
+         "optionB": "live forever and never get to experience love or have sex"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Have your legs be 2 inches longer on each side",
+         "optionB": "Have feet be 1 inch higher?"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Have your legs be 2 inches longer on each side",
+         "optionB": "Have feet be 1 inch higher?"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have a robot friend that always does your chores but never lets you leave the house to go out and have fun.",
+         "optionB": "Be able to pay people for sex?"
       }
    ]
 }
