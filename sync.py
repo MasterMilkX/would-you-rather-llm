@@ -101,9 +101,28 @@ def push_question(local_path: str = JSON_PATH) -> bool:
     """
     Called by generate_job.py after writing current_question.json.
     Pushes it to the web server so the frontend picks it up immediately.
+    Also archives it under questions_archive/{question_id}.json so the server
+    can rotate through past questions when the host machine is offline.
     """
     print("\n[sync] Pushing question JSON to web server ...")
-    return _scp(local_path, REMOTE_JSON, "push question")
+    ok = _scp(local_path, REMOTE_JSON, "push question")
+
+    # Archive a copy keyed by question_id so the server can rotate through past questions
+    try:
+        with open(local_path) as f:
+            q = json.load(f)
+        qid = q.get("question_id")
+        if qid is not None:
+            _ssh(f"mkdir -p {WEB_SERVER_DIR}/questions_archive", "create archive dir")
+            remote_archive = (
+                f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:"
+                f"{WEB_SERVER_DIR}/questions_archive/{qid}.json"
+            )
+            _scp(local_path, remote_archive, f"archive question {qid}")
+    except Exception as e:
+        print(f"  ✗ Archive push failed: {e}")
+
+    return ok
 
 
 # ---------------------------------------------------------------------------
@@ -253,3 +272,83 @@ def pull_model_mods(local_path: str = MODEL_MOD_PATH) -> int:
     os.replace(tmp_path, local_path)
     print(f"  ✓ Pulled {count} mod record(s) → {local_path}")
     return count
+
+
+# ---------------------------------------------------------------------------
+# GPU server: push unvoted recent questions to the server's archive
+# ---------------------------------------------------------------------------
+
+def push_unvoted_archive(db_path: str = DB_PATH, lookback_days: int = 7) -> int:
+    """
+    Called by generate_job.py after pulling votes each run.
+    Finds questions from the last `lookback_days` days with zero total votes,
+    reconstructs their JSON payload, and SCPs each to the server's
+    questions_archive directory — making them available for offline rotation.
+
+    Questions that received any votes are skipped (they've been served already).
+    Returns the number of files pushed.
+    """
+    print("\n[sync] Checking for unvoted recent questions to archive ...")
+
+    try:
+        import sqlite3 as _sqlite3
+        db = _sqlite3.connect(db_path)
+        rows = db.execute("""
+            SELECT q.id, q.generated_at
+            FROM questions q
+            LEFT JOIN votes v ON v.question_id = q.id
+            WHERE q.generated_at >= datetime('now', ? || ' days')
+            GROUP BY q.id
+            HAVING COALESCE(SUM(v.votes_a + v.votes_b), 0) = 0
+            ORDER BY q.id
+        """, (f"-{lookback_days}",)).fetchall()
+
+        if not rows:
+            print("  No unvoted questions in lookback window.")
+            db.close()
+            return 0
+
+        print(f"  Found {len(rows)} unvoted question(s) — pushing to server archive ...")
+        _ssh(f"mkdir -p {WEB_SERVER_DIR}/questions_archive", "create archive dir")
+
+        pushed = 0
+        for (qid, generated_at) in rows:
+            outputs = db.execute(
+                "SELECT model_name, slot, option_a, option_b "
+                "FROM model_outputs WHERE question_id = ? ORDER BY slot",
+                (qid,),
+            ).fetchall()
+            if not outputs:
+                continue
+
+            slots = {}
+            slot_model_map = {}
+            for model_name, slot, option_a, option_b in outputs:
+                slots[slot] = {"slot": slot, "option_a": option_a, "option_b": option_b}
+                slot_model_map[slot] = model_name
+
+            payload = {
+                "question_id":    qid,
+                "generated_at":   generated_at,
+                "test_mode":      False,
+                "slots":          slots,
+                "slot_model_map": slot_model_map,
+            }
+
+            tmp = f"/tmp/wyr_archive_{qid}.json"
+            with open(tmp, "w") as f:
+                f.write(json.dumps(payload, indent=2))
+
+            remote = f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:{WEB_SERVER_DIR}/questions_archive/{qid}.json"
+            ok = _scp(tmp, remote, f"archive unvoted q{qid}")
+            os.remove(tmp)
+            if ok:
+                pushed += 1
+
+        db.close()
+        print(f"  ✓ Archived {pushed}/{len(rows)} unvoted question(s)")
+        return pushed
+
+    except Exception as e:
+        print(f"  ✗ push_unvoted_archive failed: {e}")
+        return 0

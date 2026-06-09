@@ -31,7 +31,7 @@ import torch
 import warnings
 from datetime import datetime
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from sync import push_question, pull_and_merge_votes
+from sync import push_question, pull_and_merge_votes, push_unvoted_archive
 
 warnings.filterwarnings("ignore", message=".*datetime.datetime.utcnow.*")
 
@@ -198,6 +198,10 @@ def run(test_mode: bool = False):
 
     # Pull any votes the web server collected since last run and merge into local DB
     pull_and_merge_votes(DB_PATH)
+
+    # Push any recently-generated questions that received zero votes to the server
+    # archive so they're available for offline rotation (covers low-traffic hours like 2am).
+    push_unvoted_archive(DB_PATH)
 
     db = sqlite3.connect(DB_PATH)
     db.row_factory = sqlite3.Row
