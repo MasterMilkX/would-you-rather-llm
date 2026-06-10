@@ -25,6 +25,7 @@ import random
 import os
 import sys
 from datetime import datetime, timezone
+from sync import add_model_vote
 
 # ---------------------------------------------------------------------------
 # Config
@@ -140,7 +141,7 @@ def _load_archive(qid: int) -> dict | None:
 
 def load_state() -> dict:
     if not os.path.exists(STATE_PATH):
-        return {"posted_slots": [], "active": None}
+        return {"posted_slots": [], "active": None, "voters": {}}
     with open(STATE_PATH) as f:
         return json.load(f)
 
@@ -148,6 +149,38 @@ def load_state() -> dict:
 def save_state(state: dict):
     with open(STATE_PATH, "w") as f:
         json.dump(state, f, indent=2)
+
+
+def has_voted(question_id: int, slot: str, user_id: int) -> bool:
+    state = load_state()
+    key = f"{question_id}_{slot}"
+    return user_id in state.get("voters", {}).get(key, [])
+
+
+def record_voter(question_id: int, slot: str, user_id: int):
+    state = load_state()
+    key = f"{question_id}_{slot}"
+    voters = state.setdefault("voters", {})
+    voters.setdefault(key, [])
+    if user_id not in voters[key]:
+        voters[key].append(user_id)
+    save_state(state)
+
+
+def has_modded(question_id: int, slot: str, user_id: int) -> bool:
+    state = load_state()
+    key = f"mod_{question_id}_{slot}"
+    return user_id in state.get("voters", {}).get(key, [])
+
+
+def record_modder(question_id: int, slot: str, user_id: int):
+    state = load_state()
+    key = f"mod_{question_id}_{slot}"
+    voters = state.setdefault("voters", {})
+    voters.setdefault(key, [])
+    if user_id not in voters[key]:
+        voters[key].append(user_id)
+    save_state(state)
 
 
 # ---------------------------------------------------------------------------
@@ -166,13 +199,19 @@ def pick_next_question() -> dict | None:
     unvoted_ids = get_unvoted_question_ids()
     random.shuffle(unvoted_ids)
 
+
     for qid in unvoted_ids:
         q = _load_archive(qid)
         if not q:
             continue
-        slots         = q.get("slots", {})
-        slot_model    = q.get("slot_model_map", {})
-        available     = [s for s in slots if (qid, s) not in posted]
+        slots      = q.get("slots", {})
+        slot_model = q.get("slot_model_map", {})
+        available  = [
+            s for s in slots
+            if (qid, s) not in posted
+            and slots[s].get("option_a", "").lower() not in ("option a", "")
+            and slots[s].get("option_b", "").lower() not in ("option b", "")
+        ]
         if not available:
             continue
         slot       = random.choice(available)
@@ -196,9 +235,14 @@ def pick_next_question() -> dict | None:
         return None
     slots      = q.get("slots", {})
     slot_model = q.get("slot_model_map", {})
-    if not slots:
+    available  = [
+        s for s in slots
+        if slots[s].get("option_a", "").lower() not in ("option a", "")
+        and slots[s].get("option_b", "").lower() not in ("option b", "")
+    ]
+    if not available:
         return None
-    slot       = random.choice(list(slots.keys()))
+    slot       = random.choice(available)
     slot_data  = slots[slot]
     model_name = slot_model.get(slot, "unknown")
     return {
@@ -227,15 +271,17 @@ def build_embed(option_a: str, option_b: str, question_id: int,
     pct_a = int(votes_a / total * 100) if total else 0
     pct_b = 100 - pct_a if total else 0
 
-    embed = discord.Embed(title="🤔  Would You Rather...", color=0x00b0f4)
-    embed.add_field(
-        name="🔵  Option A",
-        value=f"{option_a}\n{_bar(votes_a, total)} {pct_a}% ({votes_a})",
-        inline=False,
+    embed = discord.Embed(
+        title="🤔  Would You Rather...",
+        description=f"**🔵 A)** {option_a}\n\n**— or —**\n\n**🔴 B)** {option_b}",
+        color=0x00b0f4,
     )
     embed.add_field(
-        name="🟡  Option B",
-        value=f"{option_b}\n{_bar(votes_b, total)} {pct_b}% ({votes_b})",
+        name="Results",
+        value=(
+            f"🔵 Option A  {_bar(votes_a, total)} {pct_a}% ({votes_a})\n"
+            f"🔴 Option B  {_bar(votes_b, total)} {pct_b}% ({votes_b})"
+        ),
         inline=False,
     )
     footer = f"#{question_id}"
@@ -255,14 +301,20 @@ class VoteView(discord.ui.View):
         self.option_a    = option_a
         self.option_b    = option_b
 
+        # Row 1: A/B vote
         self.add_item(_VoteButton("A", question_id, slot, discord.ButtonStyle.primary))
         self.add_item(_VoteButton("B", question_id, slot, discord.ButtonStyle.secondary))
+
+        # Row 2: moderation
+        self.add_item(_ModButton("UPVOTE",   "👍", question_id, slot, discord.ButtonStyle.success))
+        self.add_item(_ModButton("DOWNVOTE", "👎", question_id, slot, discord.ButtonStyle.danger))
+        self.add_item(_ModButton("FLAG",     "🚩", question_id, slot, discord.ButtonStyle.secondary))
 
 
 class _VoteButton(discord.ui.Button):
     def __init__(self, choice: str, question_id: int, slot: str,
                  style: discord.ButtonStyle):
-        prefix = "🔵 " if choice == "A" else "🟡 "
+        prefix = "🔵 " if choice == "A" else "🔴 "
         super().__init__(
             style=style,
             label=f"{prefix}Option {choice}",
@@ -274,7 +326,16 @@ class _VoteButton(discord.ui.Button):
 
     async def callback(self, interaction: discord.Interaction):
         view: VoteView = self.view  # type: ignore[assignment]
+        user_id = interaction.user.id
+
+        if has_voted(self.question_id, self.slot, user_id):
+            await interaction.response.send_message(
+                "You've already voted on this question!", ephemeral=True
+            )
+            return
+
         votes_a, votes_b = record_vote(self.question_id, view.model_name, self.choice)
+        record_voter(self.question_id, self.slot, user_id)
 
         embed = build_embed(view.option_a, view.option_b,
                             self.question_id, votes_a, votes_b)
@@ -285,6 +346,38 @@ class _VoteButton(discord.ui.Button):
                  f"{total} vote{'s' if total != 1 else ''}"
         )
         await interaction.response.edit_message(embed=embed, view=view)
+
+
+class _ModButton(discord.ui.Button):
+    def __init__(self, vote_type: str, emoji: str, question_id: int, slot: str,
+                 style: discord.ButtonStyle):
+        super().__init__(
+            style=style,
+            label=emoji,
+            custom_id=f"wyrmod_{question_id}_{slot}_{vote_type}",
+            row=1,
+        )
+        self.vote_type   = vote_type
+        self.question_id = question_id
+        self.slot        = slot
+
+    async def callback(self, interaction: discord.Interaction):
+        view: VoteView = self.view  # type: ignore[assignment]
+        user_id = interaction.user.id
+
+        if has_modded(self.question_id, self.slot, user_id):
+            await interaction.response.send_message(
+                "You've already rated this question!", ephemeral=True
+            )
+            return
+
+        add_model_vote(self.question_id, view.model_name, self.vote_type)
+        record_modder(self.question_id, self.slot, user_id)
+
+        labels = {"UPVOTE": "👍 upvoted", "DOWNVOTE": "👎 downvoted", "FLAG": "🚩 flagged"}
+        await interaction.response.send_message(
+            f"Thanks! You {labels[self.vote_type]} this question.", ephemeral=True
+        )
 
 
 # ---------------------------------------------------------------------------

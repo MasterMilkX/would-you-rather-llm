@@ -1,45 +1,45 @@
 {
-  "question_id": 648,
-  "generated_at": "2026-06-09T22:01:20.280684",
+  "question_id": 649,
+  "generated_at": "2026-06-10T21:01:04.341851",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Be a bear",
-      "option_b": "be an elephant"
+      "option_a": "Always get the wrong subway station",
+      "option_b": "Never be able to find your room"
     },
     "B": {
       "slot": "B",
-      "option_a": "Never have to eat again",
-      "option_b": "Have food but it tastes terrible"
+      "option_a": "Get 100000 dollars",
+      "option_b": "Be an intergalactic bounty hunter for the rest of your life"
     },
     "C": {
       "slot": "C",
-      "option_a": "Always be 5ft tall",
-      "option_b": "Be a dog"
+      "option_a": "Be able to speak any language but only have a 10% chance of speaking well",
+      "option_b": "Know all the answers on every test, but never be able to find your own?"
     },
     "D": {
       "slot": "D",
-      "option_a": "30 years old",
-      "option_b": "70+"
+      "option_a": "Have your eyes always looking like a puppy dog's ears when people look at them",
+      "option_b": "have 2 tails but cant do anything with then"
     },
     "E": {
       "slot": "E",
-      "option_a": "100 bucks for every time someone else speaks in your group chat",
-      "option_b": "50 dollars per tweet"
+      "option_a": "A magic 8 ball that knows all your future moves",
+      "option_b": "An invisible mouse that follows you everywhere"
     },
     "F": {
       "slot": "F",
-      "option_a": "Be able to eat anything that tastes good but cant taste it",
-      "option_b": "be able to drink any liquid except water"
+      "option_a": "Be 4x as fast",
+      "option_b": "Never be able to speak"
     }
   },
   "slot_model_map": {
-    "A": "tencent",
-    "B": "qwen",
-    "C": "meta-llama",
-    "D": "gemma",
+    "A": "qwen",
+    "B": "meta-llama",
+    "C": "gemma",
+    "D": "smol",
     "E": "tinyllama",
-    "F": "smol"
+    "F": "tencent"
   }
 }
