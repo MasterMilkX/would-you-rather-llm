@@ -1,45 +1,45 @@
 {
-  "question_id": 647,
-  "generated_at": "2026-06-09T21:00:26.015013",
+  "question_id": 648,
+  "generated_at": "2026-06-09T22:01:20.280684",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Have a 10 year old kid curse your life with an illness that only affects the first person they touch. You have no memory of this but it comes back when someone touches you",
-      "option_b": "Be cursed by some random super evil wizard to be able to turn into any animal, for the rest of your lives"
+      "option_a": "Be a bear",
+      "option_b": "be an elephant"
     },
     "B": {
       "slot": "B",
-      "option_a": "Be a frog",
-      "option_b": "be an elephant"
+      "option_a": "Never have to eat again",
+      "option_b": "Have food but it tastes terrible"
     },
     "C": {
       "slot": "C",
-      "option_a": "100 million now",
-      "option_b": "$1b when youre 65"
+      "option_a": "Always be 5ft tall",
+      "option_b": "Be a dog"
     },
     "D": {
       "slot": "D",
-      "option_a": "Be the most famous person in history",
-      "option_b": "Be able to speak a language without knowing it"
+      "option_a": "30 years old",
+      "option_b": "70+"
     },
     "E": {
       "slot": "E",
-      "option_a": "Would you rather...\nA) Never see the sun again forever would that be a blessing",
-      "option_b": "curse?"
+      "option_a": "100 bucks for every time someone else speaks in your group chat",
+      "option_b": "50 dollars per tweet"
     },
     "F": {
       "slot": "F",
-      "option_a": "A bear",
-      "option_b": "An alligator"
+      "option_a": "Be able to eat anything that tastes good but cant taste it",
+      "option_b": "be able to drink any liquid except water"
     }
   },
   "slot_model_map": {
-    "A": "gemma",
-    "B": "tinyllama",
+    "A": "tencent",
+    "B": "qwen",
     "C": "meta-llama",
-    "D": "tencent",
-    "E": "smol",
-    "F": "qwen"
+    "D": "gemma",
+    "E": "tinyllama",
+    "F": "smol"
   }
 }

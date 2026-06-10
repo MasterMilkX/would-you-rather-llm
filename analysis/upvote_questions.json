@@ -676,5 +676,29 @@
       "title": "Would you rather",
       "optionA": "Always have a cold, but your immune system is good enough that you can cure any illness with 10% left in your body",
       "optionB": "Never get sick, but everyone else around you does"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Be a frog",
+      "optionB": "be an elephant"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Have a 10 year old kid curse your life with an illness that only affects the first person they touch. You have no memory of this but it comes back when someone touches you",
+      "optionB": "Be cursed by some random super evil wizard to be able to turn into any animal, for the rest of your lives"
+   },
+   {
+      "MODEL": "tencent",
+      "title": "Would you rather",
+      "optionA": "Be the most famous person in history",
+      "optionB": "Be able to speak a language without knowing it"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "100 bucks for every time someone else speaks in your group chat",
+      "optionB": "50 dollars per tweet"
    }
 ]

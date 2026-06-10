@@ -41415,3 +41415,460 @@ Created question row id=647
 ✓ question_id=647 saved to /home/milk/Desktop/RESEARCH/wyr/wyr_votes.db
 ✓ Done at 2026-06-09T17:00:26
 
+
+============================================================
+WYR Generation Job  — 2026-06-09T18:00:04
+============================================================
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  No pending vote deltas.
+
+[sync] Checking for unvoted recent questions to archive ...
+  Found 177 unvoted question(s) — pushing to server archive ...
+  SSH create archive dir: mkdir -p /home/server/APPS/wyr/questions_archive
+  ✓ create archive dir OK
+  SCP archive unvoted q458: /tmp/wyr_archive_458.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/458.json
+  ✓ archive unvoted q458 OK
+  SCP archive unvoted q459: /tmp/wyr_archive_459.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/459.json
+  ✓ archive unvoted q459 OK
+  SCP archive unvoted q460: /tmp/wyr_archive_460.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/460.json
+  ✓ archive unvoted q460 OK
+  SCP archive unvoted q461: /tmp/wyr_archive_461.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/461.json
+  ✓ archive unvoted q461 OK
+  SCP archive unvoted q462: /tmp/wyr_archive_462.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/462.json
+  ✓ archive unvoted q462 OK
+  SCP archive unvoted q463: /tmp/wyr_archive_463.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/463.json
+  ✓ archive unvoted q463 OK
+  SCP archive unvoted q464: /tmp/wyr_archive_464.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/464.json
+  ✓ archive unvoted q464 OK
+  SCP archive unvoted q465: /tmp/wyr_archive_465.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/465.json
+  ✓ archive unvoted q465 OK
+  SCP archive unvoted q466: /tmp/wyr_archive_466.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/466.json
+  ✓ archive unvoted q466 OK
+  SCP archive unvoted q467: /tmp/wyr_archive_467.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/467.json
+  ✓ archive unvoted q467 OK
+  SCP archive unvoted q468: /tmp/wyr_archive_468.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/468.json
+  ✓ archive unvoted q468 OK
+  SCP archive unvoted q469: /tmp/wyr_archive_469.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/469.json
+  ✓ archive unvoted q469 OK
+  SCP archive unvoted q470: /tmp/wyr_archive_470.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/470.json
+  ✓ archive unvoted q470 OK
+  SCP archive unvoted q473: /tmp/wyr_archive_473.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/473.json
+  ✓ archive unvoted q473 OK
+  SCP archive unvoted q474: /tmp/wyr_archive_474.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/474.json
+  ✓ archive unvoted q474 OK
+  SCP archive unvoted q476: /tmp/wyr_archive_476.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/476.json
+  ✓ archive unvoted q476 OK
+  SCP archive unvoted q477: /tmp/wyr_archive_477.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/477.json
+  ✓ archive unvoted q477 OK
+  SCP archive unvoted q478: /tmp/wyr_archive_478.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/478.json
+  ✓ archive unvoted q478 OK
+  SCP archive unvoted q480: /tmp/wyr_archive_480.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/480.json
+  ✓ archive unvoted q480 OK
+  SCP archive unvoted q482: /tmp/wyr_archive_482.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/482.json
+  ✓ archive unvoted q482 OK
+  SCP archive unvoted q483: /tmp/wyr_archive_483.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/483.json
+  ✓ archive unvoted q483 OK
+  SCP archive unvoted q484: /tmp/wyr_archive_484.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/484.json
+  ✓ archive unvoted q484 OK
+  SCP archive unvoted q485: /tmp/wyr_archive_485.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/485.json
+  ✓ archive unvoted q485 OK
+  SCP archive unvoted q486: /tmp/wyr_archive_486.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/486.json
+  ✓ archive unvoted q486 OK
+  SCP archive unvoted q487: /tmp/wyr_archive_487.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/487.json
+  ✓ archive unvoted q487 OK
+  SCP archive unvoted q488: /tmp/wyr_archive_488.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/488.json
+  ✓ archive unvoted q488 OK
+  SCP archive unvoted q489: /tmp/wyr_archive_489.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/489.json
+  ✓ archive unvoted q489 OK
+  SCP archive unvoted q490: /tmp/wyr_archive_490.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/490.json
+  ✓ archive unvoted q490 OK
+  SCP archive unvoted q491: /tmp/wyr_archive_491.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/491.json
+  ✓ archive unvoted q491 OK
+  SCP archive unvoted q492: /tmp/wyr_archive_492.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/492.json
+  ✓ archive unvoted q492 OK
+  SCP archive unvoted q493: /tmp/wyr_archive_493.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/493.json
+  ✓ archive unvoted q493 OK
+  SCP archive unvoted q494: /tmp/wyr_archive_494.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/494.json
+  ✓ archive unvoted q494 OK
+  SCP archive unvoted q496: /tmp/wyr_archive_496.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/496.json
+  ✓ archive unvoted q496 OK
+  SCP archive unvoted q497: /tmp/wyr_archive_497.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/497.json
+  ✓ archive unvoted q497 OK
+  SCP archive unvoted q498: /tmp/wyr_archive_498.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/498.json
+  ✓ archive unvoted q498 OK
+  SCP archive unvoted q499: /tmp/wyr_archive_499.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/499.json
+  ✓ archive unvoted q499 OK
+  SCP archive unvoted q500: /tmp/wyr_archive_500.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/500.json
+  ✓ archive unvoted q500 OK
+  SCP archive unvoted q501: /tmp/wyr_archive_501.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/501.json
+  ✓ archive unvoted q501 OK
+  SCP archive unvoted q502: /tmp/wyr_archive_502.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/502.json
+  ✓ archive unvoted q502 OK
+  SCP archive unvoted q503: /tmp/wyr_archive_503.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/503.json
+  ✓ archive unvoted q503 OK
+  SCP archive unvoted q504: /tmp/wyr_archive_504.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/504.json
+  ✓ archive unvoted q504 OK
+  SCP archive unvoted q505: /tmp/wyr_archive_505.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/505.json
+  ✓ archive unvoted q505 OK
+  SCP archive unvoted q506: /tmp/wyr_archive_506.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/506.json
+  ✓ archive unvoted q506 OK
+  SCP archive unvoted q507: /tmp/wyr_archive_507.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/507.json
+  ✓ archive unvoted q507 OK
+  SCP archive unvoted q508: /tmp/wyr_archive_508.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/508.json
+  ✓ archive unvoted q508 OK
+  SCP archive unvoted q509: /tmp/wyr_archive_509.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/509.json
+  ✓ archive unvoted q509 OK
+  SCP archive unvoted q510: /tmp/wyr_archive_510.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/510.json
+  ✓ archive unvoted q510 OK
+  SCP archive unvoted q511: /tmp/wyr_archive_511.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/511.json
+  ✓ archive unvoted q511 OK
+  SCP archive unvoted q512: /tmp/wyr_archive_512.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/512.json
+  ✓ archive unvoted q512 OK
+  SCP archive unvoted q513: /tmp/wyr_archive_513.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/513.json
+  ✓ archive unvoted q513 OK
+  SCP archive unvoted q514: /tmp/wyr_archive_514.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/514.json
+  ✓ archive unvoted q514 OK
+  SCP archive unvoted q515: /tmp/wyr_archive_515.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/515.json
+  ✓ archive unvoted q515 OK
+  SCP archive unvoted q516: /tmp/wyr_archive_516.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/516.json
+  ✓ archive unvoted q516 OK
+  SCP archive unvoted q517: /tmp/wyr_archive_517.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/517.json
+  ✓ archive unvoted q517 OK
+  SCP archive unvoted q518: /tmp/wyr_archive_518.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/518.json
+  ✓ archive unvoted q518 OK
+  SCP archive unvoted q519: /tmp/wyr_archive_519.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/519.json
+  ✓ archive unvoted q519 OK
+  SCP archive unvoted q520: /tmp/wyr_archive_520.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/520.json
+  ✓ archive unvoted q520 OK
+  SCP archive unvoted q521: /tmp/wyr_archive_521.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/521.json
+  ✓ archive unvoted q521 OK
+  SCP archive unvoted q522: /tmp/wyr_archive_522.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/522.json
+  ✓ archive unvoted q522 OK
+  SCP archive unvoted q523: /tmp/wyr_archive_523.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/523.json
+  ✓ archive unvoted q523 OK
+  SCP archive unvoted q525: /tmp/wyr_archive_525.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/525.json
+  ✓ archive unvoted q525 OK
+  SCP archive unvoted q526: /tmp/wyr_archive_526.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/526.json
+  ✓ archive unvoted q526 OK
+  SCP archive unvoted q527: /tmp/wyr_archive_527.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/527.json
+  ✓ archive unvoted q527 OK
+  SCP archive unvoted q528: /tmp/wyr_archive_528.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/528.json
+  ✓ archive unvoted q528 OK
+  SCP archive unvoted q529: /tmp/wyr_archive_529.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/529.json
+  ✓ archive unvoted q529 OK
+  SCP archive unvoted q530: /tmp/wyr_archive_530.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/530.json
+  ✓ archive unvoted q530 OK
+  SCP archive unvoted q531: /tmp/wyr_archive_531.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/531.json
+  ✓ archive unvoted q531 OK
+  SCP archive unvoted q532: /tmp/wyr_archive_532.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/532.json
+  ✓ archive unvoted q532 OK
+  SCP archive unvoted q533: /tmp/wyr_archive_533.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/533.json
+  ✓ archive unvoted q533 OK
+  SCP archive unvoted q534: /tmp/wyr_archive_534.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/534.json
+  ✓ archive unvoted q534 OK
+  SCP archive unvoted q535: /tmp/wyr_archive_535.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/535.json
+  ✓ archive unvoted q535 OK
+  SCP archive unvoted q536: /tmp/wyr_archive_536.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/536.json
+  ✓ archive unvoted q536 OK
+  SCP archive unvoted q537: /tmp/wyr_archive_537.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/537.json
+  ✓ archive unvoted q537 OK
+  SCP archive unvoted q538: /tmp/wyr_archive_538.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/538.json
+  ✓ archive unvoted q538 OK
+  SCP archive unvoted q539: /tmp/wyr_archive_539.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/539.json
+  ✓ archive unvoted q539 OK
+  SCP archive unvoted q540: /tmp/wyr_archive_540.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/540.json
+  ✓ archive unvoted q540 OK
+  SCP archive unvoted q541: /tmp/wyr_archive_541.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/541.json
+  ✓ archive unvoted q541 OK
+  SCP archive unvoted q542: /tmp/wyr_archive_542.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/542.json
+  ✓ archive unvoted q542 OK
+  SCP archive unvoted q544: /tmp/wyr_archive_544.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/544.json
+  ✓ archive unvoted q544 OK
+  SCP archive unvoted q545: /tmp/wyr_archive_545.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/545.json
+  ✓ archive unvoted q545 OK
+  SCP archive unvoted q546: /tmp/wyr_archive_546.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/546.json
+  ✓ archive unvoted q546 OK
+  SCP archive unvoted q547: /tmp/wyr_archive_547.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/547.json
+  ✓ archive unvoted q547 OK
+  SCP archive unvoted q548: /tmp/wyr_archive_548.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/548.json
+  ✓ archive unvoted q548 OK
+  SCP archive unvoted q549: /tmp/wyr_archive_549.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/549.json
+  ✓ archive unvoted q549 OK
+  SCP archive unvoted q550: /tmp/wyr_archive_550.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/550.json
+  ✓ archive unvoted q550 OK
+  SCP archive unvoted q551: /tmp/wyr_archive_551.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/551.json
+  ✓ archive unvoted q551 OK
+  SCP archive unvoted q552: /tmp/wyr_archive_552.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/552.json
+  ✓ archive unvoted q552 OK
+  SCP archive unvoted q553: /tmp/wyr_archive_553.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/553.json
+  ✓ archive unvoted q553 OK
+  SCP archive unvoted q554: /tmp/wyr_archive_554.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/554.json
+  ✓ archive unvoted q554 OK
+  SCP archive unvoted q555: /tmp/wyr_archive_555.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/555.json
+  ✓ archive unvoted q555 OK
+  SCP archive unvoted q556: /tmp/wyr_archive_556.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/556.json
+  ✓ archive unvoted q556 OK
+  SCP archive unvoted q557: /tmp/wyr_archive_557.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/557.json
+  ✓ archive unvoted q557 OK
+  SCP archive unvoted q558: /tmp/wyr_archive_558.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/558.json
+  ✓ archive unvoted q558 OK
+  SCP archive unvoted q559: /tmp/wyr_archive_559.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/559.json
+  ✓ archive unvoted q559 OK
+  SCP archive unvoted q560: /tmp/wyr_archive_560.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/560.json
+  ✓ archive unvoted q560 OK
+  SCP archive unvoted q561: /tmp/wyr_archive_561.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/561.json
+  ✓ archive unvoted q561 OK
+  SCP archive unvoted q562: /tmp/wyr_archive_562.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/562.json
+  ✓ archive unvoted q562 OK
+  SCP archive unvoted q563: /tmp/wyr_archive_563.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/563.json
+  ✓ archive unvoted q563 OK
+  SCP archive unvoted q564: /tmp/wyr_archive_564.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/564.json
+  ✓ archive unvoted q564 OK
+  SCP archive unvoted q565: /tmp/wyr_archive_565.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/565.json
+  ✓ archive unvoted q565 OK
+  SCP archive unvoted q566: /tmp/wyr_archive_566.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/566.json
+  ✓ archive unvoted q566 OK
+  SCP archive unvoted q567: /tmp/wyr_archive_567.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/567.json
+  ✓ archive unvoted q567 OK
+  SCP archive unvoted q568: /tmp/wyr_archive_568.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/568.json
+  ✓ archive unvoted q568 OK
+  SCP archive unvoted q569: /tmp/wyr_archive_569.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/569.json
+  ✓ archive unvoted q569 OK
+  SCP archive unvoted q570: /tmp/wyr_archive_570.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/570.json
+  ✓ archive unvoted q570 OK
+  SCP archive unvoted q571: /tmp/wyr_archive_571.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/571.json
+  ✓ archive unvoted q571 OK
+  SCP archive unvoted q572: /tmp/wyr_archive_572.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/572.json
+  ✓ archive unvoted q572 OK
+  SCP archive unvoted q573: /tmp/wyr_archive_573.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/573.json
+  ✓ archive unvoted q573 OK
+  SCP archive unvoted q574: /tmp/wyr_archive_574.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/574.json
+  ✓ archive unvoted q574 OK
+  SCP archive unvoted q575: /tmp/wyr_archive_575.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/575.json
+  ✓ archive unvoted q575 OK
+  SCP archive unvoted q576: /tmp/wyr_archive_576.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/576.json
+  ✓ archive unvoted q576 OK
+  SCP archive unvoted q577: /tmp/wyr_archive_577.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/577.json
+  ✓ archive unvoted q577 OK
+  SCP archive unvoted q578: /tmp/wyr_archive_578.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/578.json
+  ✓ archive unvoted q578 OK
+  SCP archive unvoted q579: /tmp/wyr_archive_579.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/579.json
+  ✓ archive unvoted q579 OK
+  SCP archive unvoted q580: /tmp/wyr_archive_580.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/580.json
+  ✓ archive unvoted q580 OK
+  SCP archive unvoted q581: /tmp/wyr_archive_581.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/581.json
+  ✓ archive unvoted q581 OK
+  SCP archive unvoted q582: /tmp/wyr_archive_582.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/582.json
+  ✓ archive unvoted q582 OK
+  SCP archive unvoted q583: /tmp/wyr_archive_583.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/583.json
+  ✓ archive unvoted q583 OK
+  SCP archive unvoted q584: /tmp/wyr_archive_584.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/584.json
+  ✓ archive unvoted q584 OK
+  SCP archive unvoted q585: /tmp/wyr_archive_585.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/585.json
+  ✓ archive unvoted q585 OK
+  SCP archive unvoted q586: /tmp/wyr_archive_586.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/586.json
+  ✓ archive unvoted q586 OK
+  SCP archive unvoted q587: /tmp/wyr_archive_587.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/587.json
+  ✓ archive unvoted q587 OK
+  SCP archive unvoted q588: /tmp/wyr_archive_588.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/588.json
+  ✓ archive unvoted q588 OK
+  SCP archive unvoted q589: /tmp/wyr_archive_589.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/589.json
+  ✓ archive unvoted q589 OK
+  SCP archive unvoted q590: /tmp/wyr_archive_590.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/590.json
+  ✓ archive unvoted q590 OK
+  SCP archive unvoted q591: /tmp/wyr_archive_591.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/591.json
+  ✓ archive unvoted q591 OK
+  SCP archive unvoted q592: /tmp/wyr_archive_592.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/592.json
+  ✓ archive unvoted q592 OK
+  SCP archive unvoted q593: /tmp/wyr_archive_593.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/593.json
+  ✓ archive unvoted q593 OK
+  SCP archive unvoted q594: /tmp/wyr_archive_594.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/594.json
+  ✓ archive unvoted q594 OK
+  SCP archive unvoted q595: /tmp/wyr_archive_595.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/595.json
+  ✓ archive unvoted q595 OK
+  SCP archive unvoted q596: /tmp/wyr_archive_596.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/596.json
+  ✓ archive unvoted q596 OK
+  SCP archive unvoted q597: /tmp/wyr_archive_597.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/597.json
+  ✓ archive unvoted q597 OK
+  SCP archive unvoted q598: /tmp/wyr_archive_598.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/598.json
+  ✓ archive unvoted q598 OK
+  SCP archive unvoted q599: /tmp/wyr_archive_599.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/599.json
+  ✓ archive unvoted q599 OK
+  SCP archive unvoted q600: /tmp/wyr_archive_600.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/600.json
+  ✓ archive unvoted q600 OK
+  SCP archive unvoted q601: /tmp/wyr_archive_601.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/601.json
+  ✓ archive unvoted q601 OK
+  SCP archive unvoted q602: /tmp/wyr_archive_602.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/602.json
+  ✓ archive unvoted q602 OK
+  SCP archive unvoted q603: /tmp/wyr_archive_603.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/603.json
+  ✓ archive unvoted q603 OK
+  SCP archive unvoted q604: /tmp/wyr_archive_604.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/604.json
+  ✓ archive unvoted q604 OK
+  SCP archive unvoted q605: /tmp/wyr_archive_605.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/605.json
+  ✓ archive unvoted q605 OK
+  SCP archive unvoted q606: /tmp/wyr_archive_606.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/606.json
+  ✓ archive unvoted q606 OK
+  SCP archive unvoted q607: /tmp/wyr_archive_607.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/607.json
+  ✓ archive unvoted q607 OK
+  SCP archive unvoted q608: /tmp/wyr_archive_608.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/608.json
+  ✓ archive unvoted q608 OK
+  SCP archive unvoted q609: /tmp/wyr_archive_609.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/609.json
+  ✓ archive unvoted q609 OK
+  SCP archive unvoted q610: /tmp/wyr_archive_610.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/610.json
+  ✓ archive unvoted q610 OK
+  SCP archive unvoted q611: /tmp/wyr_archive_611.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/611.json
+  ✓ archive unvoted q611 OK
+  SCP archive unvoted q612: /tmp/wyr_archive_612.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/612.json
+  ✓ archive unvoted q612 OK
+  SCP archive unvoted q613: /tmp/wyr_archive_613.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/613.json
+  ✓ archive unvoted q613 OK
+  SCP archive unvoted q617: /tmp/wyr_archive_617.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/617.json
+  ✓ archive unvoted q617 OK
+  SCP archive unvoted q618: /tmp/wyr_archive_618.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/618.json
+  ✓ archive unvoted q618 OK
+  SCP archive unvoted q619: /tmp/wyr_archive_619.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/619.json
+  ✓ archive unvoted q619 OK
+  SCP archive unvoted q620: /tmp/wyr_archive_620.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/620.json
+  ✓ archive unvoted q620 OK
+  SCP archive unvoted q621: /tmp/wyr_archive_621.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/621.json[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='dynamic': {'beta_fast', 'mscale', 'alpha', 'mscale_all_dim', 'beta_slow'}
+[transformers] Unrecognized keys in `rope_parameters` for 'rope_type'='dynamic': {'beta_fast', 'mscale', 'alpha', 'mscale_all_dim', 'beta_slow'}
+
+  ✓ archive unvoted q621 OK
+  SCP archive unvoted q622: /tmp/wyr_archive_622.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/622.json
+  ✓ archive unvoted q622 OK
+  SCP archive unvoted q623: /tmp/wyr_archive_623.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/623.json
+  ✓ archive unvoted q623 OK
+  SCP archive unvoted q624: /tmp/wyr_archive_624.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/624.json
+  ✓ archive unvoted q624 OK
+  SCP archive unvoted q625: /tmp/wyr_archive_625.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/625.json
+  ✓ archive unvoted q625 OK
+  SCP archive unvoted q627: /tmp/wyr_archive_627.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/627.json
+  ✓ archive unvoted q627 OK
+  SCP archive unvoted q628: /tmp/wyr_archive_628.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/628.json
+  ✓ archive unvoted q628 OK
+  SCP archive unvoted q629: /tmp/wyr_archive_629.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/629.json
+  ✓ archive unvoted q629 OK
+  SCP archive unvoted q630: /tmp/wyr_archive_630.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/630.json
+  ✓ archive unvoted q630 OK
+  SCP archive unvoted q631: /tmp/wyr_archive_631.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/631.json
+  ✓ archive unvoted q631 OK
+  SCP archive unvoted q632: /tmp/wyr_archive_632.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/632.json
+  ✓ archive unvoted q632 OK
+  SCP archive unvoted q633: /tmp/wyr_archive_633.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/633.json
+  ✓ archive unvoted q633 OK
+  SCP archive unvoted q634: /tmp/wyr_archive_634.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/634.json
+  ✓ archive unvoted q634 OK
+  SCP archive unvoted q635: /tmp/wyr_archive_635.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/635.json
+  ✓ archive unvoted q635 OK
+  SCP archive unvoted q636: /tmp/wyr_archive_636.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/636.json
+  ✓ archive unvoted q636 OK
+  SCP archive unvoted q637: /tmp/wyr_archive_637.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/637.json
+  ✓ archive unvoted q637 OK
+  SCP archive unvoted q638: /tmp/wyr_archive_638.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/638.json
+  ✓ archive unvoted q638 OK
+  SCP archive unvoted q639: /tmp/wyr_archive_639.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/639.json
+  ✓ archive unvoted q639 OK
+  SCP archive unvoted q640: /tmp/wyr_archive_640.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/640.json
+  ✓ archive unvoted q640 OK
+  SCP archive unvoted q641: /tmp/wyr_archive_641.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/641.json
+  ✓ archive unvoted q641 OK
+  SCP archive unvoted q642: /tmp/wyr_archive_642.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/642.json
+  ✓ archive unvoted q642 OK
+  SCP archive unvoted q643: /tmp/wyr_archive_643.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/643.json
+  ✓ archive unvoted q643 OK
+  SCP archive unvoted q645: /tmp/wyr_archive_645.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/645.json
+  ✓ archive unvoted q645 OK
+  SCP archive unvoted q646: /tmp/wyr_archive_646.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/646.json
+  ✓ archive unvoted q646 OK
+  SCP archive unvoted q647: /tmp/wyr_archive_647.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/647.json
+  ✓ archive unvoted q647 OK
+  ✓ Archived 177/177 unvoted question(s)
+Created question row id=648
+
+--- Slot A: tencent ---
+  [tencent] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/tencent-wyr-merged ...
+Loading weights:   0%|          | 0/354 [00:00<?, ?it/s]Loading weights:   0%|          | 1/354 [00:00<01:23,  4.25it/s]Loading weights:   7%|▋         | 26/354 [00:00<00:03, 84.98it/s]Loading weights:  11%|█         | 38/354 [00:00<00:03, 88.08it/s]Loading weights:  14%|█▍        | 49/354 [00:00<00:03, 92.95it/s]Loading weights:  19%|█▉        | 69/354 [00:00<00:02, 116.72it/s]Loading weights:  23%|██▎       | 82/354 [00:00<00:02, 113.09it/s]Loading weights:  29%|██▉       | 102/354 [00:00<00:01, 133.81it/s]Loading weights:  33%|███▎      | 116/354 [00:01<00:01, 130.42it/s]Loading weights:  38%|███▊      | 136/354 [00:01<00:01, 144.24it/s]Loading weights:  43%|████▎     | 153/354 [00:01<00:01, 149.15it/s]Loading weights:  48%|████▊     | 169/354 [00:01<00:01, 147.48it/s]Loading weights:  52%|█████▏    | 185/354 [00:01<00:01, 150.13it/s]Loading weights:  57%|█████▋    | 202/354 [00:01<00:01, 151.25it/s]Loading weights:  62%|██████▏   | 219/354 [00:01<00:00, 156.13it/s]Loading weights:  66%|██████▋   | 235/354 [00:01<00:00, 153.47it/s]Loading weights:  71%|███████   | 252/354 [00:01<00:00, 156.99it/s]Loading weights:  76%|███████▌  | 268/354 [00:02<00:00, 148.03it/s]Loading weights:  80%|███████▉  | 283/354 [00:02<00:00, 144.30it/s]Loading weights:  85%|████████▍ | 300/354 [00:02<00:00, 142.73it/s]Loading weights:  89%|████████▉ | 315/354 [00:02<00:00, 130.28it/s]Loading weights:  93%|█████████▎| 330/354 [00:02<00:00, 134.80it/s]Loading weights:  97%|█████████▋| 345/354 [00:02<00:00, 137.93it/s]Loading weights: 100%|██████████| 354/354 [00:02<00:00, 132.89it/s]
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer TokenizersBackend. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+  [tencent] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Be a bear\nB) be an elephant'
+  Parsed Option A: 'Be a bear'
+  Parsed Option B: 'be an elephant'
+
+--- Slot B: qwen ---
+  [qwen] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/qwen-wyr-merged ...
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:   0%|          | 1/338 [00:00<01:19,  4.23it/s]Loading weights:   5%|▌         | 17/338 [00:00<00:05, 62.32it/s]Loading weights:  12%|█▏        | 40/338 [00:00<00:02, 116.24it/s]Loading weights:  19%|█▊        | 63/338 [00:00<00:01, 152.27it/s]Loading weights:  24%|██▍       | 81/338 [00:00<00:01, 157.76it/s]Loading weights:  30%|██▉       | 100/338 [00:00<00:01, 164.88it/s]Loading weights:  36%|███▌      | 122/338 [00:00<00:01, 171.29it/s]Loading weights:  44%|████▍     | 148/338 [00:01<00:01, 174.41it/s]Loading weights:  51%|█████     | 172/338 [00:01<00:00, 175.98it/s]Loading weights:  58%|█████▊    | 196/338 [00:01<00:00, 174.35it/s]Loading weights:  65%|██████▍   | 219/338 [00:01<00:00, 187.92it/s]Loading weights:  71%|███████   | 239/338 [00:01<00:00, 149.37it/s]Loading weights:  76%|███████▌  | 256/338 [00:01<00:00, 145.56it/s]Loading weights:  81%|████████  | 273/338 [00:01<00:00, 150.62it/s]Loading weights:  86%|████████▋ | 292/338 [00:01<00:00, 151.90it/s]Loading weights:  91%|█████████ | 308/338 [00:02<00:00, 152.02it/s]Loading weights:  96%|█████████▌| 324/338 [00:02<00:00, 152.20it/s]Loading weights: 100%|██████████| 338/338 [00:02<00:00, 150.39it/s]
+  [qwen] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Never have to eat again\nB) Have food but it tastes terrible'
+  Parsed Option A: 'Never have to eat again'
+  Parsed Option B: 'Have food but it tastes terrible'
+
+--- Slot C: meta-llama ---
+  [meta-llama] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/meta-llama-wyr-merged ...
+Loading weights:   0%|          | 0/146 [00:00<?, ?it/s]Loading weights:   1%|          | 1/146 [00:00<00:37,  3.82it/s]Loading weights:   9%|▉         | 13/146 [00:00<00:03, 43.38it/s]Loading weights:  17%|█▋        | 25/146 [00:00<00:01, 68.41it/s]Loading weights:  27%|██▋       | 39/146 [00:00<00:01, 85.25it/s]Loading weights:  34%|███▍      | 50/146 [00:00<00:01, 86.82it/s]Loading weights:  45%|████▌     | 66/146 [00:00<00:00, 102.36it/s]Loading weights:  53%|█████▎    | 77/146 [00:00<00:00, 99.31it/s] Loading weights:  61%|██████    | 89/146 [00:01<00:00, 103.05it/s]Loading weights:  69%|██████▉   | 101/146 [00:01<00:00, 107.58it/s]Loading weights:  77%|███████▋  | 113/146 [00:01<00:00, 89.44it/s] Loading weights:  85%|████████▍ | 124/146 [00:01<00:00, 94.17it/s]Loading weights:  92%|█████████▏| 135/146 [00:01<00:00, 92.54it/s]Loading weights:  99%|█████████▉| 145/146 [00:01<00:00, 94.26it/s]Loading weights: 100%|██████████| 146/146 [00:01<00:00, 87.28it/s]
+  [meta-llama] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Always be 5ft tall\nB) Be a dog'
+  Parsed Option A: 'Always be 5ft tall'
+  Parsed Option B: 'Be a dog'
+
+--- Slot D: gemma ---
+  [gemma] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/gemma-wyr-merged ...
+Loading weights:   0%|          | 0/340 [00:00<?, ?it/s]Loading weights:   0%|          | 1/340 [00:00<02:53,  1.95it/s]Loading weights:   5%|▍         | 16/340 [00:00<00:09, 33.90it/s]Loading weights:  12%|█▏        | 42/340 [00:00<00:03, 76.88it/s]Loading weights:  16%|█▋        | 56/340 [00:00<00:03, 87.28it/s]Loading weights:  20%|██        | 69/340 [00:01<00:02, 92.36it/s]Loading weights:  28%|██▊       | 95/340 [00:01<00:01, 130.64it/s]Loading weights:  34%|███▍      | 117/340 [00:01<00:01, 152.52it/s]Loading weights:  40%|███▉      | 135/340 [00:01<00:01, 150.17it/s]Loading weights:  46%|████▌     | 157/340 [00:01<00:01, 161.47it/s]Loading weights:  51%|█████▏    | 175/340 [00:01<00:01, 162.56it/s]Loading weights:  59%|█████▊    | 199/340 [00:01<00:00, 171.35it/s]Loading weights:  66%|██████▌   | 225/340 [00:01<00:00, 194.08it/s]Loading weights:  73%|███████▎  | 249/340 [00:01<00:00, 204.48it/s]Loading weights:  81%|████████  | 276/340 [00:02<00:00, 216.38it/s]Loading weights:  89%|████████▉ | 302/340 [00:02<00:00, 224.95it/s]Loading weights:  96%|█████████▌| 325/340 [00:02<00:00, 213.65it/s]Loading weights: 100%|██████████| 340/340 [00:02<00:00, 147.41it/s]
+  [gemma] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) 30 years old\nB) 70+'
+  Parsed Option A: '30 years old'
+  Parsed Option B: '70+'
+
+--- Slot E: tinyllama ---
+  [tinyllama] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/tinyllama-wyr-merged ...
+Loading weights:   0%|          | 0/201 [00:00<?, ?it/s]Loading weights:   0%|          | 1/201 [00:00<00:50,  3.95it/s]Loading weights:   7%|▋         | 15/201 [00:00<00:03, 50.84it/s]Loading weights:  15%|█▌        | 31/201 [00:00<00:02, 82.14it/s]Loading weights:  21%|██        | 42/201 [00:00<00:01, 84.09it/s]Loading weights:  27%|██▋       | 55/201 [00:00<00:01, 93.01it/s]Loading weights:  33%|███▎      | 67/201 [00:00<00:01, 100.46it/s]Loading weights:  39%|███▉      | 78/201 [00:00<00:01, 96.64it/s] Loading weights:  47%|████▋     | 94/201 [00:01<00:00, 110.15it/s]Loading weights:  53%|█████▎    | 106/201 [00:01<00:00, 97.26it/s]Loading weights:  59%|█████▊    | 118/201 [00:01<00:00, 101.69it/s]Loading weights:  65%|██████▍   | 130/201 [00:01<00:00, 101.37it/s]Loading weights:  72%|███████▏  | 145/201 [00:01<00:00, 112.53it/s]Loading weights:  78%|███████▊  | 157/201 [00:01<00:00, 103.55it/s]Loading weights:  86%|████████▌ | 172/201 [00:01<00:00, 114.42it/s]Loading weights:  92%|█████████▏| 185/201 [00:01<00:00, 116.19it/s]Loading weights:  99%|█████████▉| 199/201 [00:02<00:00, 120.48it/s]Loading weights: 100%|██████████| 201/201 [00:02<00:00, 100.03it/s]
+[transformers] Both `max_new_tokens` (=80) and `max_length`(=2048) seem to have been set. `max_new_tokens` will take precedence. Please refer to the documentation for more information. (https://huggingface.co/docs/transformers/main/en/main_classes/text_generation)
+  [tinyllama] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) 100 bucks for every time someone else speaks in your group chat\nB) 50 dollars per tweet'
+  Parsed Option A: '100 bucks for every time someone else speaks in your group chat'
+  Parsed Option B: '50 dollars per tweet'
+
+--- Slot F: smol ---
+  [smol] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:   0%|          | 1/218 [00:00<00:43,  4.94it/s]Loading weights:   6%|▌         | 13/218 [00:00<00:04, 49.39it/s]Loading weights:  10%|█         | 22/218 [00:00<00:03, 62.15it/s]Loading weights:  14%|█▍        | 31/218 [00:00<00:02, 70.03it/s]Loading weights:  18%|█▊        | 40/218 [00:00<00:02, 74.42it/s]Loading weights:  22%|██▏       | 49/218 [00:00<00:02, 77.75it/s]Loading weights:  27%|██▋       | 58/218 [00:00<00:02, 79.45it/s]Loading weights:  31%|███       | 67/218 [00:00<00:01, 81.25it/s]Loading weights:  35%|███▍      | 76/218 [00:01<00:01, 74.16it/s]Loading weights:  40%|████      | 88/218 [00:01<00:01, 84.11it/s]Loading weights:  44%|████▍     | 97/218 [00:01<00:01, 72.99it/s]Loading weights:  48%|████▊     | 105/218 [00:01<00:01, 69.20it/s]Loading weights:  52%|█████▏    | 113/218 [00:01<00:01, 65.44it/s]Loading weights:  56%|█████▌    | 121/218 [00:01<00:01, 68.96it/s]Loading weights:  59%|█████▉    | 129/218 [00:01<00:01, 70.36it/s]Loading weights:  63%|██████▎   | 138/218 [00:01<00:01, 69.98it/s]Loading weights:  67%|██████▋   | 146/218 [00:02<00:01, 66.58it/s]Loading weights:  71%|███████   | 155/218 [00:02<00:00, 67.90it/s]Loading weights:  76%|███████▌  | 165/218 [00:02<00:00, 72.52it/s]Loading weights:  80%|████████  | 175/218 [00:02<00:00, 76.17it/s]Loading weights:  85%|████████▍ | 185/218 [00:02<00:00, 78.56it/s]Loading weights:  89%|████████▉ | 195/218 [00:02<00:00, 82.28it/s]Loading weights:  94%|█████████▍| 206/218 [00:02<00:00, 88.84it/s]Loading weights:  99%|█████████▊| 215/218 [00:02<00:00, 88.75it/s]Loading weights: 100%|██████████| 218/218 [00:02<00:00, 74.33it/s]
+  [smol] Loaded on cuda:0
+  Raw output: 'Would you rather\nA) Have your name be the most used word in a sentence every time it is spoken by someone with an accent.'
+  Parsed Option A: None
+  Parsed Option B: None
+  Failed to parse options, retrying...
+  [smol] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 58/218 [00:00<00:00, 572.78it/s]Loading weights:  64%|██████▍   | 140/218 [00:00<00:00, 709.56it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 724.82it/s]
+  [smol] Loaded on cuda:0
+  Raw output: "Would you rather...\nA) Have all your teeth fall out but be able to regrow one at a time (but the new tooth is 1/4 inch shorter then last ones and can't fit in any of your existing slots for replacement)... twice per month."
+  Parsed Option A: None
+  Parsed Option B: None
+  Failed to parse options, retrying...
+  [smol] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:  26%|██▌       | 57/218 [00:00<00:00, 558.82it/s]Loading weights:  59%|█████▉    | 129/218 [00:00<00:00, 652.63it/s]Loading weights:  92%|█████████▏| 201/218 [00:00<00:00, 677.06it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 669.33it/s]
+  [smol] Loaded on cuda:0
+  Raw output: "Would you rather...\nA) Always be hungry but never full from eating one meal a day for your entire life (30 days)... Wouldnt even know when it's over because of hunger."
+  Parsed Option A: None
+  Parsed Option B: None
+  Failed to parse options, retrying...
+  [smol] Loading from /home/milk/Desktop/RESEARCH/wyr/model_outputs/smol-wyr-merged ...
+Loading weights:   0%|          | 0/218 [00:00<?, ?it/s]Loading weights:  27%|██▋       | 58/218 [00:00<00:00, 574.81it/s]Loading weights:  64%|██████▍   | 140/218 [00:00<00:00, 710.06it/s]Loading weights: 100%|██████████| 218/218 [00:00<00:00, 738.78it/s]
+  [smol] Loaded on cuda:0
+  Raw output: 'Would you rather...\nA) Be able to eat anything that tastes good but cant taste it\nB) be able to drink any liquid except water'
+  Parsed Option A: 'Be able to eat anything that tastes good but cant taste it'
+  Parsed Option B: 'be able to drink any liquid except water'
+✓ Status written to /home/milk/Desktop/RESEARCH/wyr/job_status.json
+
+✓ Wrote /home/milk/Desktop/RESEARCH/wyr/current_question.json
+
+[sync] Pushing question JSON to web server ...
+  SCP push question: /home/milk/Desktop/RESEARCH/wyr/current_question.json → milk@141.166.173.142:/home/server/APPS/wyr/current_question.json
+  ✓ push question OK
+  SSH create archive dir: mkdir -p /home/server/APPS/wyr/questions_archive
+  ✓ create archive dir OK
+  SCP archive question 648: /home/milk/Desktop/RESEARCH/wyr/current_question.json → milk@141.166.173.142:/home/server/APPS/wyr/questions_archive/648.json
+  ✓ archive question 648 OK
+✓ question_id=648 saved to /home/milk/Desktop/RESEARCH/wyr/wyr_votes.db
+✓ Done at 2026-06-09T18:01:21
+
