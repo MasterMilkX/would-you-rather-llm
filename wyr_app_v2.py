@@ -333,6 +333,65 @@ def api_vote():
     })
 
 
+def _is_placeholder(q: dict) -> bool:
+    """Return True if every slot in this question has generic placeholder option text."""
+    slots = q.get("slots", {})
+    if not slots:
+        return True
+    for slot_data in slots.values():
+        opt_a = (slot_data.get("option_a") or "").strip().lower()
+        opt_b = (slot_data.get("option_b") or "").strip().lower()
+        if opt_a not in ("option a", "", "option_a") and opt_b not in ("option b", "", "option_b"):
+            return False
+    return True
+
+
+@app.get("/api/recycled/ids")
+def api_recycled_ids():
+    """
+    Return a shuffled list of valid archived question IDs for recycled mode.
+    Excludes the currently active question and any placeholder questions.
+    """
+    active = get_active_question()
+    active_qid = active["question_id"] if active else None
+
+    valid_ids = []
+    for qid in list_archived_question_ids():
+        if qid == active_qid:
+            continue
+        q = load_archived_question(qid)
+        if q and not _is_placeholder(q):
+            valid_ids.append(qid)
+
+    random.shuffle(valid_ids)
+    return jsonify({"ids": valid_ids, "total": len(valid_ids)})
+
+
+@app.get("/api/recycled")
+def api_recycled():
+    """
+    Return a specific archived question by ID for the recycled questions mode.
+
+    Query params:
+        id : question ID to fetch
+    """
+    qid_param = request.args.get("id", "")
+    try:
+        qid = int(qid_param)
+    except (ValueError, TypeError):
+        return jsonify({"error": "Required: ?id=<question_id>"}), 400
+
+    q = load_archived_question(qid)
+    if not q:
+        return jsonify({"error": f"Question {qid} not found"}), 404
+
+    return jsonify({
+        "question_id":  q["question_id"],
+        "generated_at": q["generated_at"],
+        "slots":        q["slots"],
+    })
+
+
 @app.get("/api/results/<int:question_id>")
 def api_results(question_id):
     """Vote results for any question (reveals model names)."""

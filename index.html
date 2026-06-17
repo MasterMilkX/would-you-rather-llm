@@ -120,6 +120,28 @@
   .reveal-tag{font-size:0.7rem;color:var(--pink);margin-top:10px;letter-spacing:1px;text-align:center;}
   .voted-badge{font-size:0.7rem;color:var(--yellow);letter-spacing:1px;text-align:center;margin-bottom:6px;}
   footer{text-align:center;padding:20px;font-size:0.7rem;color:var(--teal);letter-spacing:2px;border-top:1px solid var(--yellow);}
+  .recycled-btn-wrap{text-align:center;padding:10px 20px 30px;}
+  .recycled-btn{
+    background:var(--teal-dim);border:1px solid var(--teal);color:var(--text);
+    font-family:'Share Tech Mono',monospace;font-size:0.8rem;letter-spacing:2px;
+    padding:10px 24px;cursor:pointer;transition:all 0.15s;
+  }
+  .recycled-btn:hover{background:var(--teal-dark);border-color:var(--teal);color:#fff;}
+  #recycled-view{display:none;max-width:800px;margin:0 auto;padding:0 20px 60px;}
+  #recycled-view.active{display:block;}
+  .recycled-header{text-align:center;padding:1rem 0 1.5rem;}
+  .recycled-label{font-family:'VT323',monospace;font-size:1.5rem;color:var(--teal);letter-spacing:4px;}
+  .recycled-sub{font-size:0.7rem;color:var(--text-dim);letter-spacing:2px;margin-top:4px;}
+  .recycled-nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px;gap:12px;}
+  .recycled-nav-btn{
+    background:var(--teal-dim);border:1px solid var(--teal);color:var(--text);
+    font-family:'Share Tech Mono',monospace;font-size:0.75rem;letter-spacing:2px;
+    padding:10px 18px;cursor:pointer;transition:all 0.15s;flex:1;text-align:center;
+  }
+  .recycled-nav-btn:hover{background:var(--teal-dark);color:#fff;}
+  .recycled-nav-btn.primary{background:rgba(255,140,0,0.25);border-color:var(--yellow);color:var(--yellow);}
+  .recycled-nav-btn.primary:hover{background:rgba(255,140,0,0.45);color:#fff;}
+  .recycled-count{font-size:0.65rem;color:var(--teal-dim);letter-spacing:1px;text-align:center;margin-top:10px;}
   ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--teal-dim);}
   @media(max-width:640px){
     .titlebar { padding: 6px 8px; }
@@ -145,6 +167,9 @@
     .result-row { font-size: 0.7rem; }
     .bar { height: 6px; }
     footer { font-size: 0.62rem; padding: 14px; }
+    .recycled-nav { flex-direction: column; }
+    .recycled-nav-btn { width: 100%; text-align: center; }
+    #recycled-view { padding: 0 12px 40px; }
   }
 </style>
 </head>
@@ -174,6 +199,24 @@
   <div class="win" id="card-D"></div>
   <div class="win" id="card-E"></div>
   <div class="win" id="card-F"></div>
+</div>
+
+<div class="recycled-btn-wrap" id="recycled-btn-wrap">
+  <button class="recycled-btn" onclick="enterRecycledMode()">[ EXPLORE RECYCLED QUESTIONS ]</button>
+</div>
+
+<div id="recycled-view">
+  <div class="recycled-header">
+    <div class="recycled-label">// RECYCLED QUESTIONS //</div>
+    <div class="recycled-sub">VOTING THROUGH ARCHIVED WYR QUESTIONS — ONE AT A TIME</div>
+  </div>
+  <div class="status" id="recycled-status">LOADING_</div>
+  <div class="win" id="recycled-card" style="transition-delay:0s;"></div>
+  <div class="recycled-nav">
+    <button class="recycled-nav-btn" onclick="exitRecycledMode()">← BACK TO LIVE</button>
+    <button class="recycled-nav-btn primary" id="recycled-next-btn" onclick="loadRecycledQuestion()">NEXT QUESTION →</button>
+  </div>
+  <div class="recycled-count" id="recycled-count"></div>
 </div>
 
 <footer>[ WOULD YOU RATHER LLM // ALL OUTPUTS AI GENERATED // THIS IS FOR RESEARCH PURPOSES ONLY - NO PERSONAL DATA IS COLLECTED; ONLY VOTES // <span onclick="window.open('https://ai.google.dev/gemma/terms', '_blank')">Gemma Terms of Use</span> ]</footer>
@@ -388,6 +431,204 @@ function setStatus(cls,msg){
 }
 
 loadQuestion();
+
+// ── Recycled Questions Mode ───────────────────────────────────────────────────
+
+const recycled = {
+  queue: [],
+  queueIndex: 0,
+  currentQid: null,
+  currentSlot: null,
+  voted: false,
+};
+
+async function enterRecycledMode() {
+  document.getElementById('recycled-btn-wrap').style.display = 'none';
+  document.getElementById('grid').style.display = 'none';
+  document.querySelector('.countdown-bar').style.display = 'none';
+  document.getElementById('genTime').style.display = 'none';
+  document.getElementById('status').style.display = 'none';
+  document.getElementById('recycled-view').classList.add('active');
+  setRecycledStatus('loading', 'LOADING QUESTION LIST_');
+  try {
+    const resp = await fetch('/api/recycled/ids');
+    if (!resp.ok) { setRecycledStatus('error', 'FAILED TO LOAD LIST'); return; }
+    const data = await resp.json();
+    recycled.queue = data.ids;
+    recycled.queueIndex = 0;
+    updateRecycledCount();
+    loadRecycledQuestion();
+  } catch(e) { setRecycledStatus('error', 'CONNECTION ERROR: ' + e.message); }
+}
+
+function exitRecycledMode() {
+  document.getElementById('recycled-view').classList.remove('active');
+  document.getElementById('recycled-btn-wrap').style.display = '';
+  document.getElementById('grid').style.display = '';
+  document.querySelector('.countdown-bar').style.display = '';
+  document.getElementById('genTime').style.display = '';
+  document.getElementById('status').style.display = '';
+  const card = document.getElementById('recycled-card');
+  card.classList.remove('visible');
+  card.innerHTML = '';
+}
+
+async function loadRecycledQuestion() {
+  if (recycled.queueIndex >= recycled.queue.length) {
+    // All exhausted — reshuffle and loop
+    recycled.queue = recycled.queue.slice().sort(() => Math.random() - 0.5);
+    recycled.queueIndex = 0;
+  }
+  const qid = recycled.queue[recycled.queueIndex++];
+
+  const card = document.getElementById('recycled-card');
+  card.classList.remove('visible');
+  recycled.voted = false;
+  document.getElementById('recycled-next-btn').disabled = false;
+  setRecycledStatus('loading', 'LOADING ARCHIVED QUESTION_');
+
+  try {
+    const resp = await fetch(`/api/recycled?id=${qid}`);
+    if (!resp.ok) { const e = await resp.json(); setRecycledStatus('error', e.error || 'FAILED TO LOAD'); return; }
+    const data = await resp.json();
+
+    recycled.currentQid = data.question_id;
+
+    // Pick a random slot from this question
+    const slots = Object.keys(data.slots || {});
+    if (!slots.length) { loadRecycledQuestion(); return; }
+    const slot = slots[Math.floor(Math.random() * slots.length)];
+    recycled.currentSlot = slot;
+    const s = data.slots[slot];
+
+    const savedVote = getSavedVotes(data.question_id)[slot];
+    buildRecycledCard(data.question_id, slot, s.option_a, s.option_b, savedVote);
+    updateRecycledCount();
+    setRecycledStatus('', savedVote ? 'PREVIOUS VOTE RESTORED_' : 'CLICK AN OPTION TO VOTE_');
+  } catch(e) { setRecycledStatus('error', 'CONNECTION ERROR: ' + e.message); }
+}
+
+function buildRecycledCard(qid, slot, optA, optB, savedVote) {
+  const card = document.getElementById('recycled-card');
+  card.innerHTML = `
+    <div class="win-title">
+      <span>MODEL_${slot}.EXE</span>
+      <div class="win-controls">
+        <div class="win-ctrl" id="rfb-UPVOTE"   data-tip="GOOD QUESTION"  onclick="submitRecycledFeedback('UPVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M720-120H280v-520l280-280 50 50q7 7 11.5 19t4.5 23v14l-44 174h258q32 0 56 24t24 56v80q0 7-2 15t-4 15L794-168q-9 20-30 34t-44 14Zm-360-80h360l120-280v-80H480l54-220-174 174v406Zm0-406v406-406Zm-80-34v80H160v360h120v80H80v-520h200Z"/></svg></div>
+        <div class="win-ctrl" id="rfb-DOWNVOTE" data-tip="BAD QUESTION"   onclick="submitRecycledFeedback('DOWNVOTE')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M240-840h440v520L400-40l-50-50q-7-7-11.5-19t-4.5-23v-14l44-174H120q-32 0-56-24t-24-56v-80q0-7 2-15t4-15l120-282q9-20 30-34t44-14Zm360 80H240L120-480v80h360l-54 220 174-174v-406Zm0 406v-406 406Zm80 34v-80h120v-360H680v-80h200v520H680Z"/></svg></div>
+        <div class="win-ctrl" id="rfb-FLAG"     data-tip="FLAG CONTENT"   onclick="submitRecycledFeedback('FLAG')"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#dedede"><path d="M200-120v-680h360l16 80h224v400H520l-16-80H280v280h-80Zm300-440Zm86 160h134v-240H510l-16-80H280v240h290l16 80Z"/></svg></div>
+      </div>
+    </div>
+    <div class="win-body">
+      <div class="wyr-prompt">Would you rather...</div>
+      <button class="option-btn" id="robtn-A" onclick="pickRecycledOption('A')">${esc(optA)}</button>
+      <button class="option-btn" id="robtn-B" onclick="pickRecycledOption('B')">${esc(optB)}</button>
+      <div class="results" id="recycled-results"></div>
+    </div>`;
+
+  // Restore saved vote if any
+  if (savedVote) {
+    const bA = document.getElementById('robtn-A');
+    const bB = document.getElementById('robtn-B');
+    bA.disabled = true; bB.disabled = true;
+    bA.classList.toggle('selected-a', savedVote === 'A');
+    bB.classList.toggle('selected-b', savedVote === 'B');
+    recycled.voted = true;
+    // Try to load results too
+    fetch(`/api/results/${qid}`).then(r => r.ok ? r.json() : null).then(data => {
+      if (data) showRecycledResults(data.totals, data.slot_reveal, savedVote);
+    }).catch(() => {});
+  }
+
+  // Restore saved feedback
+  const savedFb = getSavedFeedback(qid)[slot];
+  if (savedFb) lockRecycledFeedback(savedFb);
+
+  setTimeout(() => card.classList.add('visible'), 10);
+}
+
+function pickRecycledOption(option) {
+  if (document.getElementById('recycled-results').classList.contains('show')) return;
+  const bA = document.getElementById('robtn-A');
+  const bB = document.getElementById('robtn-B');
+  if (!bA) return;
+  bA.disabled = true; bB.disabled = true;
+  bA.classList.toggle('selected-a', option === 'A');
+  bB.classList.toggle('selected-b', option === 'B');
+  recycled.voted = true;
+  submitRecycledVote(option);
+}
+
+async function submitRecycledVote(chosenOption) {
+  setRecycledStatus('loading', 'RECORDING VOTE_');
+  try {
+    const resp = await fetch('/api/vote', {
+      method: 'POST', headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({question_id: recycled.currentQid, slot: recycled.currentSlot, chosen_option: chosenOption})
+    });
+    const data = await resp.json();
+    if (!resp.ok) { setRecycledStatus('error', data.error); return; }
+    saveVote(recycled.currentQid, recycled.currentSlot, chosenOption);
+    showRecycledResults(data.totals, data.slot_reveal, chosenOption);
+    setRecycledStatus('', 'VOTE RECORDED // HIT NEXT FOR ANOTHER_');
+  } catch(e) { setRecycledStatus('error', 'VOTE ERROR: ' + e.message); }
+}
+
+function showRecycledResults(totals, slotReveal, chosenOption) {
+  const modelName = slotReveal ? slotReveal[recycled.currentSlot] : null;
+  const el = document.getElementById('recycled-results');
+  if (!el) return;
+  if (modelName && totals[modelName]) {
+    const t = totals[modelName];
+    const total = (t.votes_a + t.votes_b) || 1;
+    const pctA = Math.round(t.votes_a / total * 100);
+    const pctB = 100 - pctA;
+    el.innerHTML = `
+      <div class="result-row">
+        <span class="result-label">OPT A</span>
+        <div class="bar-wrap"><span class="bar ${chosenOption==='A'?'voted':''}" style="width:${Math.round(pctA*.9)}px"></span><span>${t.votes_a}v / ${pctA}%</span></div>
+      </div>
+      <div class="result-row">
+        <span class="result-label">OPT B</span>
+        <div class="bar-wrap"><span class="bar ${chosenOption==='B'?'voted':''}" style="width:${Math.round(pctB*.9)}px"></span><span>${t.votes_b}v / ${pctB}%</span></div>
+      </div>
+      <div class="reveal-tag">★ MODEL: ${modelName.toUpperCase()} ★</div>`;
+  } else {
+    el.innerHTML = `<div class="reveal-tag">★ VOTE RECORDED ★</div>`;
+  }
+  el.classList.add('show');
+}
+
+function submitRecycledFeedback(feedback) {
+  lockRecycledFeedback(feedback);
+  saveFeedback(recycled.currentQid, recycled.currentSlot, feedback);
+  fetch('/api/moderate', {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({question_id: recycled.currentQid, slot: recycled.currentSlot, vote_type: feedback})
+  }).catch(() => {});
+}
+
+function lockRecycledFeedback(chosen) {
+  for (const type of FEEDBACK_TYPES) {
+    const el = document.getElementById(`rfb-${type}`);
+    if (!el) continue;
+    el.classList.toggle('feedback-selected', type === chosen);
+    el.classList.toggle('feedback-disabled',  type !== chosen);
+  }
+}
+
+function updateRecycledCount() {
+  const total = recycled.queue.length;
+  const seen = Math.min(recycled.queueIndex, total);
+  document.getElementById('recycled-count').textContent =
+    total ? `${seen} OF ${total} ARCHIVED QUESTIONS EXPLORED` : '';
+}
+
+function setRecycledStatus(cls, msg) {
+  const el = document.getElementById('recycled-status');
+  el.className = 'status' + (cls ? ' ' + cls : '');
+  el.textContent = msg;
+}
 </script>
 </body>
 </html>

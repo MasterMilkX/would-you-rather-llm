@@ -1,45 +1,45 @@
 {
-  "question_id": 666,
-  "generated_at": "2026-06-17T15:00:29.911334",
+  "question_id": 670,
+  "generated_at": "2026-06-17T19:00:28.717410",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Have to eat all your food raw",
-      "option_b": "All of the time have a weird smell"
+      "option_a": "Be able to see all of the stars in your home town, but only at night and always with a blue glow around them instead",
+      "option_b": "Have 10x more people than average watching every performance that would be performed if ever movie theater were built"
     },
     "B": {
       "slot": "B",
-      "option_a": "10,000 chickens",
-      "option_b": "A family of elephants"
+      "option_a": "Be a millionaire, but have to live in your car",
+      "option_b": "Have 50 billion dollars and only be able to drive stick"
     },
     "C": {
       "slot": "C",
-      "option_a": "50 different kinds of cookies to bake",
-      "option_b": "Be the best chef in the world"
+      "option_a": "10 million dollar car, helicopter and private jet for your personal transport (you have to fly in a specific location at least once per week.)",
+      "option_b": "You get to travel anywhere/anytime with teleportation but no destination allowed."
     },
     "D": {
       "slot": "D",
-      "option_a": "Have the ability to only sleep 20 minutes a night and be awake for an hour at any time of day",
-      "option_b": "Only have one hand"
+      "option_a": "20% chance to get $1M",
+      "option_b": "80% chance of losing everything"
     },
     "E": {
       "slot": "E",
-      "option_a": "Only eat watermelon for the rest of your life",
-      "option_b": "Eat only chocolate for the rest of your life"
+      "option_a": "Always have to be able to make the universe",
+      "option_b": "Be able to control it"
     },
     "F": {
       "slot": "F",
-      "option_a": "Get 10 feet",
-      "option_b": "Fall from the grass"
+      "option_a": "Only eat ketchup",
+      "option_b": "only drink milk"
     }
   },
   "slot_model_map": {
-    "A": "qwen",
-    "B": "tinyllama",
+    "A": "smol",
+    "B": "meta-llama",
     "C": "gemma",
-    "D": "smol",
-    "E": "meta-llama",
-    "F": "tencent"
+    "D": "qwen",
+    "E": "tencent",
+    "F": "tinyllama"
   }
 }

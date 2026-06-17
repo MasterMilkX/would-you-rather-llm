@@ -712,5 +712,113 @@
       "title": "Would you rather",
       "optionA": "A magic 8 ball that knows all your future moves",
       "optionB": "An invisible mouse that follows you everywhere"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "Get a bowl of cereal every time someone calls your name",
+      "optionB": "get $5 when people walk by"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Have to eat all your food raw",
+      "optionB": "All of the time have a weird smell"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "A 95% chance of dying in your sleep at any age",
+      "optionB": "None ever die"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Be stuck in a room with only 10 people and have to make friends at the drop of hat but be able to leave whenever you want (but wouldnt come back for fear that everyone might die instead )",
+      "optionB": "Be stuck on an island where every day is basically your birthday, except its literally just another random person who has been there forever"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "100% chance of getting your heart broken but no one cares",
+      "optionB": "Only 25% chance of getting your heart broken and everyone loves you"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "The color purple",
+      "optionB": "Any animal"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Be able to grow 360 degree vegetables and trees, but all are edible.",
+      "optionB": "Grow a tree with your thoughts"
+   },
+   {
+      "MODEL": "qwen",
+      "title": "Would you rather",
+      "optionA": "Be able to create a magical object whenever u want",
+      "optionB": "Have the ability of time travel, but be unable to go back in time"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Always have the perfect shower temperature (but it has to be 102 degrees fahrenheit)",
+      "optionB": "Have your hair never get wet, but always smell like lavender"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "A bunch of crows",
+      "optionB": "1000 mice"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Be able to read but no one else can see the books you've written, including yourself.",
+      "optionB": "Not be able to write?"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "Be a ghost and the only one who can see you. You get to do 100 wishes but no powers/special abilities",
+      "optionB": "be a monster that nobody knows about (like a werewolf or witch)"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Be able to make anything made of pure gold come into existance but only for a second and not be able to keep it",
+      "optionB": "have the ability to put any material into existence (but cant change or move your creation once its done being created)?"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Live in a world where everyone is your age (10-25) but have superhuman abilities",
+      "optionB": "Live in the 90s and be able to control anything you want"
+   },
+   {
+      "MODEL": "meta-llama",
+      "title": "Would you rather",
+      "optionA": "1000 year sentence",
+      "optionB": "Life in a zoo"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Always have to be the last one picked for anything (including battles)",
+      "optionB": "Never get any good grades, but learn from every bad grade"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Get eaten by a polar bear if your name is bobby",
+      "optionB": "Die in a fire, but have the power to create one yourself"
+   },
+   {
+      "MODEL": "tencent",
+      "title": "Would you rather",
+      "optionA": "Be  able to run at a speed of 50 ft/s",
+      "optionB": "Know how many people are around your house"
    }
 ]

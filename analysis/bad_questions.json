@@ -494,6 +494,266 @@
          "MODEL": "tencent",
          "optionA": "Be 1 mpcw",
          "optionB": "be a basketball player (10 players), but only one of them in your group"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Always be able to speak",
+         "optionB": "Never know when your friend will die"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Be able to hear your own thoughts, but not everyone elses",
+         "optionB": "Be able to talk to animals"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Get 10 feet",
+         "optionB": "Fall from the grass"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "The ability to be able to see through walls (but no contact with the world outside of it's solidity)",
+         "optionB": "The ability to see as many shadows in a room at once as possible"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be a ghost and haunt your family home all day, every day (never get to leave the house or interact with anyone other than ghosts of dead people who are haunting it too.)",
+         "optionB": "Work at an amusement park"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have a 10ft tree trunk in your house as an ottoman.",
+         "optionB": "Live under the house with no windows and have to deal with roaches?"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Only have 10% of your brain",
+         "optionB": "Be born with the size of a mouse"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "A lion",
+         "optionB": "Be able to kill anyone else 4x time"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "get 10 million but only if one person dies",
+         "optionB": "Get 1 billion no matter what?"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "20+ years in prison for a crime you didnt do.",
+         "optionB": "A lifetime of jail time because somebody else did it"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "have 10x more food",
+         "optionB": "A million dollars"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Be able to speak to animals (only 1 animal at a time)",
+         "optionB": "Speak to everyone but only one person"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be able to speak multiple languages fluently but only understand one",
+         "optionB": "Only be able to hear someones thoughts"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Noisy but warm and smells of cookies (but not too many to where it tastes like dirt or food garbage )",
+         "optionB": "Cold, wet mud"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "be trapped in an endless loop of your most embarrassing memory",
+         "optionB": "Have to live without sleep for a year"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be able to talk with animals",
+         "optionB": "Have super strength"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have a house made of cookies that can only be eaten by kids when they are 10 or older. But if your under ten then the cookie has to make all people in it laugh (but not at each other).",
+         "optionB": "Have an old car with no working brakes and have a family member pick you up whenever you get into trouble would you rather.."
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "10 feet from the water, where there's a rock",
+         "optionB": "A person in your room with no people"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be a perfect  always be able to move",
+         "optionB": "Have all the powers of any other person"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Always have to recharge your phone when outside of it's battery life",
+         "optionB": "always run out of power after charging"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Go back to school 10 years ago, and have a ton of knowledge but no experience.",
+         "optionB": "Work for $5/hour as an adult at age 24"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Have a super human body that cant get tired",
+         "optionB": "have to keep eating"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "A pig's head",
+         "optionB": "An elephant's body"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Only eat rice and beans for the rest of your life.",
+         "optionB": "Eat whatever is available no matter how bad it tastes"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "You have to live in a building that is always 10 degrees colder than normal",
+         "optionB": "Always be wearing boots and heavy coats no matter what weather"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "A squirrel in your house",
+         "optionB": "a cockroach in your house"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be able to see time pass at 10x normal speed",
+         "optionB": "Only get a meal once every other week"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Always have to be the first person awake (but no time for sleep)",
+         "optionB": "Be able to make others do everything but your job"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "30% chance of dying on your own, but only when flying",
+         "optionB": "No guarantee of death at all"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be the most beautiful in all directions",
+         "optionB": "be 10 feet tall"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "have to sing every song",
+         "optionB": "Have to dance"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Have to eat 100lb of food every day",
+         "optionB": "Never have any sleep ever"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Be stuck in a room with one another for 30 days without ever leaving, but only be able to speak and eat",
+         "optionB": "Live on the streets of your city, but have access to all food and shelter"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be able to make any food your heart desires, but everytime you do it has 20 calories more than the last time.",
+         "optionB": "Have a stomach of metal"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Eat 10 carrots for dinner every day without sugar or salt.",
+         "optionB": "Drink a gallon of water and eat 2 bottles of soda each time you need to pee"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "be able to speak in a room",
+         "optionB": "Be able to move around in a car"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Have a giant horse with your head on its horns",
+         "optionB": "Be one of the 10 greatest athletes in history"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "have 1 butane gas lighter and be able to light things on fire",
+         "optionB": "Have one wood burning stove with no electricity"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Be able to fly at will",
+         "optionB": "Be a good magician"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Be able to see all of the stars in your home town, but only at night and always with a blue glow around them instead",
+         "optionB": "Have 10x more people than average watching every performance that would be performed if ever movie theater were built"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Be a millionaire, but have to live in your car",
+         "optionB": "Have 50 billion dollars and only be able to drive stick"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "The world is a huge red elephant",
+         "optionB": "A giant black wolf"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "have to eat your favourite food all the time, but no other foods. (your fave would be chicken noodle soup)",
+         "optionB": "Have to only eat when youre super tired?"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be able to speak english fluently (not just basic vocab)",
+         "optionB": "be fluent in one language, but cant understand any other languages"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Be a horseman of fire",
+         "optionB": "Be a dragon of ice"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Live in a world where everyone has the power to control time",
+         "optionB": "live in a world where everyone can heal any wound"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Have a really bad headache that lasts for 10 hours",
+         "optionB": "Only be able to speak in 1 word answers"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Have 2 perfect teeth but only eat dirt",
+         "optionB": "A perfectly white smile, but have no food"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "20,000 dollars a year but never get to enjoy anything because your neighbor has that much money too. (but he spends all the time in his house)",
+         "optionB": "not have any money at all"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Every time your clothes get wet, they start to turn into ice",
+         "optionB": "You cant eat anything that is not a vegan burger"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "100 bucks for a single 5 second song, but you cant edit it",
+         "optionB": "2 dollars to use the voice of your favorite celebrity for one minute"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "1000 people who know you",
+         "optionB": "10 million people who can see your thoughts"
       }
    ],
    "flagged": [
@@ -576,6 +836,21 @@
          "MODEL": "qwen",
          "optionA": "Be a 12 year old boy",
          "optionB": "be a teenaged girl"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be able to walk through a tunnel",
+         "optionB": "Walk 3m of stairs"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Be a 1980s pop star who is still super famous today (but not as famous, like an obscure one).",
+         "optionB": "A really good video game character from the past that nobody knows about but would be great if they did know it?"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "Never ever get hungry again.",
+         "optionB": "Eat all the food in your fridge"
       }
    ]
 }
