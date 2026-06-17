@@ -3,3 +3,6 @@
 *-merged/
 model_outputs/
 questions_archive/
+start_bot.sh
+discord_token.txt
+.gitignore

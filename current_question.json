@@ -1,45 +1,45 @@
 {
-  "question_id": 649,
-  "generated_at": "2026-06-10T21:01:04.341851",
+  "question_id": 666,
+  "generated_at": "2026-06-17T15:00:29.911334",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Always get the wrong subway station",
-      "option_b": "Never be able to find your room"
+      "option_a": "Have to eat all your food raw",
+      "option_b": "All of the time have a weird smell"
     },
     "B": {
       "slot": "B",
-      "option_a": "Get 100000 dollars",
-      "option_b": "Be an intergalactic bounty hunter for the rest of your life"
+      "option_a": "10,000 chickens",
+      "option_b": "A family of elephants"
     },
     "C": {
       "slot": "C",
-      "option_a": "Be able to speak any language but only have a 10% chance of speaking well",
-      "option_b": "Know all the answers on every test, but never be able to find your own?"
+      "option_a": "50 different kinds of cookies to bake",
+      "option_b": "Be the best chef in the world"
     },
     "D": {
       "slot": "D",
-      "option_a": "Have your eyes always looking like a puppy dog's ears when people look at them",
-      "option_b": "have 2 tails but cant do anything with then"
+      "option_a": "Have the ability to only sleep 20 minutes a night and be awake for an hour at any time of day",
+      "option_b": "Only have one hand"
     },
     "E": {
       "slot": "E",
-      "option_a": "A magic 8 ball that knows all your future moves",
-      "option_b": "An invisible mouse that follows you everywhere"
+      "option_a": "Only eat watermelon for the rest of your life",
+      "option_b": "Eat only chocolate for the rest of your life"
     },
     "F": {
       "slot": "F",
-      "option_a": "Be 4x as fast",
-      "option_b": "Never be able to speak"
+      "option_a": "Get 10 feet",
+      "option_b": "Fall from the grass"
     }
   },
   "slot_model_map": {
     "A": "qwen",
-    "B": "meta-llama",
+    "B": "tinyllama",
     "C": "gemma",
     "D": "smol",
-    "E": "tinyllama",
+    "E": "meta-llama",
     "F": "tencent"
   }
 }

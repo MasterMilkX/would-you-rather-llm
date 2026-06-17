@@ -31,7 +31,7 @@ import torch
 import warnings
 from datetime import datetime
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from sync import push_question, pull_and_merge_votes, push_unvoted_archive
+from sync import push_question, pull_and_merge_votes, push_unvoted_archive, push_discord_delta
 
 warnings.filterwarnings("ignore", message=".*datetime.datetime.utcnow.*")
 
@@ -198,6 +198,13 @@ def run(test_mode: bool = False):
 
     # Pull any votes the web server collected since last run and merge into local DB
     pull_and_merge_votes(DB_PATH)
+
+    # Merge Discord votes into the local DB and push them to the web server's
+    # delta so the web frontend can display them alongside web votes.
+    push_discord_delta(
+        local_discord_delta="/home/milk/Desktop/RESEARCH/wyr/discord_votes_delta.jsonl",
+        local_db_path=DB_PATH,
+    )
 
     # Push any recently-generated questions that received zero votes to the server
     # archive so they're available for offline rotation (covers low-traffic hours like 2am).

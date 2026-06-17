@@ -24,8 +24,28 @@ import json
 import random
 import os
 import sys
+import fcntl
 from datetime import datetime, timezone
 from sync import add_model_vote
+
+# ---------------------------------------------------------------------------
+# Single-instance lock — prevents duplicate posts if the bot is started twice
+# ---------------------------------------------------------------------------
+
+_LOCK_PATH = "/tmp/wyr_discord_bot.lock"
+try:
+    _lock_fh = open(_LOCK_PATH, "w")
+    fcntl.flock(_lock_fh, fcntl.LOCK_EX | fcntl.LOCK_NB)
+except PermissionError:
+    sys.exit(f"ERROR: cannot write lock file {_LOCK_PATH} — check file permissions "
+             f"(try: ls -la {_LOCK_PATH})")
+except IOError:
+    # flock failed — another process holds the lock
+    import subprocess
+    holder = subprocess.run(["lsof", _LOCK_PATH], capture_output=True, text=True).stdout.strip()
+    sys.exit(f"ERROR: another instance of discord_bot.py is already running.\n"
+             f"{holder or 'Run: lsof ' + _LOCK_PATH + ' to find it'}\n"
+             f"Kill that process or delete {_LOCK_PATH} if it is stale.")
 
 # ---------------------------------------------------------------------------
 # Config
@@ -35,13 +55,16 @@ DB_PATH     = "wyr_votes.db"
 ARCHIVE_DIR = "questions_archive"
 STATE_PATH  = "discord_state.json"
 
-TOKEN      = os.environ.get("DISCORD_BOT_TOKEN", "")
-CHANNEL_ID = int(os.environ.get("DISCORD_CHANNEL_ID", "0"))
+TOKEN = os.environ.get("DISCORD_BOT_TOKEN", "")
+
+# Comma-separated list of channel IDs — bot posts to all of them each hour
+_raw_ids    = os.environ.get("DISCORD_CHANNEL_IDS", os.environ.get("DISCORD_CHANNEL_ID", ""))
+CHANNEL_IDS = [int(cid.strip()) for cid in _raw_ids.split(",") if cid.strip()]
 
 if not TOKEN:
     sys.exit("ERROR: Set DISCORD_BOT_TOKEN env var")
-if not CHANNEL_ID:
-    sys.exit("ERROR: Set DISCORD_CHANNEL_ID env var")
+if not CHANNEL_IDS:
+    sys.exit("ERROR: Set DISCORD_CHANNEL_IDS env var (comma-separated list of channel IDs)")
 
 # ---------------------------------------------------------------------------
 # DB helpers
@@ -74,40 +97,56 @@ def get_unvoted_question_ids() -> list[int]:
     return [r["id"] for r in rows]
 
 
+DISCORD_DELTA_PATH = "discord_votes_delta.jsonl"
+
+
 def record_vote(question_id: int, model_name: str, chosen_option: str) -> tuple[int, int]:
     """
-    Increment votes_a or votes_b for question_id + model_name.
-    Inserts the row if it doesn't exist yet (handles questions that were
-    never put through generate_job's initial insert).
-    Returns (votes_a, votes_b) after the update.
+    Append vote to discord_votes_delta.jsonl so generate_job.py can merge it
+    into wyr_votes.db and push it to the web server on its next run.
+    Returns the combined live totals (DB + pending delta) for immediate display.
     """
-    col = "votes_a" if chosen_option == "A" else "votes_b"
-    db = _db()
-    db.execute(
-        "INSERT OR IGNORE INTO votes (question_id, model_name, votes_a, votes_b) VALUES (?,?,0,0)",
-        (question_id, model_name)
-    )
-    db.execute(
-        f"UPDATE votes SET {col} = {col} + 1 WHERE question_id = ? AND model_name = ?",
-        (question_id, model_name)
-    )
-    db.commit()
-    row = db.execute(
-        "SELECT votes_a, votes_b FROM votes WHERE question_id = ? AND model_name = ?",
-        (question_id, model_name)
-    ).fetchone()
-    db.close()
-    return (row["votes_a"], row["votes_b"]) if row else (0, 0)
+    record = {
+        "question_id":   question_id,
+        "model_name":    model_name,
+        "chosen_option": chosen_option,
+        "voted_at":      datetime.now(timezone.utc).isoformat(),
+        "source":        "discord",
+    }
+    with open(DISCORD_DELTA_PATH, "a") as f:
+        f.write(json.dumps(record) + "\n")
+    return get_vote_totals(question_id, model_name)
 
 
 def get_vote_totals(question_id: int, model_name: str) -> tuple[int, int]:
-    db = _db()
+    """
+    Return combined vote totals from wyr_votes.db (synced) +
+    discord_votes_delta.jsonl (pending, not yet merged by generate_job).
+    """
+    db  = _db()
     row = db.execute(
         "SELECT votes_a, votes_b FROM votes WHERE question_id = ? AND model_name = ?",
         (question_id, model_name)
     ).fetchone()
     db.close()
-    return (row["votes_a"], row["votes_b"]) if row else (0, 0)
+    votes_a = row["votes_a"] if row else 0
+    votes_b = row["votes_b"] if row else 0
+
+    # Add any Discord votes not yet flushed to the DB by generate_job
+    if os.path.exists(DISCORD_DELTA_PATH):
+        with open(DISCORD_DELTA_PATH) as f:
+            for line in f:
+                try:
+                    rec = json.loads(line.strip())
+                    if rec.get("question_id") == question_id and rec.get("model_name") == model_name:
+                        if rec.get("chosen_option") == "A":
+                            votes_a += 1
+                        else:
+                            votes_b += 1
+                except (json.JSONDecodeError, KeyError):
+                    pass
+
+    return votes_a, votes_b
 
 
 # ---------------------------------------------------------------------------
@@ -389,11 +428,6 @@ bot     = discord.Client(intents=intents)
 
 
 async def post_question():
-    channel = bot.get_channel(CHANNEL_ID)
-    if not channel:
-        print(f"[bot] Channel {CHANNEL_ID} not found — check DISCORD_CHANNEL_ID")
-        return
-
     q = pick_next_question()
     if not q:
         print("[bot] No questions available in archive")
@@ -403,22 +437,27 @@ async def post_question():
     embed = build_embed(q["option_a"], q["option_b"], q["question_id"], votes_a, votes_b)
     view  = VoteView(q["question_id"], q["slot"], q["model_name"],
                      q["option_a"], q["option_b"])
-    msg   = await channel.send(embed=embed, view=view)
 
-    state = load_state()
+    state  = load_state()
     posted = state.get("posted_slots", [])
     posted.append([q["question_id"], q["slot"]])
     state["posted_slots"] = posted
-    state["active"] = {
-        "message_id":  msg.id,
-        "channel_id":  CHANNEL_ID,
-        **q,
-    }
+    state["active"] = {**q, "messages": []}
+
+    for cid in CHANNEL_IDS:
+        channel = bot.get_channel(cid)
+        if not channel:
+            print(f"[bot] Channel {cid} not found — check DISCORD_CHANNEL_IDS")
+            continue
+        msg = await channel.send(embed=embed, view=view)
+        state["active"]["messages"].append({"channel_id": cid, "message_id": msg.id})
+
     save_state(state)
 
     ts = datetime.now(timezone.utc).strftime("%H:%M UTC")
     print(f"[bot] {ts} — Posted q#{q['question_id']} slot {q['slot']} "
-          f"({q['model_name']}): {q['option_a']!r} vs {q['option_b']!r}")
+          f"({q['model_name']}) to {len(CHANNEL_IDS)} channel(s): "
+          f"{q['option_a']!r} vs {q['option_b']!r}")
 
 
 @tasks.loop(hours=1)
@@ -428,9 +467,10 @@ async def hourly_question():
 
 @bot.event
 async def on_ready():
-    print(f"[bot] Logged in as {bot.user} (discord.py {discord.__version__})")
+    print(f"[bot] on_ready — logged in as {bot.user} (discord.py {discord.__version__})")
 
-    # Re-register persistent views so buttons on old messages keep working
+    # Re-register persistent views so buttons on old messages keep working.
+    # Safe to call on every reconnect — discord.py deduplicates by custom_id.
     state  = load_state()
     active = state.get("active")
     if active:
@@ -441,9 +481,10 @@ async def on_ready():
         bot.add_view(view)
         print(f"[bot] Re-registered persistent view for q#{active['question_id']}")
 
+    # Only start the loop once — on_ready fires again on every Discord reconnect
     if not hourly_question.is_running():
         hourly_question.start()
-    print("[bot] Hourly question loop started")
+        print("[bot] Hourly question loop started")
 
 
 bot.run(TOKEN)

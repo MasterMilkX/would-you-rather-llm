@@ -474,6 +474,26 @@
          "MODEL": "smol",
          "optionA": "A) 10 people who can do any skill (except fighting ) and have to be in a room with no doors",
          "optionB": "walls for days until they find food. Would one person get hurt? would the other ones die because of hunger, etc."
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Have your eyes always looking like a puppy dog's ears when people look at them",
+         "optionB": "have 2 tails but cant do anything with then"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be 4x as fast",
+         "optionB": "Never be able to speak"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "Would you rather...\nA) Get a 40% chance of winning the lottery once every month. But your first win is guaranteed to ruin everything else in life (you cant eat, sleep",
+         "optionB": "drink for example)."
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "Be 1 mpcw",
+         "optionB": "be a basketball player (10 players), but only one of them in your group"
       }
    ],
    "flagged": [
@@ -551,6 +571,11 @@
          "MODEL": "smol",
          "optionA": "Have a robot friend that always does your chores but never lets you leave the house to go out and have fun.",
          "optionB": "Be able to pay people for sex?"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "Be a 12 year old boy",
+         "optionB": "be a teenaged girl"
       }
    ]
 }

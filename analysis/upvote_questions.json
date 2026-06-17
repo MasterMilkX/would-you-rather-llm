@@ -700,5 +700,17 @@
       "title": "Would you rather",
       "optionA": "100 bucks for every time someone else speaks in your group chat",
       "optionB": "50 dollars per tweet"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "A magic 8 ball that knows all your future moves",
+      "optionB": "An invisible mouse that follows you everywhere"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "A magic 8 ball that knows all your future moves",
+      "optionB": "An invisible mouse that follows you everywhere"
    }
 ]
