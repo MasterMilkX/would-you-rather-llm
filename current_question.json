@@ -1,45 +1,45 @@
 {
-  "question_id": 670,
-  "generated_at": "2026-06-17T19:00:28.717410",
+  "question_id": 778,
+  "generated_at": "2026-06-22T14:00:51.422893",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Be able to see all of the stars in your home town, but only at night and always with a blue glow around them instead",
-      "option_b": "Have 10x more people than average watching every performance that would be performed if ever movie theater were built"
+      "option_a": "20% of your energy",
+      "option_b": "1.5% of your energy"
     },
     "B": {
       "slot": "B",
-      "option_a": "Be a millionaire, but have to live in your car",
-      "option_b": "Have 50 billion dollars and only be able to drive stick"
+      "option_a": "Be the best dancer in the world",
+      "option_b": "Be a chef"
     },
     "C": {
       "slot": "C",
-      "option_a": "10 million dollar car, helicopter and private jet for your personal transport (you have to fly in a specific location at least once per week.)",
-      "option_b": "You get to travel anywhere/anytime with teleportation but no destination allowed."
+      "option_a": "Have a pet fish that's only 3 cm long but has really annoying sound everytime it swims by.",
+      "option_b": "Have an invisible dog running around your house whenever someone walks in?"
     },
     "D": {
       "slot": "D",
-      "option_a": "20% chance to get $1M",
-      "option_b": "80% chance of losing everything"
+      "option_a": "10x more likely to be killed by a bear",
+      "option_b": "Have no ability for sleep"
     },
     "E": {
       "slot": "E",
-      "option_a": "Always have to be able to make the universe",
-      "option_b": "Be able to control it"
+      "option_a": "100mph wind turbine blades that never break",
+      "option_b": "A giant panda with a heart"
     },
     "F": {
       "slot": "F",
-      "option_a": "Only eat ketchup",
-      "option_b": "only drink milk"
+      "option_a": "be able to read people's minds",
+      "option_b": "Be able to speak to animals"
     }
   },
   "slot_model_map": {
-    "A": "smol",
-    "B": "meta-llama",
-    "C": "gemma",
+    "A": "tencent",
+    "B": "gemma",
+    "C": "smol",
     "D": "qwen",
-    "E": "tencent",
-    "F": "tinyllama"
+    "E": "tinyllama",
+    "F": "meta-llama"
   }
 }

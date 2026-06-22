@@ -754,6 +754,41 @@
          "MODEL": "tencent",
          "optionA": "1000 people who know you",
          "optionB": "10 million people who can see your thoughts"
+      },
+      {
+         "MODEL": "meta-llama",
+         "optionA": "Have an eye for 10 but a mouth thats only capable of saying one word",
+         "optionB": "Be able to speak perfectly, and have no eyes"
+      },
+      {
+         "MODEL": "gemma",
+         "optionA": "One hand is always full of ice water, one isn't.",
+         "optionB": "You can hear your own thoughts but only for 10 seconds at a time"
+      },
+      {
+         "MODEL": "tencent",
+         "optionA": "You can go to 10 people in your room",
+         "optionB": "The only person left is a cat"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "A 10ft super long arm that can do everything with ease. (but only good at one thing)",
+         "optionB": "A 2 foot strong leg muscle, but no arms or hands"
+      },
+      {
+         "MODEL": "smol",
+         "optionA": "50 year-old dog named Ziggy, but would always be in pain",
+         "optionB": "A new puppy with no health problems"
+      },
+      {
+         "MODEL": "qwen",
+         "optionA": "A horse",
+         "optionB": "The world"
+      },
+      {
+         "MODEL": "tinyllama",
+         "optionA": "Be able to hear your own thoughts, but not everyone elses",
+         "optionB": "Be able to talk to animals"
       }
    ],
    "flagged": [

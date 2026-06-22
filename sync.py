@@ -283,38 +283,45 @@ def pull_model_mods(local_path: str = MODEL_MOD_PATH) -> int:
 def push_discord_delta(local_discord_delta: str = "discord_votes_delta.jsonl",
                        local_db_path: str = DB_PATH) -> int:
     """
-    Called by generate_job.py each run to sync Discord votes into both places:
-      1. Merges them into the local wyr_votes.db (so the DB is authoritative).
-      2. Appends them (tagged source=discord) to the web server's votes_delta.jsonl
-         so the web frontend can display them — the discord tag prevents
-         pull_and_merge_votes() from double-counting them on the next run.
-      3. Clears the local discord_votes_delta.jsonl.
+    Called by generate_job.py (and sync_votes.py) to pull the Discord vote delta
+    from the web server, merge it into the local wyr_votes.db, and clear the
+    remote file so votes aren't double-counted on the next run.
 
-    Returns the number of records processed.
+    Returns the number of records merged.
     """
-    print("\n[sync] Pushing Discord vote delta ...")
+    print("\n[sync] Pulling Discord vote delta from web server ...")
 
-    if not os.path.exists(local_discord_delta) or os.path.getsize(local_discord_delta) == 0:
-        print("  No pending Discord votes.")
+    remote_delta = f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:{WEB_SERVER_DIR}/discord_votes_delta.jsonl"
+    tmp = local_discord_delta + ".incoming"
+
+    ok = _scp(remote_delta, tmp, "pull discord delta")
+    if not ok or not os.path.exists(tmp) or os.path.getsize(tmp) == 0:
+        print("  No pending Discord votes on web server.")
+        if os.path.exists(tmp):
+            os.remove(tmp)
         return 0
 
     records = []
-    with open(local_discord_delta) as f:
+    with open(tmp) as f:
         for line in f:
             line = line.strip()
             if not line:
                 continue
             try:
-                records.append(json.loads(line))
+                rec = json.loads(line)
+                if "chosen_option" in rec:   # skip moderation entries
+                    records.append(rec)
             except json.JSONDecodeError as e:
                 print(f"  ✗ Skipping malformed line: {e}")
+    os.remove(tmp)
 
     if not records:
+        print("  No A/B vote records found.")
         return 0
 
-    print(f"  Found {len(records)} Discord vote(s) to sync")
+    print(f"  Found {len(records)} Discord vote(s) to merge")
 
-    # 1. Merge into local DB
+    # Merge into local DB
     db = sqlite3.connect(local_db_path)
     merged = 0
     for rec in records:
@@ -337,27 +344,9 @@ def push_discord_delta(local_discord_delta: str = "discord_votes_delta.jsonl",
     db.close()
     print(f"  ✓ Merged {merged} record(s) into local DB")
 
-    # 2. Push tagged records to web server's votes_delta.jsonl
-    tmp = local_discord_delta + ".push_tmp"
-    with open(tmp, "w") as f:
-        for rec in records:
-            tagged = {**rec, "source": "discord"}
-            f.write(json.dumps(tagged) + "\n")
-
-    # SCP to a temp file on the web server, then atomically append + remove
-    remote_tmp = f"{WEB_SERVER_DIR}/votes_delta.discord_tmp"
-    ok = _scp(tmp, f"{WEB_SERVER_USER}@{WEB_SERVER_HOST}:{remote_tmp}", "push discord votes to web")
-    if ok:
-        _ssh(
-            f"cat {remote_tmp} >> {WEB_SERVER_DIR}/votes_delta.jsonl "
-            f"&& rm {remote_tmp}",
-            "append discord votes to web delta"
-        )
-    os.remove(tmp)
-
-    # 3. Clear local discord delta
-    open(local_discord_delta, "w").close()
-    print(f"  ✓ Discord delta cleared")
+    # Clear the remote delta so we don't re-process on the next run
+    _ssh(f"truncate -s 0 {WEB_SERVER_DIR}/discord_votes_delta.jsonl",
+         "clear remote discord delta")
 
     return merged
 

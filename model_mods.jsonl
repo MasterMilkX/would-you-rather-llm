@@ -313,3 +313,13 @@
 {"question_id": 562, "model_name": "gemma", "vote_type": "DOWNVOTE", "voted_at": "2026-06-17T19:31:24.526271"}
 {"question_id": 255, "model_name": "tencent", "vote_type": "DOWNVOTE", "voted_at": "2026-06-17T19:31:48.578029"}
 {"question_id": 544, "model_name": "gemma", "vote_type": "FLAG", "voted_at": "2026-06-17T19:31:59.615422"}
+{"question_id": 688, "model_name": "meta-llama", "vote_type": "DOWNVOTE", "voted_at": "2026-06-18T14:40:38.652415"}
+{"question_id": 688, "model_name": "gemma", "vote_type": "DOWNVOTE", "voted_at": "2026-06-18T14:40:40.313769"}
+{"question_id": 688, "model_name": "tencent", "vote_type": "DOWNVOTE", "voted_at": "2026-06-18T14:40:45.794890"}
+{"question_id": 386, "model_name": "tinyllama", "vote_type": "UPVOTE", "voted_at": "2026-06-18T16:20:37.472451"}
+{"question_id": 386, "model_name": "gemma", "vote_type": "UPVOTE", "voted_at": "2026-06-18T16:20:55.435791"}
+{"question_id": 386, "model_name": "smol", "vote_type": "UPVOTE", "voted_at": "2026-06-18T16:20:57.848864"}
+{"question_id": 528, "model_name": "tinyllama", "vote_type": "DOWNVOTE", "voted_at": "2026-06-22T13:48:29.308673"}
+{"question_id": 777, "model_name": "smol", "vote_type": "DOWNVOTE", "voted_at": "2026-06-22T13:48:43.250858"}
+{"question_id": 169, "model_name": "qwen", "vote_type": "DOWNVOTE", "voted_at": "2026-06-22T13:49:19.618288"}
+{"question_id": 665, "model_name": "tinyllama", "vote_type": "DOWNVOTE", "voted_at": "2026-06-22T13:58:50.733206"}

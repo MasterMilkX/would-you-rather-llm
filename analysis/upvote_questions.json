@@ -820,5 +820,23 @@
       "title": "Would you rather",
       "optionA": "Be  able to run at a speed of 50 ft/s",
       "optionB": "Know how many people are around your house"
+   },
+   {
+      "MODEL": "tinyllama",
+      "title": "Would you rather",
+      "optionA": "Everyone else is always angry with you, no matter what they do",
+      "optionB": "You are the only one that can make everyone happy"
+   },
+   {
+      "MODEL": "gemma",
+      "title": "Would you rather",
+      "optionA": "be able to summon 10 people from space for free",
+      "optionB": "Be able to control all animals on earth"
+   },
+   {
+      "MODEL": "smol",
+      "title": "Would you rather",
+      "optionA": "Get a job as the head chef and be able to pick whatever restaurant u want but cant have any free time",
+      "optionB": "Be really good at your current job, get paid more but never promoted"
    }
 ]
