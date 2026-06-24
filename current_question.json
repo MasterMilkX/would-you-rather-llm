@@ -1,42 +1,42 @@
 {
-  "question_id": 778,
-  "generated_at": "2026-06-22T14:00:51.422893",
+  "question_id": 826,
+  "generated_at": "2026-06-24T14:01:07.948511",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "20% of your energy",
-      "option_b": "1.5% of your energy"
+      "option_a": "Be able to hear the thoughts of everyone in a room (only 1 person), but they only think about money or food. You have to be the one who has to pay for everything, no matter what",
+      "option_b": "Have your body always grow into an adult at exactly when you want?"
     },
     "B": {
       "slot": "B",
-      "option_a": "Be the best dancer in the world",
-      "option_b": "Be a chef"
+      "option_a": "Be the only person in your family",
+      "option_b": "Have to be 10 years old"
     },
     "C": {
       "slot": "C",
-      "option_a": "Have a pet fish that's only 3 cm long but has really annoying sound everytime it swims by.",
-      "option_b": "Have an invisible dog running around your house whenever someone walks in?"
+      "option_a": "Not be able to do anything else but eat and sleep ever day (but could have food delivered every week)... or",
+      "option_b": "Only get one hour of exercise per day, no matter what"
     },
     "D": {
       "slot": "D",
-      "option_a": "10x more likely to be killed by a bear",
-      "option_b": "Have no ability for sleep"
+      "option_a": "10,000 followers on instagram",
+      "option_b": "A million fans on facebook"
     },
     "E": {
       "slot": "E",
-      "option_a": "100mph wind turbine blades that never break",
-      "option_b": "A giant panda with a heart"
+      "option_a": "have all of your teeth fall out every time you eat (except for one)",
+      "option_b": "Everytime you go to the bathroom, you cant pee for like 3 days"
     },
     "F": {
       "slot": "F",
-      "option_a": "be able to read people's minds",
-      "option_b": "Be able to speak to animals"
+      "option_a": "Be a bird",
+      "option_b": "be an animal"
     }
   },
   "slot_model_map": {
-    "A": "tencent",
-    "B": "gemma",
+    "A": "gemma",
+    "B": "tencent",
     "C": "smol",
     "D": "qwen",
     "E": "tinyllama",
