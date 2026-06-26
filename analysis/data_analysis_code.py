@@ -181,9 +181,61 @@ with tqdm(total=num_entries) as pbar:
             pbar.update(1)
 
 
+def vis_stacked_all_models(cat_pairs):
+    categories = list(CATEGORIES.keys())
+    models     = sorted(cat_pairs.keys())
+
+    # count main_category hits per (model, category)
+    counts = {m: {c: 0 for c in categories} for m in models}
+    for model, entries in cat_pairs.items():
+        for e in entries:
+            counts[model][e["main_category"]] += 1
+
+    # colour palette — one colour per model
+    palette = plt.cm.tab10.colors
+    model_colours = {m: palette[i % len(palette)] for i, m in enumerate(models)}
+
+    fig, ax = plt.subplots(figsize=(10, max(5, len(categories) * 0.55)))
+
+    lefts = [0] * len(categories)
+    for model in models:
+        values = [counts[model][c] for c in categories]
+        bars = ax.barh(
+            categories, values, left=lefts,
+            label=model, color=model_colours[model],
+            edgecolor="white", height=0.7,
+        )
+        # label non-zero segments
+        for bar_patch, val in zip(bars, values):
+            if val > 0:
+                x_mid = bar_patch.get_x() + bar_patch.get_width() / 2
+                y_mid = bar_patch.get_y() + bar_patch.get_height() / 2
+                ax.text(x_mid, y_mid, str(val),
+                        ha="center", va="center", fontsize=7,
+                        color="white", fontweight="bold")
+        lefts = [l + v for l, v in zip(lefts, values)]
+
+    ax.invert_yaxis()
+    ax.set_xlabel("Number of questions", fontsize=11)
+    ax.set_ylabel("Category", fontsize=11)
+    ax.set_title("Questions per category by model", fontsize=13, fontweight="bold")
+    ax.legend(title="Model", bbox_to_anchor=(1.01, 1), loc="upper left", fontsize=9)
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.grid(axis="x", alpha=0.3)
+    fig.tight_layout()
+
+    out = f"graphs/STACKED_BY_MODEL-{TIME}.png"
+    plt.savefig(out, dpi=300, bbox_inches="tight")
+    plt.close(fig)
+    print(f"Stacked-by-model chart saved to {out}")
+
+
 # visualize each model
 for model, dat in CAT_PAIRS.items():
     vis_data_cat(dat, model)
+
+vis_stacked_all_models(CAT_PAIRS)
 
 
 
