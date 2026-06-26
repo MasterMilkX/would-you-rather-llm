@@ -1207,3 +1207,68 @@
   ✓ clear remote discord delta OK
 
 ✓ Done — 6 web vote(s) + 58 Discord vote(s) merged into DB.
+=== Vote Sync — 2026-06-26 12:00:01 ===
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  No pending vote deltas.
+
+[sync] Pulling Discord vote delta from web server ...
+  SCP pull discord delta: milk@141.166.173.142:/home/server/APPS/wyr/discord_votes_delta.jsonl → /home/milk/Desktop/RESEARCH/wyr/discord_votes_delta.jsonl.incoming
+  ✓ pull discord delta OK
+  No pending Discord votes on web server.
+
+✓ Done — 0 web vote(s) + 0 Discord vote(s) merged into DB.
+=== Vote Sync — 2026-06-26 13:00:01 ===
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  No pending vote deltas.
+
+[sync] Pulling Discord vote delta from web server ...
+  SCP pull discord delta: milk@141.166.173.142:/home/server/APPS/wyr/discord_votes_delta.jsonl → /home/milk/Desktop/RESEARCH/wyr/discord_votes_delta.jsonl.incoming
+  ✓ pull discord delta OK
+  Found 1 Discord vote(s) to merge
+  ✓ Merged 1 record(s) into local DB
+  SSH clear remote discord delta: truncate -s 0 /home/server/APPS/wyr/discord_votes_delta.jsonl
+  ✓ clear remote discord delta OK
+
+✓ Done — 0 web vote(s) + 1 Discord vote(s) merged into DB.
+=== Vote Sync — 2026-06-26 14:00:01 ===
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  Found 1 vote record(s) to merge
+  SSH clear remote delta: cp /home/server/APPS/wyr/votes_delta.jsonl /home/server/APPS/wyr/votes_delta.jsonl.bak && truncate -s 0 /home/server/APPS/wyr/votes_delta.jsonl
+  ✓ clear remote delta OK
+  ✗ Failed to merge record {'question_id': 639, 'model_name': 'gemma', 'vote_type': 'UPVOTE', 'voted_at': '2026-06-26T17:59:51.000847'}: 'chosen_option'
+  ✓ Merged 0 vote(s), skipped 1
+
+[sync] Pulling Discord vote delta from web server ...
+  SCP pull discord delta: milk@141.166.173.142:/home/server/APPS/wyr/discord_votes_delta.jsonl → /home/milk/Desktop/RESEARCH/wyr/discord_votes_delta.jsonl.incoming
+  ✓ pull discord delta OK
+  Found 3 Discord vote(s) to merge
+  ✓ Merged 3 record(s) into local DB
+  SSH clear remote discord delta: truncate -s 0 /home/server/APPS/wyr/discord_votes_delta.jsonl
+  ✓ clear remote discord delta OK
+
+✓ Done — 0 web vote(s) + 3 Discord vote(s) merged into DB.
+=== Vote Sync — 2026-06-26 15:00:01 ===
+
+[sync] Pulling vote deltas from web server ...
+  SCP pull delta: milk@141.166.173.142:/home/server/APPS/wyr/votes_delta.jsonl → votes_delta_incoming.jsonl
+  ✓ pull delta OK
+  No pending vote deltas.
+
+[sync] Pulling Discord vote delta from web server ...
+  SCP pull discord delta: milk@141.166.173.142:/home/server/APPS/wyr/discord_votes_delta.jsonl → /home/milk/Desktop/RESEARCH/wyr/discord_votes_delta.jsonl.incoming
+  ✓ pull discord delta OK
+  Found 2 Discord vote(s) to merge
+  ✓ Merged 2 record(s) into local DB
+  SSH clear remote discord delta: truncate -s 0 /home/server/APPS/wyr/discord_votes_delta.jsonl
+  ✓ clear remote discord delta OK
+
+✓ Done — 0 web vote(s) + 2 Discord vote(s) merged into DB.

@@ -17,7 +17,7 @@ import numpy as np
 from pathlib import Path
 from scipy.sparse import hstack
 
-from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.feature_extraction.text import  TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import StratifiedKFold, cross_val_score
 from sklearn.metrics import classification_report, roc_auc_score

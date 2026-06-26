@@ -1,45 +1,45 @@
 {
-  "question_id": 851,
-  "generated_at": "2026-06-26T15:01:07.791075",
+  "question_id": 855,
+  "generated_at": "2026-06-26T19:01:11.599237",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Have a permanent mouth wound (ie: split lip)",
-      "option_b": "You get bit by 10 spiders every time you talk"
+      "option_a": "30 min wait time for a single lane road",
+      "option_b": "2 hour wait time on a four lane highway"
     },
     "B": {
       "slot": "B",
-      "option_a": "10 years of being a total asshole",
-      "option_b": "One good day"
+      "option_a": "Eat a sandwich on the way home (the one with lettuce and tomato), but no water",
+      "option_b": "Drink 1 gallon of water"
     },
     "C": {
       "slot": "C",
-      "option_a": "Would you rather...\nA) Have to say the first thing that comes into your head when asked a question. (Even if it is random",
-      "option_b": "wrong). \n B) Can only answer one of these two questions- Would you rather have to take off all your clothes for every time someone asks about any shirt on earth?"
+      "option_a": "be able to carry a bucket of water",
+      "option_b": "Be an allthe worst dog"
     },
     "D": {
       "slot": "D",
-      "option_a": "Be able to talk for 10 minutes, but only when hungry (but your stomach growls loudly)",
-      "option_b": "Only be able to dance like a frog when it rains"
+      "option_a": "1000000 animals",
+      "option_b": "A billion humans"
     },
     "E": {
       "slot": "E",
-      "option_a": "A 1000m square",
-      "option_b": "A 1.5km square"
+      "option_a": "Be a ghost (no physical form, only spirit but very lonely)",
+      "option_b": "Have no soul"
     },
     "F": {
       "slot": "F",
-      "option_a": "Be 50 in a tube",
-      "option_b": "be the last person standing when everyones stuck in an elevator for 3 hours"
+      "option_a": "Be 10x shorter but way faster",
+      "option_b": "be able to lift a ton"
     }
   },
   "slot_model_map": {
-    "A": "meta-llama",
-    "B": "qwen",
-    "C": "smol",
-    "D": "gemma",
-    "E": "tencent",
-    "F": "tinyllama"
+    "A": "smol",
+    "B": "gemma",
+    "C": "tencent",
+    "D": "meta-llama",
+    "E": "tinyllama",
+    "F": "qwen"
   }
 }
