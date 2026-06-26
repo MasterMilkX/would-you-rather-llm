@@ -1,45 +1,45 @@
 {
-  "question_id": 826,
-  "generated_at": "2026-06-24T14:01:07.948511",
+  "question_id": 851,
+  "generated_at": "2026-06-26T15:01:07.791075",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "Be able to hear the thoughts of everyone in a room (only 1 person), but they only think about money or food. You have to be the one who has to pay for everything, no matter what",
-      "option_b": "Have your body always grow into an adult at exactly when you want?"
+      "option_a": "Have a permanent mouth wound (ie: split lip)",
+      "option_b": "You get bit by 10 spiders every time you talk"
     },
     "B": {
       "slot": "B",
-      "option_a": "Be the only person in your family",
-      "option_b": "Have to be 10 years old"
+      "option_a": "10 years of being a total asshole",
+      "option_b": "One good day"
     },
     "C": {
       "slot": "C",
-      "option_a": "Not be able to do anything else but eat and sleep ever day (but could have food delivered every week)... or",
-      "option_b": "Only get one hour of exercise per day, no matter what"
+      "option_a": "Would you rather...\nA) Have to say the first thing that comes into your head when asked a question. (Even if it is random",
+      "option_b": "wrong). \n B) Can only answer one of these two questions- Would you rather have to take off all your clothes for every time someone asks about any shirt on earth?"
     },
     "D": {
       "slot": "D",
-      "option_a": "10,000 followers on instagram",
-      "option_b": "A million fans on facebook"
+      "option_a": "Be able to talk for 10 minutes, but only when hungry (but your stomach growls loudly)",
+      "option_b": "Only be able to dance like a frog when it rains"
     },
     "E": {
       "slot": "E",
-      "option_a": "have all of your teeth fall out every time you eat (except for one)",
-      "option_b": "Everytime you go to the bathroom, you cant pee for like 3 days"
+      "option_a": "A 1000m square",
+      "option_b": "A 1.5km square"
     },
     "F": {
       "slot": "F",
-      "option_a": "Be a bird",
-      "option_b": "be an animal"
+      "option_a": "Be 50 in a tube",
+      "option_b": "be the last person standing when everyones stuck in an elevator for 3 hours"
     }
   },
   "slot_model_map": {
-    "A": "gemma",
-    "B": "tencent",
+    "A": "meta-llama",
+    "B": "qwen",
     "C": "smol",
-    "D": "qwen",
-    "E": "tinyllama",
-    "F": "meta-llama"
+    "D": "gemma",
+    "E": "tencent",
+    "F": "tinyllama"
   }
 }
