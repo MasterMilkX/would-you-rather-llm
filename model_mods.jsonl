@@ -323,3 +323,4 @@
 {"question_id": 777, "model_name": "smol", "vote_type": "DOWNVOTE", "voted_at": "2026-06-22T13:48:43.250858"}
 {"question_id": 169, "model_name": "qwen", "vote_type": "DOWNVOTE", "voted_at": "2026-06-22T13:49:19.618288"}
 {"question_id": 665, "model_name": "tinyllama", "vote_type": "DOWNVOTE", "voted_at": "2026-06-22T13:58:50.733206"}
+{"question_id": 783, "model_name": "tencent", "vote_type": "UPVOTE", "voted_at": "2026-06-22T19:13:18.567578"}

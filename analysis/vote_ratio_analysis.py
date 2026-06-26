@@ -58,6 +58,8 @@ df["total"]   = df["votes_a"] + df["votes_b"]
 df["ratio"]   = df["votes_a"] / df["total"]
 df["balance"] = 1 - 2 * (df["ratio"] - 0.5).abs()   # 1 = perfect, 0 = one-sided
 
+print(f"Total votes across all questions: {df['total'].sum()}")
+
 # ── load feedback and build quality-weight lookup ────────────────────────────
 quality: dict[tuple, int] = defaultdict(lambda: WEIGHT_DEFAULT)
 

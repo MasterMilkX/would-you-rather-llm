@@ -838,5 +838,11 @@
       "title": "Would you rather",
       "optionA": "Get a job as the head chef and be able to pick whatever restaurant u want but cant have any free time",
       "optionB": "Be really good at your current job, get paid more but never promoted"
+   },
+   {
+      "MODEL": "tencent",
+      "title": "Would you rather",
+      "optionA": "Have a terrible 4th",
+      "optionB": "Be able to hide from 3rd"
    }
 ]
