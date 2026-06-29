@@ -1,45 +1,45 @@
 {
-  "question_id": 855,
-  "generated_at": "2026-06-26T19:01:11.599237",
+  "question_id": 921,
+  "generated_at": "2026-06-29T13:01:04.112775",
   "test_mode": false,
   "slots": {
     "A": {
       "slot": "A",
-      "option_a": "30 min wait time for a single lane road",
-      "option_b": "2 hour wait time on a four lane highway"
+      "option_a": "20% of food energy",
+      "option_b": "Have to use a car"
     },
     "B": {
       "slot": "B",
-      "option_a": "Eat a sandwich on the way home (the one with lettuce and tomato), but no water",
-      "option_b": "Drink 1 gallon of water"
+      "option_a": "Be a dog",
+      "option_b": "be an elephant"
     },
     "C": {
       "slot": "C",
-      "option_a": "be able to carry a bucket of water",
-      "option_b": "Be an allthe worst dog"
+      "option_a": "5 years of life after being put in a coma",
+      "option_b": "Never get to see your family again"
     },
     "D": {
       "slot": "D",
-      "option_a": "1000000 animals",
-      "option_b": "A billion humans"
+      "option_a": "always have 10$ in your pocket",
+      "option_b": "never get hungry"
     },
     "E": {
       "slot": "E",
-      "option_a": "Be a ghost (no physical form, only spirit but very lonely)",
-      "option_b": "Have no soul"
+      "option_a": "be able to make all other people hate the person they are talking to, but only 10% of them will see it",
+      "option_b": "Be able to hear everyones thoughts even when no one else can"
     },
     "F": {
       "slot": "F",
-      "option_a": "Be 10x shorter but way faster",
-      "option_b": "be able to lift a ton"
+      "option_a": "Be able to talk with animals",
+      "option_b": "Be able to read minds"
     }
   },
   "slot_model_map": {
-    "A": "smol",
-    "B": "gemma",
-    "C": "tencent",
+    "A": "tencent",
+    "B": "qwen",
+    "C": "smol",
     "D": "meta-llama",
     "E": "tinyllama",
-    "F": "qwen"
+    "F": "gemma"
   }
 }
